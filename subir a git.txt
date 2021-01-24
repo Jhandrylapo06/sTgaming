@@ -1,0 +1,12 @@
+* git init
+* git add .     Añadir cambios al respaldo
+* git commit -m "Nombre version" 
+
+
+* git tag -a v1.0.1 -m "Nombre version"      v version     
+*git push --tags
+
+
+
+
+*git tag   visualizar versiones
