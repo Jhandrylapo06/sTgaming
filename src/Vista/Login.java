@@ -41,7 +41,6 @@ public class Login extends javax.swing.JFrame {
         txtNombreusuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtcontrasena = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
         lblRegistrar = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -57,7 +56,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(6, 11, 25));
         jPanel1.setForeground(new java.awt.Color(176, 175, 175));
 
         jSeparator2.setBackground(new java.awt.Color(1, 1, 1));
@@ -75,7 +74,7 @@ public class Login extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(1, 1, 1));
 
-        txtNombreusuario.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombreusuario.setBackground(new java.awt.Color(6, 11, 25));
         txtNombreusuario.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 18)); // NOI18N
         txtNombreusuario.setForeground(new java.awt.Color(255, 255, 255));
         txtNombreusuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -83,7 +82,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/user3 (3).png"))); // NOI18N
 
-        txtcontrasena.setBackground(new java.awt.Color(51, 51, 51));
+        txtcontrasena.setBackground(new java.awt.Color(6, 11, 25));
         txtcontrasena.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 18)); // NOI18N
         txtcontrasena.setForeground(new java.awt.Color(255, 255, 255));
         txtcontrasena.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -92,16 +91,6 @@ public class Login extends javax.swing.JFrame {
         txtcontrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcontrasenaActionPerformed(evt);
-            }
-        });
-
-        jCheckBox1.setBackground(new java.awt.Color(51, 51, 51));
-        jCheckBox1.setFont(new java.awt.Font("Microsoft New Tai Lue", 2, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Recordarme");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
             }
         });
 
@@ -120,6 +109,11 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 2, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Olvide mi contraseña");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         jSeparator3.setBackground(new java.awt.Color(1, 1, 1));
 
@@ -127,6 +121,9 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(lblBingresar)
+                .addGap(114, 114, 114))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -152,16 +149,10 @@ public class Login extends javax.swing.JFrame {
                         .addGap(240, 240, 240)
                         .addComponent(jLabel5))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(lblBingresar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGap(72, 72, 72)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -189,17 +180,15 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel5)
-                .addGap(23, 23, 23)
-                .addComponent(jCheckBox1)
-                .addGap(6, 6, 6)
+                .addGap(27, 27, 27)
                 .addComponent(lblBingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(44, 44, 44)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(lblRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,25 +210,27 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_lblBRegistrarMouseClicked
 
     private void lblBingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBingresarMouseClicked
-        this.setVisible(false);
-        Principal principal=new Principal();
-        principal.setVisible(true);
-        principal.setResizable(false);
+//        
+          INICIOTENDENCIAS n=new INICIOTENDENCIAS();
+          n.setVisible(true);
+          this.setVisible(false);
     }//GEN-LAST:event_lblBingresarMouseClicked
 
     private void txtcontrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcontrasenaActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
     private void lblRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistrarMouseClicked
         Registro registrar=new Registro();
         registrar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lblRegistrarMouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        RecuperarContrasena n=new RecuperarContrasena();
+        n.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -277,7 +268,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -47,14 +47,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         lblTienda1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jpDEs = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         lblTienda = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,30 +67,30 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("COMPRADOS");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 170, 40));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 170, 40));
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 170, 60));
 
         jLabel8.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("ASSASSINS CREED VALHALLA");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 190, 60));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 190, 60));
 
         jLabel9.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("CALL OF DUTY: BLACK OPS");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 190, 60));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 190, 60));
 
         jLabel10.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("ASSASSINS CREED VALHALLA");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 190, 60));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 190, 60));
 
         jLabel11.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("FAVORITOS");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 170, 40));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 170, 40));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 260, 920));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 260, 980));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102, 120));
         jPanel3.setForeground(new java.awt.Color(255, 204, 204));
@@ -101,7 +99,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("STGAMING LOGO");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 170, 40));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 40));
 
         jLabel13.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
@@ -111,12 +109,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("NOVEDADES");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 170, 40));
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 170, 40));
 
         jLabel15.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("MIS JUEGOS");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 170, 40));
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 170, 40));
 
         lblTienda1.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         lblTienda1.setForeground(new java.awt.Color(204, 204, 204));
@@ -126,38 +124,25 @@ public class Principal extends javax.swing.JFrame {
                 lblTienda1MouseEntered(evt);
             }
         });
-        jPanel3.add(lblTienda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 170, 40));
+        jPanel3.add(lblTienda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 170, 40));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 160));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 100));
 
         jPanel4.setBackground(new java.awt.Color(102, 153, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ass.png"))); // NOI18N
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, -1, -1));
-
         jpDEs.setBackground(new java.awt.Color(0, 0, 0, 120));
         jpDEs.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("que alguien la conquiste.");
-        jpDEs.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 1640, 30));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Assassin's Creed Valhalla es una nueva entrega de la saga de aventura y acción histórica a cargo de Ubisoft para PC, PlayStation 4, Xbox One, PlayStation 5, Xbox Series X y Stadia ambientada en la era vikinga.");
-        jpDEs.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 1640, 30));
+        jpDEs.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1640, 30));
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Ponte en la piel de Eivor y lidera a tu clan desde los gélidos páramos de Noruega hasta un nuevo hogar en los exuberantes campos de la Inglaterra del siglo IX. Funda tu asentamiento, conquista esa tierra hostil ");
-        jpDEs.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1640, 30));
-
-        jLabel16.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("y gánate un lugar en el Valhalla. La Inglaterra de la era vikinga es una nación fracturada, plagada de ruines señores feudales y reinos en guerra, pero bajo ese caos yace una tierra rica e indómita que aguarda a ");
-        jpDEs.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1640, 30));
+        jpDEs.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 1640, 30));
 
         lblTienda.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         lblTienda.setForeground(new java.awt.Color(204, 204, 204));
@@ -176,7 +161,25 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/game2_1.jpg"))); // NOI18N
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1080));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2076, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, -1));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
@@ -245,13 +248,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -259,6 +259,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jpDEs;
     private javax.swing.JLabel lblTienda;
     private javax.swing.JLabel lblTienda1;
