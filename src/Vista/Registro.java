@@ -5,10 +5,6 @@
  */
 package Vista;
 
-import Controlador.Metodos_usuarios;
-import Modelo.Cuenta;
-import Modelo.Usuario;
-
 /**
  *
  * @author Usuario iTC
@@ -38,7 +34,6 @@ public class Registro extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -85,8 +80,6 @@ public class Registro extends javax.swing.JFrame {
 
         jLabel7.setText("jLabel4");
 
-        jButton1.setText("jButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(6, 11, 25));
@@ -116,7 +109,7 @@ public class Registro extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 230, -1));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 230, -1));
 
         jPaneldatos.setBackground(new java.awt.Color(6, 11, 25));
         jPaneldatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -201,7 +194,7 @@ public class Registro extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPaneldatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 110, 110));
+        jPaneldatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 110, 110));
 
         txtApellidoUs1.setBackground(new java.awt.Color(6, 11, 25));
         txtApellidoUs1.setForeground(new java.awt.Color(255, 255, 255));
@@ -334,7 +327,6 @@ public class Registro extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         jPaneldatos.setVisible(false);
         jpanelConfirmar.setVisible(true);
-       
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void txtcodConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodConfActionPerformed
@@ -400,7 +392,6 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
