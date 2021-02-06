@@ -12,7 +12,22 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Vista/INICIOTENDENCIAS.java</file>
+=======
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/RecuperarContrasena.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/TextPrompt.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/Tienda.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/Registro.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/AnadirJuego.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/INICIOCOMPRA.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/EditarJuego.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/Principal.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/INICIOADMINISTRACION.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/Login.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/INICIOTENDENCIAS.java</file>
+            <file>file:/C:/Users/ordon/Documents/NetBeansProjects/sTgaming/src/Vista/INICIOTIENDA.java</file>
+>>>>>>> 62394f97669e829541d280c64301daccb0af25c4
         </group>
     </open-files>
 </project-private>
