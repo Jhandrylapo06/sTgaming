@@ -30,165 +30,165 @@ public class Tienda extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
+        JPProcesoCompra = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jButton4 = new javax.swing.JButton();
+        txtCodigo = new javax.swing.JTextField();
+        txtNumtarjeta = new javax.swing.JTextField();
+        lblPrecioTotal = new javax.swing.JTextField();
+        btnVisa = new javax.swing.JRadioButton();
+        btnMastercard = new javax.swing.JRadioButton();
+        btnDinerscllub = new javax.swing.JRadioButton();
+        btnConfirmarCompra = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtfVencimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(6, 11, 25));
 
-        jPanel1.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPProcesoCompra.setBackground(new java.awt.Color(6, 11, 25));
+        JPProcesoCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("PRECIO TOTAL A PAGAR");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
+        JPProcesoCompra.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Candara Light", 1, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("PROCEDER A LA COMPRA");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+        JPProcesoCompra.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setText("NUMERO DE TARJETA");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+        JPProcesoCompra.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("AUTHORIZED SIGNATURE");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+        JPProcesoCompra.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
         jLabel15.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("AÑO DE VENCIMIENTO");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+        JPProcesoCompra.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(6, 11, 25));
-        jTextField1.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 460, -1));
+        txtCodigo.setBackground(new java.awt.Color(6, 11, 25));
+        txtCodigo.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPProcesoCompra.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 460, -1));
 
-        jTextField2.setBackground(new java.awt.Color(6, 11, 25));
-        jTextField2.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 460, -1));
+        txtNumtarjeta.setBackground(new java.awt.Color(6, 11, 25));
+        txtNumtarjeta.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtNumtarjeta.setForeground(new java.awt.Color(255, 255, 255));
+        txtNumtarjeta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPProcesoCompra.add(txtNumtarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 460, -1));
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(6, 11, 25));
-        jTextField4.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("99.99");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        lblPrecioTotal.setEditable(false);
+        lblPrecioTotal.setBackground(new java.awt.Color(6, 11, 25));
+        lblPrecioTotal.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        lblPrecioTotal.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecioTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lblPrecioTotal.setText("99.99");
+        lblPrecioTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                lblPrecioTotalActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 460, -1));
+        JPProcesoCompra.add(lblPrecioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 460, -1));
 
-        jRadioButton1.setBackground(new java.awt.Color(6, 11, 25));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton1.setText("VISA");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVisa.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup1.add(btnVisa);
+        btnVisa.setForeground(new java.awt.Color(204, 204, 204));
+        btnVisa.setText("VISA");
+        btnVisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                btnVisaActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
+        JPProcesoCompra.add(btnVisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(6, 11, 25));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton2.setText("MASTERCARD");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnMastercard.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup1.add(btnMastercard);
+        btnMastercard.setForeground(new java.awt.Color(204, 204, 204));
+        btnMastercard.setText("MASTERCARD");
+        btnMastercard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                btnMastercardActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, -1));
+        JPProcesoCompra.add(btnMastercard, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, -1));
 
-        jRadioButton3.setBackground(new java.awt.Color(6, 11, 25));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton3.setText("DINERSCLUB");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, -1, -1));
+        btnDinerscllub.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup1.add(btnDinerscllub);
+        btnDinerscllub.setForeground(new java.awt.Color(204, 204, 204));
+        btnDinerscllub.setText("DINERSCLUB");
+        JPProcesoCompra.add(btnDinerscllub, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(6, 11, 25));
-        jButton4.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
-        jButton4.setText("CONFIMAR");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirmarCompra.setBackground(new java.awt.Color(6, 11, 25));
+        btnConfirmarCompra.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
+        btnConfirmarCompra.setForeground(new java.awt.Color(204, 204, 204));
+        btnConfirmarCompra.setText("CONFIMAR");
+        btnConfirmarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnConfirmarCompraActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 400, 70));
+        JPProcesoCompra.add(btnConfirmarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 400, 70));
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("TIPO DE TARJETA");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
+        JPProcesoCompra.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
 
-        jTextField5.setBackground(new java.awt.Color(6, 11, 25));
-        jTextField5.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 460, -1));
+        txtfVencimiento.setBackground(new java.awt.Color(6, 11, 25));
+        txtfVencimiento.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtfVencimiento.setForeground(new java.awt.Color(255, 255, 255));
+        txtfVencimiento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPProcesoCompra.add(txtfVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 460, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1027, Short.MAX_VALUE)
+            .addComponent(JPProcesoCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 1027, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+            .addComponent(JPProcesoCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
         this.setVisible(false);
         
                 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void btnVisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_btnVisaActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void btnMastercardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMastercardActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_btnMastercardActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void lblPrecioTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblPrecioTotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_lblPrecioTotalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,21 +233,21 @@ public class Tienda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPProcesoCompra;
+    private javax.swing.JButton btnConfirmarCompra;
+    private javax.swing.JRadioButton btnDinerscllub;
+    private javax.swing.JRadioButton btnMastercard;
+    private javax.swing.JRadioButton btnVisa;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField lblPrecioTotal;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtNumtarjeta;
+    private javax.swing.JTextField txtfVencimiento;
     // End of variables declaration//GEN-END:variables
 }

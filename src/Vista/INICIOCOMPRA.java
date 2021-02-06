@@ -35,27 +35,27 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
         lblTienda5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        JPapartadoComprar = new javax.swing.JPanel();
+        SPJuego = new javax.swing.JScrollPane();
+        JPjuego = new javax.swing.JPanel();
+        lblPortada = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        btnComprarJuego = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        SPRRe = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
+        JPdescripcionjuego = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
+        JPrequisitosMi = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
+        lblPrecio = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblValoracion = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscarJuego = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblTienda4 = new javax.swing.JLabel();
         lblTienda2 = new javax.swing.JLabel();
@@ -102,39 +102,39 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 960));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0, 100));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPapartadoComprar.setBackground(new java.awt.Color(0, 0, 0, 100));
+        JPapartadoComprar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane2.setToolTipText("");
-        jScrollPane2.setHorizontalScrollBar(null);
+        SPJuego.setToolTipText("");
+        SPJuego.setHorizontalScrollBar(null);
 
-        jPanel5.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel5.setForeground(new java.awt.Color(27, 21, 21));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPjuego.setBackground(new java.awt.Color(6, 11, 25));
+        JPjuego.setForeground(new java.awt.Color(27, 21, 21));
+        JPjuego.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setBackground(new java.awt.Color(7, 9, 32));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2.jpg"))); // NOI18N
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1570, 780));
+        lblPortada.setBackground(new java.awt.Color(7, 9, 32));
+        lblPortada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2.jpg"))); // NOI18N
+        JPjuego.add(lblPortada, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1570, 780));
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Call of Duty®: Black Ops Cold War");
-        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 780, -1, 80));
+        lblNombre.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombre.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(204, 204, 204));
+        lblNombre.setText("Call of Duty®: Black Ops Cold War");
+        JPjuego.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 780, -1, 80));
 
-        jButton2.setBackground(new java.awt.Color(6, 11, 25));
-        jButton2.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("COMPRAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnComprarJuego.setBackground(new java.awt.Color(6, 11, 25));
+        btnComprarJuego.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        btnComprarJuego.setForeground(new java.awt.Color(204, 204, 204));
+        btnComprarJuego.setText("COMPRAR");
+        btnComprarJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnComprarJuegoActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 360, 90));
+        JPjuego.add(btnComprarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 360, 90));
 
         jLabel1.setText("Todos los derechos reservados");
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 1660, -1, 30));
+        JPjuego.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 1660, -1, 30));
 
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(6, 11, 25));
@@ -148,15 +148,15 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
         jTextArea2.setBorder(null);
         jTextArea2.setCaretColor(new java.awt.Color(6, 11, 25));
         jTextArea2.setSelectionColor(new java.awt.Color(6, 11, 25));
-        jScrollPane4.setViewportView(jTextArea2);
+        SPRRe.setViewportView(jTextArea2);
 
-        jPanel5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1260, 730, 300));
+        JPjuego.add(SPRRe, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1260, 730, 300));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Candara Light", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Recomendados");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1210, -1, -1));
+        JPjuego.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1210, -1, -1));
 
         jTextArea3.setEditable(false);
         jTextArea3.setBackground(new java.awt.Color(6, 11, 25));
@@ -170,9 +170,9 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
         jTextArea3.setBorder(null);
         jTextArea3.setCaretColor(new java.awt.Color(6, 11, 25));
         jTextArea3.setSelectionColor(new java.awt.Color(6, 11, 25));
-        jScrollPane5.setViewportView(jTextArea3);
+        JPdescripcionjuego.setViewportView(jTextArea3);
 
-        jPanel5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 970, 1510, 160));
+        JPjuego.add(JPdescripcionjuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 970, 1510, 160));
 
         jTextArea4.setEditable(false);
         jTextArea4.setBackground(new java.awt.Color(6, 11, 25));
@@ -186,64 +186,64 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
         jTextArea4.setBorder(null);
         jTextArea4.setCaretColor(new java.awt.Color(6, 11, 25));
         jTextArea4.setSelectionColor(new java.awt.Color(6, 11, 25));
-        jScrollPane6.setViewportView(jTextArea4);
+        JPrequisitosMi.setViewportView(jTextArea4);
 
-        jPanel5.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1260, 730, 300));
+        JPjuego.add(JPrequisitosMi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1260, 730, 300));
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("Precio$:99,99");
-        jLabel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 820, 240, -1));
+        lblPrecio.setBackground(new java.awt.Color(255, 255, 255));
+        lblPrecio.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblPrecio.setForeground(new java.awt.Color(204, 204, 204));
+        lblPrecio.setText("Precio$:99,99");
+        lblPrecio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JPjuego.add(lblPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 820, 240, -1));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Candara Light", 1, 40)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Requisitos:");
-        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 1140, -1, -1));
+        JPjuego.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 1140, -1, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Candara Light", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Minimos:");
-        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1210, -1, -1));
+        JPjuego.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1210, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Candara Light", 1, 40)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Descripción:");
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 910, -1, -1));
+        JPjuego.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 910, -1, -1));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel12.setText("Valoracion: 4.8/5");
-        jLabel12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 780, 240, -1));
+        lblValoracion.setBackground(new java.awt.Color(255, 255, 255));
+        lblValoracion.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValoracion.setForeground(new java.awt.Color(204, 204, 204));
+        lblValoracion.setText("Valoracion: 4.8/5");
+        lblValoracion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JPjuego.add(lblValoracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 780, 240, -1));
 
-        jScrollPane2.setViewportView(jPanel5);
+        SPJuego.setViewportView(JPjuego);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 880));
+        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 910));
 
         txtbuscar.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
         txtbuscar.setText("Call of duty cold war");
-        jPanel3.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
+        JPapartadoComprar.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
 
-        jButton1.setBackground(new java.awt.Color(6, 11, 25));
-        jButton1.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 153, 255));
-        jButton1.setText("BUSCAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarJuego.setBackground(new java.awt.Color(6, 11, 25));
+        btnBuscarJuego.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnBuscarJuego.setForeground(new java.awt.Color(102, 153, 255));
+        btnBuscarJuego.setText("BUSCAR");
+        btnBuscarJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarJuegoActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
+        JPapartadoComprar.add(btnBuscarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
+        getContentPane().add(JPapartadoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0, 50));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -304,18 +304,18 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTienda5MouseEntered
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBuscarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJuegoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBuscarJuegoActionPerformed
 
     private void lblTienda4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda4MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTienda4MouseEntered
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnComprarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarJuegoActionPerformed
         Tienda tienda= new Tienda();
         tienda.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnComprarJuegoActionPerformed
 
     private void lblTienda1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda1MouseClicked
         INICIOTIENDA n=new INICIOTIENDA();
@@ -366,35 +366,35 @@ public class INICIOCOMPRA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel JPapartadoComprar;
+    private javax.swing.JScrollPane JPdescripcionjuego;
+    private javax.swing.JPanel JPjuego;
+    private javax.swing.JScrollPane JPrequisitosMi;
+    private javax.swing.JScrollPane SPJuego;
+    private javax.swing.JScrollPane SPRRe;
+    private javax.swing.JButton btnBuscarJuego;
+    private javax.swing.JButton btnComprarJuego;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPortada;
+    private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblTienda1;
     private javax.swing.JLabel lblTienda2;
     private javax.swing.JLabel lblTienda4;
     private javax.swing.JLabel lblTienda5;
+    private javax.swing.JLabel lblValoracion;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;

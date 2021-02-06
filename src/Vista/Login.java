@@ -43,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         txtcontrasena = new javax.swing.JPasswordField();
         lblRegistrar = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblOlvidePSS = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
 
         lblBRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add_opt.png"))); // NOI18N
@@ -106,12 +106,12 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("¿No estas registrado?");
 
-        jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 2, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Olvide mi contraseña");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblOlvidePSS.setFont(new java.awt.Font("Microsoft New Tai Lue", 2, 12)); // NOI18N
+        lblOlvidePSS.setForeground(new java.awt.Color(255, 255, 255));
+        lblOlvidePSS.setText("Olvide mi contraseña");
+        lblOlvidePSS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                lblOlvidePSSMouseClicked(evt);
             }
         });
 
@@ -147,7 +147,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(240, 240, 240)
-                        .addComponent(jLabel5))
+                        .addComponent(lblOlvidePSS))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,7 +179,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel5)
+                .addComponent(lblOlvidePSS)
                 .addGap(27, 27, 27)
                 .addComponent(lblBingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
@@ -226,11 +226,11 @@ public class Login extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_lblRegistrarMouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void lblOlvidePSSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOlvidePSSMouseClicked
         RecuperarContrasena n=new RecuperarContrasena();
         n.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_lblOlvidePSSMouseClicked
 
     /**
      * @param args the command line arguments
@@ -271,7 +271,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
@@ -279,6 +278,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblBRegistrar;
     private javax.swing.JLabel lblBingresar;
+    private javax.swing.JLabel lblOlvidePSS;
     private javax.swing.JLabel lblRegistrar;
     private javax.swing.JTextField txtNombreusuario;
     private javax.swing.JPasswordField txtcontrasena;

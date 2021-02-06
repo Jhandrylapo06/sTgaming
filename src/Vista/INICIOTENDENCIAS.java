@@ -31,64 +31,54 @@ public class INICIOTENDENCIAS extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
-        jPanel2 = new javax.swing.JPanel();
+        JPMisjuegos = new javax.swing.JPanel();
         lblTienda5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        SPMisjuegos = new javax.swing.JScrollPane();
+        JLMisjuegos = new javax.swing.JList<>();
+        JPApartadoTendencias = new javax.swing.JPanel();
+        SPtendencias = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        lblTienda4 = new javax.swing.JLabel();
-        lblTienda2 = new javax.swing.JLabel();
-        lblTienda1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        JPtendencia1 = new javax.swing.JPanel();
+        lblNomT1 = new javax.swing.JLabel();
+        lblMinT1 = new javax.swing.JLabel();
+        lblValT1 = new javax.swing.JLabel();
+        JPtendencia2 = new javax.swing.JPanel();
+        lblNomT2 = new javax.swing.JLabel();
+        lblMinT2 = new javax.swing.JLabel();
+        lblValT2 = new javax.swing.JLabel();
+        JPtendencia3 = new javax.swing.JPanel();
+        lblNomT3 = new javax.swing.JLabel();
+        lblMinT3 = new javax.swing.JLabel();
+        lblValT3 = new javax.swing.JLabel();
+        JPtendencia4 = new javax.swing.JPanel();
+        lblNomT4 = new javax.swing.JLabel();
+        lblMinT4 = new javax.swing.JLabel();
+        lblValT4 = new javax.swing.JLabel();
+        JPtendencia5 = new javax.swing.JPanel();
+        lblNomT5 = new javax.swing.JLabel();
+        lblMinT5 = new javax.swing.JLabel();
+        lblValT5 = new javax.swing.JLabel();
+        JPtendencia6 = new javax.swing.JPanel();
+        lblNomT6 = new javax.swing.JLabel();
+        lblMinT6 = new javax.swing.JLabel();
+        lblValT6 = new javax.swing.JLabel();
+        JPtendencia7 = new javax.swing.JPanel();
+        lblNomT7 = new javax.swing.JLabel();
+        lblMinT7 = new javax.swing.JLabel();
+        lblValT7 = new javax.swing.JLabel();
+        JPtendencia8 = new javax.swing.JPanel();
+        lblNomT8 = new javax.swing.JLabel();
+        lblMinT8 = new javax.swing.JLabel();
+        lblValT8 = new javax.swing.JLabel();
+        JPtendencia9 = new javax.swing.JPanel();
+        lblNomT9 = new javax.swing.JLabel();
+        lblMinT9 = new javax.swing.JLabel();
+        lblValT9 = new javax.swing.JLabel();
+        JPmenu = new javax.swing.JPanel();
+        lblUsuario = new javax.swing.JLabel();
+        lblTendencias = new javax.swing.JLabel();
+        lblTienda = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -100,9 +90,9 @@ public class INICIOTENDENCIAS extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1440, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0, 50));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPMisjuegos.setBackground(new java.awt.Color(0, 0, 0, 50));
+        JPMisjuegos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JPMisjuegos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTienda5.setFont(new java.awt.Font("Lucida Bright", 0, 28)); // NOI18N
         lblTienda5.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,335 +102,293 @@ public class INICIOTENDENCIAS extends javax.swing.JFrame {
                 lblTienda5MouseEntered(evt);
             }
         });
-        jPanel2.add(lblTienda5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 50));
+        JPMisjuegos.add(lblTienda5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 50));
 
-        jList1.setBackground(new java.awt.Color(6, 11, 25));
-        jList1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        jList1.setForeground(new java.awt.Color(204, 204, 204));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        JLMisjuegos.setBackground(new java.awt.Color(6, 11, 25));
+        JLMisjuegos.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        JLMisjuegos.setForeground(new java.awt.Color(204, 204, 204));
+        JLMisjuegos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Assasins Creed: Valhala", "Call of Duty Cold War" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList1.setSelectionBackground(new java.awt.Color(102, 153, 255));
-        jScrollPane1.setViewportView(jList1);
+        JLMisjuegos.setSelectionBackground(new java.awt.Color(102, 153, 255));
+        SPMisjuegos.setViewportView(JLMisjuegos);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 250, 380));
+        JPMisjuegos.add(SPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 250, 380));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 960));
+        getContentPane().add(JPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 960));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0, 100));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPApartadoTendencias.setBackground(new java.awt.Color(0, 0, 0, 100));
+        JPApartadoTendencias.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane2.setToolTipText("");
-        jScrollPane2.setHorizontalScrollBar(null);
+        SPtendencias.setToolTipText("");
+        SPtendencias.setHorizontalScrollBar(null);
 
         jPanel5.setBackground(new java.awt.Color(6, 11, 25));
         jPanel5.setForeground(new java.awt.Color(27, 21, 21));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPtendencia1.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("Call of Duty®: Black Ops II");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 370, 110));
+        lblNomT1.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT1.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT1.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT1.setText("Call of Duty®: Black Ops III");
+        JPtendencia1.add(lblNomT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 390, 110));
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops2_miniatura.jpg"))); // NOI18N
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        lblMinT1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops3_miniatura.jpg"))); // NOI18N
+        JPtendencia1.add(lblMinT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel14.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("V: 4.9/5");
-        jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+        lblValT1.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT1.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT1.setText("V: 4.9/5");
+        JPtendencia1.add(lblValT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jPanel14.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.add(JPtendencia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 780, 230));
 
-        jLabel39.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel39.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel39.setText("Call of Duty®: Black Ops Cold War");
-        jPanel14.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+        JPtendencia2.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
-        jPanel14.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        lblNomT2.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT2.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT2.setText("Call of Duty®: Black Ops II");
+        JPtendencia2.add(lblNomT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 370, 110));
 
-        jLabel41.setText("jLabel4");
-        jPanel14.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+        lblMinT2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops2_miniatura.jpg"))); // NOI18N
+        JPtendencia2.add(lblMinT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel42.setText("jLabel4");
-        jPanel14.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+        lblValT2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT2.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT2.setText("V: 4.9/5");
+        JPtendencia2.add(lblValT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jPanel15.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.add(JPtendencia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 780, 230));
 
-        jLabel43.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel43.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel43.setText("Call of Duty®: Black Ops Cold War");
-        jPanel15.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+        JPtendencia3.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
-        jPanel15.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        lblNomT3.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT3.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT3.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT3.setText("Call of Duty®: Black Ops I");
+        JPtendencia3.add(lblNomT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
 
-        jLabel45.setText("jLabel4");
-        jPanel15.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+        lblMinT3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops1_miniatura.jpg"))); // NOI18N
+        JPtendencia3.add(lblMinT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel46.setText("jLabel4");
-        jPanel15.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+        lblValT3.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT3.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT3.setText("V: 4.8/5");
+        JPtendencia3.add(lblValT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 1550, 230));
+        jPanel5.add(JPtendencia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 780, 230));
 
-        jPanel6.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 1550, 230));
+        JPtendencia4.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 780, 230));
+        lblNomT4.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT4.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT4.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT4.setText("Call of Duty®: Black Ops Cold War");
+        JPtendencia4.add(lblNomT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 110));
 
-        jPanel17.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblMinT4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
+        JPtendencia4.add(lblMinT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel37.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel37.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel37.setText("Call of Duty®: Black Ops IV");
-        jPanel17.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 380, 110));
+        lblValT4.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT4.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT4.setText("V: 4.8/5");
+        JPtendencia4.add(lblValT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 180, 100));
 
-        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops4_miniatura.jpg"))); // NOI18N
-        jPanel17.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        jPanel5.add(JPtendencia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, 780, 230));
 
-        jLabel48.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setText("V: 4.0/5");
-        jPanel17.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+        JPtendencia5.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 970, 780, 230));
+        lblNomT5.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT5.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT5.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT5.setText("Halo: The Master Chief Collection ");
+        JPtendencia5.add(lblNomT5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
 
-        jPanel18.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblMinT5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/holaTMCC_miniatura.jpg"))); // NOI18N
+        JPtendencia5.add(lblMinT5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel49.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel49.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel49.setText("Ark: Survival Evolved");
-        jPanel18.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
+        lblValT5.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT5.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT5.setText("V: 4.7/5");
+        JPtendencia5.add(lblValT5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/arksurvival-miniatura.jpg"))); // NOI18N
-        jPanel18.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        jPanel5.add(JPtendencia5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 780, 230));
 
-        jLabel51.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel51.setText("V: 4.5/5");
-        jPanel18.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+        JPtendencia6.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 730, 780, 230));
+        lblNomT6.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT6.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT6.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT6.setText("Phasmophobia");
+        JPtendencia6.add(lblNomT6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
 
-        jPanel10.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblMinT6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Phasmofobia_miniatura.jpg"))); // NOI18N
+        JPtendencia6.add(lblMinT6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel23.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel23.setText("Halo: The Master Chief Collection ");
-        jPanel10.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
+        lblValT6.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT6.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT6.setText("V: 4.6/5");
+        JPtendencia6.add(lblValT6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/holaTMCC_miniatura.jpg"))); // NOI18N
-        jPanel10.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        jPanel5.add(JPtendencia6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 490, 780, 230));
 
-        jLabel26.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("V: 4.7/5");
-        jPanel10.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+        JPtendencia7.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 780, 230));
+        lblNomT7.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT7.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT7.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT7.setText("FarCry 5");
+        JPtendencia7.add(lblNomT7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
 
-        jPanel11.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblMinT7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Farcry5_miniatura.jpg"))); // NOI18N
+        JPtendencia7.add(lblMinT7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel27.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel27.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel27.setText("Call of Duty®: Black Ops Cold War");
-        jPanel11.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 110));
+        lblValT7.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT7.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT7.setText("V: 4.6/5");
+        JPtendencia7.add(lblValT7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
-        jPanel11.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        jPanel5.add(JPtendencia7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 780, 230));
 
-        jLabel30.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("V: 4.8/5");
-        jPanel11.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 180, 100));
+        JPtendencia8.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, 780, 230));
+        lblNomT8.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT8.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT8.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT8.setText("Ark: Survival Evolved");
+        JPtendencia8.add(lblNomT8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
 
-        jPanel12.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblMinT8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/arksurvival-miniatura.jpg"))); // NOI18N
+        JPtendencia8.add(lblMinT8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel31.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel31.setText("Call of Duty®: Black Ops III");
-        jPanel12.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 390, 110));
+        lblValT8.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT8.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT8.setText("V: 4.5/5");
+        JPtendencia8.add(lblValT8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops3_miniatura.jpg"))); // NOI18N
-        jPanel12.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        jPanel5.add(JPtendencia8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 730, 780, 230));
 
-        jLabel34.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("V: 4.9/5");
-        jPanel12.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+        JPtendencia9.setBackground(new java.awt.Color(6, 11, 25));
+        JPtendencia9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPtendencia9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 780, 230));
+        lblNomT9.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomT9.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblNomT9.setForeground(new java.awt.Color(204, 204, 204));
+        lblNomT9.setText("Call of Duty®: Black Ops IV");
+        JPtendencia9.add(lblNomT9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 380, 110));
 
-        jPanel19.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblMinT9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinT9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops4_miniatura.jpg"))); // NOI18N
+        JPtendencia9.add(lblMinT9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel52.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel52.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel52.setText("Phasmophobia");
-        jPanel19.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
+        lblValT9.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValT9.setForeground(new java.awt.Color(255, 255, 255));
+        lblValT9.setText("V: 4.0/5");
+        JPtendencia9.add(lblValT9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
 
-        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Phasmofobia_miniatura.jpg"))); // NOI18N
-        jPanel19.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        jPanel5.add(JPtendencia9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 970, 780, 230));
 
-        jLabel54.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel54.setText("V: 4.6/5");
-        jPanel19.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+        SPtendencias.setViewportView(jPanel5);
 
-        jPanel5.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 490, 780, 230));
+        JPApartadoTendencias.add(SPtendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
 
-        jPanel13.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(JPApartadoTendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
 
-        jLabel35.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel35.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel35.setText("Call of Duty®: Black Ops I");
-        jPanel13.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
+        JPmenu.setBackground(new java.awt.Color(0, 0, 0, 50));
+        JPmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops1_miniatura.jpg"))); // NOI18N
-        jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
-
-        jLabel38.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setText("V: 4.8/5");
-        jPanel13.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
-
-        jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 780, 230));
-
-        jPanel16.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel25.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel25.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel25.setText("FarCry 5");
-        jPanel16.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
-
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Farcry5_miniatura.jpg"))); // NOI18N
-        jPanel16.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
-
-        jLabel33.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("V: 4.6/5");
-        jPanel16.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
-
-        jPanel5.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 780, 230));
-
-        jScrollPane2.setViewportView(jPanel5);
-
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
-
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0, 50));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblTienda4.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
-        lblTienda4.setForeground(new java.awt.Color(204, 204, 204));
-        lblTienda4.setText("eLJhandRy");
-        lblTienda4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblUsuario.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        lblUsuario.setText("eLJhandRy");
+        lblUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienda4MouseEntered(evt);
+                lblUsuarioMouseEntered(evt);
             }
         });
-        jPanel1.add(lblTienda4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1800, 20, 110, 40));
+        JPmenu.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1800, 20, 110, 40));
 
-        lblTienda2.setFont(new java.awt.Font("Lucida Bright", 0, 28)); // NOI18N
-        lblTienda2.setForeground(new java.awt.Color(102, 153, 255));
-        lblTienda2.setText("Tendencias");
-        lblTienda2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblTendencias.setFont(new java.awt.Font("Lucida Bright", 0, 28)); // NOI18N
+        lblTendencias.setForeground(new java.awt.Color(102, 153, 255));
+        lblTendencias.setText("Tendencias");
+        lblTendencias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienda2MouseEntered(evt);
+                lblTendenciasMouseEntered(evt);
             }
         });
-        jPanel1.add(lblTienda2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 170, 40));
+        JPmenu.add(lblTendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 170, 40));
 
-        lblTienda1.setFont(new java.awt.Font("Lucida Bright", 0, 28)); // NOI18N
-        lblTienda1.setForeground(new java.awt.Color(255, 255, 255));
-        lblTienda1.setText("Tienda");
-        lblTienda1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblTienda.setFont(new java.awt.Font("Lucida Bright", 0, 28)); // NOI18N
+        lblTienda.setForeground(new java.awt.Color(255, 255, 255));
+        lblTienda.setText("Tienda");
+        lblTienda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblTienda1MouseClicked(evt);
+                lblTiendaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienda1MouseEntered(evt);
+                lblTiendaMouseEntered(evt);
             }
         });
-        jPanel1.add(lblTienda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 170, 40));
+        JPmenu.add(lblTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 170, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
+        getContentPane().add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/FONDOA1.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1920, -1));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/FONDOA1.jpg"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1920, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblTienda1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda1MouseEntered
+    private void lblTiendaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTiendaMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienda1MouseEntered
+    }//GEN-LAST:event_lblTiendaMouseEntered
 
-    private void lblTienda2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda2MouseEntered
+    private void lblTendenciasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTendenciasMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienda2MouseEntered
+    }//GEN-LAST:event_lblTendenciasMouseEntered
 
     private void lblTienda5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda5MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTienda5MouseEntered
 
-    private void lblTienda4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda4MouseEntered
+    private void lblUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUsuarioMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienda4MouseEntered
+    }//GEN-LAST:event_lblUsuarioMouseEntered
 
-    private void lblTienda1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda1MouseClicked
+    private void lblTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTiendaMouseClicked
         INICIOTIENDA n=new INICIOTIENDA();
         this.setVisible(false);
         n.setVisible(true);
-    }//GEN-LAST:event_lblTienda1MouseClicked
+    }//GEN-LAST:event_lblTiendaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -485,64 +433,54 @@ public class INICIOTENDENCIAS extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JList<String> JLMisjuegos;
+    private javax.swing.JPanel JPApartadoTendencias;
+    private javax.swing.JPanel JPMisjuegos;
+    private javax.swing.JPanel JPmenu;
+    private javax.swing.JPanel JPtendencia1;
+    private javax.swing.JPanel JPtendencia2;
+    private javax.swing.JPanel JPtendencia3;
+    private javax.swing.JPanel JPtendencia4;
+    private javax.swing.JPanel JPtendencia5;
+    private javax.swing.JPanel JPtendencia6;
+    private javax.swing.JPanel JPtendencia7;
+    private javax.swing.JPanel JPtendencia8;
+    private javax.swing.JPanel JPtendencia9;
+    private javax.swing.JScrollPane SPMisjuegos;
+    private javax.swing.JScrollPane SPtendencias;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblTienda1;
-    private javax.swing.JLabel lblTienda2;
-    private javax.swing.JLabel lblTienda4;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblMinT1;
+    private javax.swing.JLabel lblMinT2;
+    private javax.swing.JLabel lblMinT3;
+    private javax.swing.JLabel lblMinT4;
+    private javax.swing.JLabel lblMinT5;
+    private javax.swing.JLabel lblMinT6;
+    private javax.swing.JLabel lblMinT7;
+    private javax.swing.JLabel lblMinT8;
+    private javax.swing.JLabel lblMinT9;
+    private javax.swing.JLabel lblNomT1;
+    private javax.swing.JLabel lblNomT2;
+    private javax.swing.JLabel lblNomT3;
+    private javax.swing.JLabel lblNomT4;
+    private javax.swing.JLabel lblNomT5;
+    private javax.swing.JLabel lblNomT6;
+    private javax.swing.JLabel lblNomT7;
+    private javax.swing.JLabel lblNomT8;
+    private javax.swing.JLabel lblNomT9;
+    private javax.swing.JLabel lblTendencias;
+    private javax.swing.JLabel lblTienda;
     private javax.swing.JLabel lblTienda5;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblValT1;
+    private javax.swing.JLabel lblValT2;
+    private javax.swing.JLabel lblValT3;
+    private javax.swing.JLabel lblValT4;
+    private javax.swing.JLabel lblValT5;
+    private javax.swing.JLabel lblValT6;
+    private javax.swing.JLabel lblValT7;
+    private javax.swing.JLabel lblValT8;
+    private javax.swing.JLabel lblValT9;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;

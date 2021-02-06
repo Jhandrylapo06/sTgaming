@@ -35,14 +35,29 @@ public class INICIOTIENDA extends javax.swing.JFrame {
         lblTienda5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        JPapartadoTienda = new javax.swing.JPanel();
+        JPjuegosTienda = new javax.swing.JScrollPane();
+        JPjuegoBuscado = new javax.swing.JPanel();
+        JPBuscado1 = new javax.swing.JPanel();
+        lblNombreB1 = new javax.swing.JLabel();
+        lblMiniatura1 = new javax.swing.JLabel();
+        lblPrecioB1 = new javax.swing.JLabel();
+        lblValorB1 = new javax.swing.JLabel();
+        JPBuscado2 = new javax.swing.JPanel();
+        lblNombreB2 = new javax.swing.JLabel();
+        lblMiniatura2 = new javax.swing.JLabel();
+        lblPrecioB2 = new javax.swing.JLabel();
+        lblValorB2 = new javax.swing.JLabel();
+        JPBuscado3 = new javax.swing.JPanel();
+        lblNombreB3 = new javax.swing.JLabel();
+        lblMiniatura3 = new javax.swing.JLabel();
+        lblPrecioB3 = new javax.swing.JLabel();
+        lblValorB3 = new javax.swing.JLabel();
+        JPBuscado4 = new javax.swing.JPanel();
+        lblNombreB4 = new javax.swing.JLabel();
+        lblMiniatura4 = new javax.swing.JLabel();
+        lblPrecioB4 = new javax.swing.JLabel();
+        lblValorB4 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -53,28 +68,13 @@ public class INICIOTIENDA extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
+        JPBuscado5 = new javax.swing.JPanel();
+        lblNombreB5 = new javax.swing.JLabel();
+        lblMiniatura5 = new javax.swing.JLabel();
+        lblPrecioB5 = new javax.swing.JLabel();
+        lblValorB5 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscarJuegoT = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblTienda4 = new javax.swing.JLabel();
         lblTienda2 = new javax.swing.JLabel();
@@ -120,39 +120,122 @@ public class INICIOTIENDA extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 960));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0, 100));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPapartadoTienda.setBackground(new java.awt.Color(0, 0, 0, 100));
+        JPapartadoTienda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane2.setToolTipText("");
-        jScrollPane2.setHorizontalScrollBar(null);
+        JPjuegosTienda.setToolTipText("");
+        JPjuegosTienda.setHorizontalScrollBar(null);
 
-        jPanel5.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel5.setForeground(new java.awt.Color(27, 21, 21));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPjuegoBuscado.setBackground(new java.awt.Color(6, 11, 25));
+        JPjuegoBuscado.setForeground(new java.awt.Color(27, 21, 21));
+        JPjuegoBuscado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPBuscado1.setBackground(new java.awt.Color(6, 11, 25));
+        JPBuscado1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBuscado1MouseClicked(evt);
+            }
+        });
+        JPBuscado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("Call of Duty®: Black Ops II");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+        lblNombreB1.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombreB1.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        lblNombreB1.setForeground(new java.awt.Color(204, 204, 204));
+        lblNombreB1.setText("Call of Duty®: Black Ops Cold War");
+        JPBuscado1.add(lblNombreB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops2_miniatura.jpg"))); // NOI18N
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        lblMiniatura1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMiniatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
+        JPBuscado1.add(lblMiniatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel8.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("49,99");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+        lblPrecioB1.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblPrecioB1.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecioB1.setText("PVP:99,99");
+        JPBuscado1.add(lblPrecioB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
 
-        jLabel14.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("V: 4.9/5");
-        jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+        lblValorB1.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValorB1.setForeground(new java.awt.Color(255, 255, 255));
+        lblValorB1.setText("V: 4.8/5");
+        JPBuscado1.add(lblValorB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+
+        JPjuegoBuscado.add(JPBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1550, 230));
+
+        JPBuscado2.setBackground(new java.awt.Color(6, 11, 25));
+        JPBuscado2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNombreB2.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombreB2.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        lblNombreB2.setForeground(new java.awt.Color(204, 204, 204));
+        lblNombreB2.setText("Call of Duty®: Black Ops IV");
+        JPBuscado2.add(lblNombreB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+
+        lblMiniatura2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMiniatura2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops4_miniatura.jpg"))); // NOI18N
+        JPBuscado2.add(lblMiniatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+
+        lblPrecioB2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblPrecioB2.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecioB2.setText("PVP:69,99");
+        JPBuscado2.add(lblPrecioB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+
+        lblValorB2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValorB2.setForeground(new java.awt.Color(255, 255, 255));
+        lblValorB2.setText("V: 4.0/5");
+        JPBuscado2.add(lblValorB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+
+        JPjuegoBuscado.add(JPBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 230));
+
+        JPBuscado3.setBackground(new java.awt.Color(6, 11, 25));
+        JPBuscado3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNombreB3.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombreB3.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        lblNombreB3.setForeground(new java.awt.Color(204, 204, 204));
+        lblNombreB3.setText("Call of Duty®: Black Ops III");
+        JPBuscado3.add(lblNombreB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+
+        lblMiniatura3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMiniatura3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops3_miniatura.jpg"))); // NOI18N
+        JPBuscado3.add(lblMiniatura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+
+        lblPrecioB3.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblPrecioB3.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecioB3.setText("79.99");
+        JPBuscado3.add(lblPrecioB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+
+        lblValorB3.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValorB3.setForeground(new java.awt.Color(255, 255, 255));
+        lblValorB3.setText("V: 4.9/5");
+        JPBuscado3.add(lblValorB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+
+        JPjuegoBuscado.add(JPBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 1550, 230));
+
+        JPBuscado4.setBackground(new java.awt.Color(6, 11, 25));
+        JPBuscado4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNombreB4.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombreB4.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        lblNombreB4.setForeground(new java.awt.Color(204, 204, 204));
+        lblNombreB4.setText("Call of Duty®: Black Ops II");
+        JPBuscado4.add(lblNombreB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+
+        lblMiniatura4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMiniatura4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops2_miniatura.jpg"))); // NOI18N
+        JPBuscado4.add(lblMiniatura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+
+        lblPrecioB4.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblPrecioB4.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecioB4.setText("49,99");
+        JPBuscado4.add(lblPrecioB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+
+        lblValorB4.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValorB4.setForeground(new java.awt.Color(255, 255, 255));
+        lblValorB4.setText("V: 4.9/5");
+        JPBuscado4.add(lblValorB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
 
         jPanel14.setBackground(new java.awt.Color(6, 11, 25));
         jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -194,141 +277,58 @@ public class INICIOTIENDA extends javax.swing.JFrame {
 
         jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 1550, 230));
 
-        jPanel6.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 1550, 230));
+        JPBuscado4.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 1550, 230));
 
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 780, 1550, 230));
+        JPjuegoBuscado.add(JPBuscado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 780, 1550, 230));
 
-        jPanel10.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPBuscado5.setBackground(new java.awt.Color(6, 11, 25));
+        JPBuscado5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel23.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel23.setText("Call of Duty®: Black Ops IV");
-        jPanel10.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
+        lblNombreB5.setBackground(new java.awt.Color(255, 255, 255));
+        lblNombreB5.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        lblNombreB5.setForeground(new java.awt.Color(204, 204, 204));
+        lblNombreB5.setText("Call of Duty®: Black Ops I");
+        JPBuscado5.add(lblNombreB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops4_miniatura.jpg"))); // NOI18N
-        jPanel10.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
+        lblMiniatura5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMiniatura5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops1_miniatura.jpg"))); // NOI18N
+        JPBuscado5.add(lblMiniatura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
-        jLabel25.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("PVP:69,99");
-        jPanel10.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
+        lblPrecioB5.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblPrecioB5.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecioB5.setText("29,99");
+        JPBuscado5.add(lblPrecioB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
 
-        jLabel26.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("V: 4.0/5");
-        jPanel10.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
+        lblValorB5.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        lblValorB5.setForeground(new java.awt.Color(255, 255, 255));
+        lblValorB5.setText("V: 4.8/5");
+        JPBuscado5.add(lblValorB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
 
-        jPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 230));
+        JPjuegoBuscado.add(JPBuscado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1030, -1, 230));
 
-        jPanel11.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel11MouseClicked(evt);
-            }
-        });
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPjuegosTienda.setViewportView(JPjuegoBuscado);
 
-        jLabel27.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel27.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel27.setText("Call of Duty®: Black Ops Cold War");
-        jPanel11.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
-
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
-        jPanel11.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
-
-        jLabel29.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setText("PVP:99,99");
-        jPanel11.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
-
-        jLabel30.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("V: 4.8/5");
-        jPanel11.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
-
-        jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1550, 230));
-
-        jPanel12.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel31.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel31.setText("Call of Duty®: Black Ops III");
-        jPanel12.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
-
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops3_miniatura.jpg"))); // NOI18N
-        jPanel12.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
-
-        jLabel33.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("79.99");
-        jPanel12.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
-
-        jLabel34.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("V: 4.9/5");
-        jPanel12.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
-
-        jPanel5.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 1550, 230));
-
-        jPanel13.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel35.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel35.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel35.setText("Call of Duty®: Black Ops I");
-        jPanel13.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
-
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops1_miniatura.jpg"))); // NOI18N
-        jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
-
-        jLabel37.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setText("29,99");
-        jPanel13.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 110, 180, 100));
-
-        jLabel38.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setText("V: 4.8/5");
-        jPanel13.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
-
-        jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1030, -1, 230));
-
-        jScrollPane2.setViewportView(jPanel5);
-
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 880));
+        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 910));
 
         txtbuscar.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar.setFont(new java.awt.Font("Eras Light ITC", 0, 24)); // NOI18N
         txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
         txtbuscar.setText("Call of duty black ops");
-        jPanel3.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
+        JPapartadoTienda.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
 
-        jButton1.setBackground(new java.awt.Color(6, 11, 25));
-        jButton1.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 153, 255));
-        jButton1.setText("BUSCAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarJuegoT.setBackground(new java.awt.Color(6, 11, 25));
+        btnBuscarJuegoT.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnBuscarJuegoT.setForeground(new java.awt.Color(102, 153, 255));
+        btnBuscarJuegoT.setText("BUSCAR");
+        btnBuscarJuegoT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarJuegoTActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
+        JPapartadoTienda.add(btnBuscarJuegoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 870));
+        getContentPane().add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0, 50));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -383,19 +383,19 @@ public class INICIOTIENDA extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTienda5MouseEntered
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBuscarJuegoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJuegoTActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBuscarJuegoTActionPerformed
 
     private void lblTienda4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienda4MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTienda4MouseEntered
 
-    private void jPanel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseClicked
+    private void JPBuscado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado1MouseClicked
         INICIOCOMPRA n=new INICIOCOMPRA();
         this.setVisible(false);
         n.setVisible(true);
-    }//GEN-LAST:event_jPanel11MouseClicked
+    }//GEN-LAST:event_JPBuscado1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -436,27 +436,17 @@ public class INICIOTIENDA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
+    private javax.swing.JPanel JPBuscado1;
+    private javax.swing.JPanel JPBuscado2;
+    private javax.swing.JPanel JPBuscado3;
+    private javax.swing.JPanel JPBuscado4;
+    private javax.swing.JPanel JPBuscado5;
+    private javax.swing.JPanel JPapartadoTienda;
+    private javax.swing.JPanel JPjuegoBuscado;
+    private javax.swing.JScrollPane JPjuegosTienda;
+    private javax.swing.JButton btnBuscarJuegoT;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -464,26 +454,36 @@ public class INICIOTIENDA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblMiniatura1;
+    private javax.swing.JLabel lblMiniatura2;
+    private javax.swing.JLabel lblMiniatura3;
+    private javax.swing.JLabel lblMiniatura4;
+    private javax.swing.JLabel lblMiniatura5;
+    private javax.swing.JLabel lblNombreB1;
+    private javax.swing.JLabel lblNombreB2;
+    private javax.swing.JLabel lblNombreB3;
+    private javax.swing.JLabel lblNombreB4;
+    private javax.swing.JLabel lblNombreB5;
+    private javax.swing.JLabel lblPrecioB1;
+    private javax.swing.JLabel lblPrecioB2;
+    private javax.swing.JLabel lblPrecioB3;
+    private javax.swing.JLabel lblPrecioB4;
+    private javax.swing.JLabel lblPrecioB5;
     private javax.swing.JLabel lblTienda1;
     private javax.swing.JLabel lblTienda2;
     private javax.swing.JLabel lblTienda4;
     private javax.swing.JLabel lblTienda5;
+    private javax.swing.JLabel lblValorB1;
+    private javax.swing.JLabel lblValorB2;
+    private javax.swing.JLabel lblValorB3;
+    private javax.swing.JLabel lblValorB4;
+    private javax.swing.JLabel lblValorB5;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;

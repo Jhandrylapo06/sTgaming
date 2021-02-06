@@ -34,27 +34,27 @@ public class Registro extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        JPRegistro = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPaneldatos = new javax.swing.JPanel();
-        txtApellidoUs = new javax.swing.JTextField();
-        txtUsuario = new javax.swing.JTextField();
+        txtCorreoUs = new javax.swing.JTextField();
+        txtTag = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtPassConf = new javax.swing.JPasswordField();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        txtPasCon = new javax.swing.JPasswordField();
+        txtPasUS = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        txtApellidoUs1 = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JLabel();
+        txtNombreUs = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        txtApellidoUs2 = new javax.swing.JTextField();
+        txtApellidoUs = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         jpanelConfirmar = new javax.swing.JPanel();
@@ -64,7 +64,7 @@ public class Registro extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         txtcodConf = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        btnConfirmar = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -82,8 +82,8 @@ public class Registro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPRegistro.setBackground(new java.awt.Color(6, 11, 25));
+        JPRegistro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(6, 11, 25));
 
@@ -109,35 +109,35 @@ public class Registro extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 230, -1));
+        JPRegistro.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 230, -1));
 
         jPaneldatos.setBackground(new java.awt.Color(6, 11, 25));
         jPaneldatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPaneldatos.setForeground(new java.awt.Color(0, 0, 0));
         jPaneldatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtApellidoUs.setBackground(new java.awt.Color(6, 11, 25));
-        txtApellidoUs.setForeground(new java.awt.Color(255, 255, 255));
-        txtApellidoUs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtApellidoUs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtApellidoUs.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreoUs.setBackground(new java.awt.Color(6, 11, 25));
+        txtCorreoUs.setForeground(new java.awt.Color(255, 255, 255));
+        txtCorreoUs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCorreoUs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCorreoUs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoUsActionPerformed(evt);
+                txtCorreoUsActionPerformed(evt);
             }
         });
-        jPaneldatos.add(txtApellidoUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 350, 30));
+        jPaneldatos.add(txtCorreoUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 350, 30));
 
-        txtUsuario.setBackground(new java.awt.Color(6, 11, 25));
-        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtUsuario.setToolTipText("Este nombre se mostrara en la pagina principal");
-        txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+        txtTag.setBackground(new java.awt.Color(6, 11, 25));
+        txtTag.setForeground(new java.awt.Color(255, 255, 255));
+        txtTag.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTag.setToolTipText("Este nombre se mostrara en la pagina principal");
+        txtTag.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
+                txtTagActionPerformed(evt);
             }
         });
-        jPaneldatos.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 350, 30));
+        jPaneldatos.add(txtTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 350, 30));
 
         jLabel4.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
@@ -154,22 +154,22 @@ public class Registro extends javax.swing.JFrame {
         jLabel8.setText("Correo electronico");
         jPaneldatos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
-        txtPassConf.setBackground(new java.awt.Color(6, 11, 25));
-        txtPassConf.setForeground(new java.awt.Color(255, 255, 255));
-        txtPassConf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPassConf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtPassConf.addActionListener(new java.awt.event.ActionListener() {
+        txtPasCon.setBackground(new java.awt.Color(6, 11, 25));
+        txtPasCon.setForeground(new java.awt.Color(255, 255, 255));
+        txtPasCon.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPasCon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPasCon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPassConfActionPerformed(evt);
+                txtPasConActionPerformed(evt);
             }
         });
-        jPaneldatos.add(txtPassConf, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 350, 30));
+        jPaneldatos.add(txtPasCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 350, 30));
 
-        jPasswordField3.setBackground(new java.awt.Color(6, 11, 25));
-        jPasswordField3.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPaneldatos.add(jPasswordField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 350, 30));
+        txtPasUS.setBackground(new java.awt.Color(6, 11, 25));
+        txtPasUS.setForeground(new java.awt.Color(255, 255, 255));
+        txtPasUS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPasUS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPaneldatos.add(txtPasUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 350, 30));
 
         jLabel9.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
@@ -188,25 +188,25 @@ public class Registro extends javax.swing.JFrame {
         jSeparator6.setBackground(new java.awt.Color(102, 102, 102));
         jPaneldatos.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 350, 10));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/save.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/save.png"))); // NOI18N
+        btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                btnGuardarMouseClicked(evt);
             }
         });
-        jPaneldatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 110, 110));
+        jPaneldatos.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 110, 110));
 
-        txtApellidoUs1.setBackground(new java.awt.Color(6, 11, 25));
-        txtApellidoUs1.setForeground(new java.awt.Color(255, 255, 255));
-        txtApellidoUs1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtApellidoUs1.setToolTipText("La siguiente informacion solo la podras ver tu");
-        txtApellidoUs1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtApellidoUs1.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreUs.setBackground(new java.awt.Color(6, 11, 25));
+        txtNombreUs.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombreUs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombreUs.setToolTipText("La siguiente informacion solo la podras ver tu");
+        txtNombreUs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombreUs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoUs1ActionPerformed(evt);
+                txtNombreUsActionPerformed(evt);
             }
         });
-        jPaneldatos.add(txtApellidoUs1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 350, 30));
+        jPaneldatos.add(txtNombreUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 350, 30));
 
         jLabel15.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
@@ -216,16 +216,16 @@ public class Registro extends javax.swing.JFrame {
         jSeparator7.setBackground(new java.awt.Color(102, 102, 102));
         jPaneldatos.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 350, 10));
 
-        txtApellidoUs2.setBackground(new java.awt.Color(6, 11, 25));
-        txtApellidoUs2.setForeground(new java.awt.Color(255, 255, 255));
-        txtApellidoUs2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtApellidoUs2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtApellidoUs2.addActionListener(new java.awt.event.ActionListener() {
+        txtApellidoUs.setBackground(new java.awt.Color(6, 11, 25));
+        txtApellidoUs.setForeground(new java.awt.Color(255, 255, 255));
+        txtApellidoUs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtApellidoUs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtApellidoUs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoUs2ActionPerformed(evt);
+                txtApellidoUsActionPerformed(evt);
             }
         });
-        jPaneldatos.add(txtApellidoUs2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 350, 30));
+        jPaneldatos.add(txtApellidoUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 350, 30));
 
         jLabel16.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
@@ -235,7 +235,7 @@ public class Registro extends javax.swing.JFrame {
         jSeparator8.setBackground(new java.awt.Color(102, 102, 102));
         jPaneldatos.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 350, 10));
 
-        jPanel1.add(jPaneldatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 530, 480));
+        JPRegistro.add(jPaneldatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 530, 480));
 
         jpanelConfirmar.setBackground(new java.awt.Color(6, 11, 25));
         jpanelConfirmar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -282,63 +282,63 @@ public class Registro extends javax.swing.JFrame {
         });
         jpanelConfirmar.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
 
-        jLabel13.setBackground(new java.awt.Color(6, 11, 25));
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/confirmar).png"))); // NOI18N
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnConfirmar.setBackground(new java.awt.Color(6, 11, 25));
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/confirmar).png"))); // NOI18N
+        btnConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
+                btnConfirmarMouseClicked(evt);
             }
         });
-        jpanelConfirmar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, 110));
+        jpanelConfirmar.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, 110));
 
-        jPanel1.add(jpanelConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 530, 390));
+        JPRegistro.add(jpanelConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 530, 390));
 
         jLabel5.setText("Todos los derechos reservados");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, -1, 20));
+        JPRegistro.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(JPRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtApellidoUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoUsActionPerformed
+    private void txtCorreoUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoUsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoUsActionPerformed
+    }//GEN-LAST:event_txtCorreoUsActionPerformed
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    private void txtTagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTagActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_txtTagActionPerformed
 
-    private void txtPassConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassConfActionPerformed
+    private void txtPasConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasConActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPassConfActionPerformed
+    }//GEN-LAST:event_txtPasConActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
         jPaneldatos.setVisible(false);
         jpanelConfirmar.setVisible(true);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_btnGuardarMouseClicked
 
     private void txtcodConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodConfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcodConfActionPerformed
 
-    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+    private void btnConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmarMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Login log=new Login();
         log.setVisible(true);
-    }//GEN-LAST:event_jLabel13MouseClicked
+    }//GEN-LAST:event_btnConfirmarMouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
@@ -347,13 +347,13 @@ public class Registro extends javax.swing.JFrame {
         log.setVisible(true);
     }//GEN-LAST:event_jLabel14MouseClicked
 
-    private void txtApellidoUs1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoUs1ActionPerformed
+    private void txtNombreUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreUsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoUs1ActionPerformed
+    }//GEN-LAST:event_txtNombreUsActionPerformed
 
-    private void txtApellidoUs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoUs2ActionPerformed
+    private void txtApellidoUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoUsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoUs2ActionPerformed
+    }//GEN-LAST:event_txtApellidoUsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,15 +391,16 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPRegistro;
+    private javax.swing.JLabel btnConfirmar;
+    private javax.swing.JLabel btnGuardar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -407,11 +408,9 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPaneldatos;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -421,10 +420,11 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JPanel jpanelConfirmar;
     private javax.swing.JTextField txtApellidoUs;
-    private javax.swing.JTextField txtApellidoUs1;
-    private javax.swing.JTextField txtApellidoUs2;
-    private javax.swing.JPasswordField txtPassConf;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField txtCorreoUs;
+    private javax.swing.JTextField txtNombreUs;
+    private javax.swing.JPasswordField txtPasCon;
+    private javax.swing.JPasswordField txtPasUS;
+    private javax.swing.JTextField txtTag;
     private javax.swing.JTextField txtcodConf;
     // End of variables declaration//GEN-END:variables
 }

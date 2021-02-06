@@ -43,22 +43,22 @@ public class INICIOADMINISTRACION extends javax.swing.JFrame {
         SCadministracion = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        PesstaañasAdmin = new javax.swing.JTabbedPane();
+        Pjuegos = new javax.swing.JPanel();
+        PAdministrarJuegos = new javax.swing.JPanel();
+        SPjuegos = new javax.swing.JScrollPane();
+        JlistJuegos = new javax.swing.JList<>();
+        btnAgregarJuego = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         txtbuscar = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        btnBuscar = new javax.swing.JButton();
+        JPAdminRol = new javax.swing.JPanel();
+        JPadministrarRoles = new javax.swing.JPanel();
+        SpUsers = new javax.swing.JScrollPane();
+        JListUsuarios = new javax.swing.JList<>();
         txtbuscar1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btnBuscarUsuario = new javax.swing.JButton();
         btnAsignarAdmin = new javax.swing.JRadioButton();
         btnAsignarUser = new javax.swing.JRadioButton();
         jLabel12 = new javax.swing.JLabel();
@@ -124,120 +124,120 @@ public class INICIOADMINISTRACION extends javax.swing.JFrame {
         jLabel11.setText("ADMINISTRACIÓN");
         jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, -1, -1));
 
-        jTabbedPane1.setBackground(new java.awt.Color(6, 11, 25));
-        jTabbedPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        PesstaañasAdmin.setBackground(new java.awt.Color(6, 11, 25));
+        PesstaañasAdmin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PesstaañasAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        PesstaañasAdmin.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
 
-        jPanel4.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel4.setForeground(new java.awt.Color(27, 21, 21));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Pjuegos.setBackground(new java.awt.Color(6, 11, 25));
+        Pjuegos.setForeground(new java.awt.Color(27, 21, 21));
+        Pjuegos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel8.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PAdministrarJuegos.setBackground(new java.awt.Color(6, 11, 25));
+        PAdministrarJuegos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList2.setBackground(new java.awt.Color(6, 11, 25));
-        jList2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        jList2.setForeground(new java.awt.Color(255, 255, 255));
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        JlistJuegos.setBackground(new java.awt.Color(6, 11, 25));
+        JlistJuegos.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        JlistJuegos.setForeground(new java.awt.Color(255, 255, 255));
+        JlistJuegos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Assassins creed: Valhala", "Call of duty black ops cold war", "Crisis 1", "Counter Strike global ofensive", "Halo Mastershif collletion", "Need for speed Hot persuit" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList2.setToolTipText("");
-        jScrollPane2.setViewportView(jList2);
+        JlistJuegos.setToolTipText("");
+        SPjuegos.setViewportView(JlistJuegos);
 
-        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
+        PAdministrarJuegos.add(SPjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
 
-        jButton4.setBackground(new java.awt.Color(6, 11, 25));
-        jButton4.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
-        jButton4.setText("AGREGAR NUEVO JUEGO");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarJuego.setBackground(new java.awt.Color(6, 11, 25));
+        btnAgregarJuego.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
+        btnAgregarJuego.setForeground(new java.awt.Color(204, 204, 204));
+        btnAgregarJuego.setText("AGREGAR NUEVO JUEGO");
+        btnAgregarJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnAgregarJuegoActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 200, 400, 70));
+        PAdministrarJuegos.add(btnAgregarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 200, 400, 70));
 
-        jButton5.setBackground(new java.awt.Color(6, 11, 25));
-        jButton5.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(204, 204, 204));
-        jButton5.setText("DAR DE BAJA/ELIMINAR");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setBackground(new java.awt.Color(6, 11, 25));
+        btnEliminar.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(204, 204, 204));
+        btnEliminar.setText("DAR DE BAJA/ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 470, 400, 70));
+        PAdministrarJuegos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 470, 400, 70));
 
-        jButton6.setBackground(new java.awt.Color(6, 11, 25));
-        jButton6.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(204, 204, 204));
-        jButton6.setText("EDITAR");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setBackground(new java.awt.Color(6, 11, 25));
+        btnEditar.setFont(new java.awt.Font("Candara Light", 1, 28)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(204, 204, 204));
+        btnEditar.setText("EDITAR");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 330, 400, 70));
+        PAdministrarJuegos.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 330, 400, 70));
 
         txtbuscar.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
         txtbuscar.setText("Call of duty cold war");
-        jPanel8.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
+        PAdministrarJuegos.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
 
-        jButton2.setBackground(new java.awt.Color(6, 11, 25));
-        jButton2.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 153, 255));
-        jButton2.setText("BUSCAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setBackground(new java.awt.Color(6, 11, 25));
+        btnBuscar.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(102, 153, 255));
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 200, 50));
+        PAdministrarJuegos.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 200, 50));
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1440, 670));
+        Pjuegos.add(PAdministrarJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1440, 670));
 
-        jTabbedPane1.addTab("ADMINISTRAR JUEGOS", jPanel4);
+        PesstaañasAdmin.addTab("ADMINISTRAR JUEGOS", Pjuegos);
 
-        jPanel7.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPAdminRol.setBackground(new java.awt.Color(6, 11, 25));
+        JPAdminRol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JPAdminRol.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setBackground(new java.awt.Color(6, 11, 25));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPadministrarRoles.setBackground(new java.awt.Color(6, 11, 25));
+        JPadministrarRoles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList3.setBackground(new java.awt.Color(6, 11, 25));
-        jList3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jList3.setForeground(new java.awt.Color(255, 255, 255));
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        JListUsuarios.setBackground(new java.awt.Color(6, 11, 25));
+        JListUsuarios.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        JListUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        JListUsuarios.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Carlos Ordoñes", "Jhandry Lapo" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList3.setToolTipText("");
-        jScrollPane3.setViewportView(jList3);
+        JListUsuarios.setToolTipText("");
+        SpUsers.setViewportView(JListUsuarios);
 
-        jPanel9.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
+        JPadministrarRoles.add(SpUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
 
         txtbuscar1.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar1.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         txtbuscar1.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel9.add(txtbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
+        JPadministrarRoles.add(txtbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
 
-        jButton3.setBackground(new java.awt.Color(6, 11, 25));
-        jButton3.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(102, 153, 255));
-        jButton3.setText("BUSCAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarUsuario.setBackground(new java.awt.Color(6, 11, 25));
+        btnBuscarUsuario.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnBuscarUsuario.setForeground(new java.awt.Color(102, 153, 255));
+        btnBuscarUsuario.setText("BUSCAR");
+        btnBuscarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnBuscarUsuarioActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 200, 50));
+        JPadministrarRoles.add(btnBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 200, 50));
 
         btnAsignarAdmin.setBackground(new java.awt.Color(6, 11, 25));
         buttonGroup1.add(btnAsignarAdmin);
@@ -254,7 +254,7 @@ public class INICIOADMINISTRACION extends javax.swing.JFrame {
                 btnAsignarAdminActionPerformed(evt);
             }
         });
-        jPanel9.add(btnAsignarAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, -1, -1));
+        JPadministrarRoles.add(btnAsignarAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, -1, -1));
 
         btnAsignarUser.setBackground(new java.awt.Color(6, 11, 25));
         buttonGroup1.add(btnAsignarUser);
@@ -266,20 +266,20 @@ public class INICIOADMINISTRACION extends javax.swing.JFrame {
                 btnAsignarUserActionPerformed(evt);
             }
         });
-        jPanel9.add(btnAsignarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 350, -1, -1));
+        JPadministrarRoles.add(btnAsignarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 350, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("SELECIONA EL ROL DEL ESTE USUARIO");
-        jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, -1, -1));
+        JPadministrarRoles.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, -1, -1));
 
-        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1440, 670));
+        JPAdminRol.add(JPadministrarRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1440, 670));
 
-        jTabbedPane1.addTab("ADMINISTRAR ROLES", jPanel7);
+        PesstaañasAdmin.addTab("ADMINISTRAR ROLES", JPAdminRol);
 
-        jPanel5.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 1490, 760));
-        jTabbedPane1.getAccessibleContext().setAccessibleName("JUEGOS");
+        jPanel5.add(PesstaañasAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 1490, 760));
+        PesstaañasAdmin.getAccessibleContext().setAccessibleName("JUEGOS");
 
         SCadministracion.setViewportView(jPanel5);
 
@@ -359,27 +359,27 @@ public class INICIOADMINISTRACION extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTienda4MouseEntered
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnAgregarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJuegoActionPerformed
        AnadirJuego nuevo=new AnadirJuego();
        nuevo.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnAgregarJuegoActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         JOptionPane.showConfirmDialog(null, "Estas seguro de dar de baja/eliminar este juego", "Confirmar",WIDTH);        
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
       EditarJuego nuevo=new EditarJuego();
        nuevo.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
 
     private void btnAsignarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarAdminMouseClicked
         
@@ -432,34 +432,34 @@ public class INICIOADMINISTRACION extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> JListUsuarios;
+    private javax.swing.JPanel JPAdminRol;
+    private javax.swing.JPanel JPadministrarRoles;
+    private javax.swing.JList<String> JlistJuegos;
+    private javax.swing.JPanel PAdministrarJuegos;
+    private javax.swing.JTabbedPane PesstaañasAdmin;
+    private javax.swing.JPanel Pjuegos;
     private javax.swing.JScrollPane SCadministracion;
+    private javax.swing.JScrollPane SPjuegos;
+    private javax.swing.JScrollPane SpUsers;
+    private javax.swing.JButton btnAgregarJuego;
     private javax.swing.JRadioButton btnAsignarAdmin;
     private javax.swing.JRadioButton btnAsignarUser;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscarUsuario;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblTienda1;
     private javax.swing.JLabel lblTienda2;
     private javax.swing.JLabel lblTienda4;

@@ -37,20 +37,20 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         txtmailrecuperar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnEnviarCodigo = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         panelverificar = new javax.swing.JPanel();
         txtcodConf = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnVerificar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         panelguardar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btnGuardarNPs = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        txtPassnueva = new javax.swing.JPasswordField();
+        txtPassCOnfir = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -84,17 +84,17 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         jLabel4.setText("Recuperación de contraseña");
         panelenviarC.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 337, 40));
 
-        jButton2.setBackground(new java.awt.Color(6, 11, 25));
-        jButton2.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 153, 255));
-        jButton2.setText("Enviar el codigo");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviarCodigo.setBackground(new java.awt.Color(6, 11, 25));
+        btnEnviarCodigo.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnEnviarCodigo.setForeground(new java.awt.Color(102, 153, 255));
+        btnEnviarCodigo.setText("Enviar el codigo");
+        btnEnviarCodigo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEnviarCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEnviarCodigoActionPerformed(evt);
             }
         });
-        panelenviarC.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 210, 50));
+        panelenviarC.add(btnEnviarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 210, 50));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         panelenviarC.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 440, 10));
@@ -114,17 +114,17 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         });
         panelverificar.add(txtcodConf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 560, 70));
 
-        jButton1.setBackground(new java.awt.Color(6, 11, 25));
-        jButton1.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 153, 255));
-        jButton1.setText("Verificar");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVerificar.setBackground(new java.awt.Color(6, 11, 25));
+        btnVerificar.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnVerificar.setForeground(new java.awt.Color(102, 153, 255));
+        btnVerificar.setText("Verificar");
+        btnVerificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVerificarActionPerformed(evt);
             }
         });
-        panelverificar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 50));
+        panelverificar.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 50));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         panelverificar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 510, 10));
@@ -144,17 +144,17 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         jLabel5.setText("Cambiar contraseña");
         panelguardar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 230, 40));
 
-        jButton3.setBackground(new java.awt.Color(6, 11, 25));
-        jButton3.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(102, 153, 255));
-        jButton3.setText("Guardar");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarNPs.setBackground(new java.awt.Color(6, 11, 25));
+        btnGuardarNPs.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnGuardarNPs.setForeground(new java.awt.Color(102, 153, 255));
+        btnGuardarNPs.setText("Guardar");
+        btnGuardarNPs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGuardarNPs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnGuardarNPsActionPerformed(evt);
             }
         });
-        panelguardar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 210, 50));
+        panelguardar.add(btnGuardarNPs, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 210, 50));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         panelguardar.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 340, 10));
@@ -162,22 +162,22 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         panelguardar.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 340, 10));
 
-        jPasswordField1.setBackground(new java.awt.Color(6, 11, 25));
-        jPasswordField1.setForeground(new java.awt.Color(204, 204, 204));
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setBorder(null);
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        txtPassnueva.setBackground(new java.awt.Color(6, 11, 25));
+        txtPassnueva.setForeground(new java.awt.Color(204, 204, 204));
+        txtPassnueva.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPassnueva.setBorder(null);
+        txtPassnueva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                txtPassnuevaActionPerformed(evt);
             }
         });
-        panelguardar.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 340, -1));
+        panelguardar.add(txtPassnueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 340, -1));
 
-        jPasswordField2.setBackground(new java.awt.Color(6, 11, 25));
-        jPasswordField2.setForeground(new java.awt.Color(204, 204, 204));
-        jPasswordField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField2.setBorder(null);
-        panelguardar.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 340, -1));
+        txtPassCOnfir.setBackground(new java.awt.Color(6, 11, 25));
+        txtPassCOnfir.setForeground(new java.awt.Color(204, 204, 204));
+        txtPassCOnfir.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPassCOnfir.setBorder(null);
+        panelguardar.add(txtPassCOnfir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 340, -1));
 
         jLabel3.setBackground(new java.awt.Color(6, 11, 25));
         jLabel3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
@@ -217,29 +217,29 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtmailrecuperarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
         panelverificar.setVisible(false);
         panelguardar.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnVerificarActionPerformed
 
     private void txtcodConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodConfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcodConfActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEnviarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarCodigoActionPerformed
     panelenviarC.setVisible(false);
     panelverificar.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEnviarCodigoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnGuardarNPsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarNPsActionPerformed
         this.setVisible(false);
         Login g=new Login();
         g.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnGuardarNPsActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void txtPassnuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassnuevaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_txtPassnuevaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,17 +277,15 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnEnviarCodigo;
+    private javax.swing.JButton btnGuardarNPs;
+    private javax.swing.JButton btnVerificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -295,6 +293,8 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     private javax.swing.JPanel panelenviarC;
     private javax.swing.JPanel panelguardar;
     private javax.swing.JPanel panelverificar;
+    private javax.swing.JPasswordField txtPassCOnfir;
+    private javax.swing.JPasswordField txtPassnueva;
     private javax.swing.JTextField txtcodConf;
     private javax.swing.JTextField txtmailrecuperar;
     // End of variables declaration//GEN-END:variables
