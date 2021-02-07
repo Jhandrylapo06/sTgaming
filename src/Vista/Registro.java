@@ -5,6 +5,17 @@
  */
 package Vista;
 
+import com.sun.mail.imap.IMAPMessage;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Usuario iTC
@@ -259,7 +270,7 @@ public class Registro extends javax.swing.JFrame {
         jpanelConfirmar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 460, 20));
 
         txtcodConf.setBackground(new java.awt.Color(6, 11, 25));
-        txtcodConf.setFont(new java.awt.Font("ROG Fonts", 0, 24)); // NOI18N
+        txtcodConf.setFont(new java.awt.Font("Candara Light", 0, 24)); // NOI18N
         txtcodConf.setForeground(new java.awt.Color(255, 255, 255));
         txtcodConf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtcodConf.setBorder(null);
@@ -326,6 +337,38 @@ public class Registro extends javax.swing.JFrame {
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
         jPaneldatos.setVisible(false);
+        try {
+            // TODO add your handling code here:
+            Properties prop= new Properties();
+            prop.setProperty("mail.smtp.host", "smtp.gmail.com");
+            prop.setProperty("mail.smtp.starttls.enable", "true");
+            prop.setProperty("mail.smtp.port", "587");
+            prop.setProperty("mail.smtp.auth", "true");
+            
+            Session sesion = Session.getDefaultInstance(prop);
+            
+            String Remitente ="sstgaming9@gmail.com";
+            String contra ="proyectofinal123";
+            String correoenviar= txtCorreoUs.getText();
+            String asunto="CODIGO DE CONFIRMACION";
+            String codigo="TDE1234";
+            
+            MimeMessage mensaje = new MimeMessage(sesion);
+            mensaje.setFrom(new InternetAddress(Remitente));
+            
+            mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress( correoenviar));
+            mensaje.setSubject(asunto);
+            mensaje.setText(codigo);
+            
+            Transport t= sesion.getTransport("smtp");
+            t.connect(Remitente,contra);
+            t.sendMessage(mensaje, mensaje.getRecipients(Message.RecipientType.TO));
+            t.close();
+            
+            
+        } catch (MessagingException ex) {
+            //Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jpanelConfirmar.setVisible(true);
     }//GEN-LAST:event_btnGuardarMouseClicked
 
