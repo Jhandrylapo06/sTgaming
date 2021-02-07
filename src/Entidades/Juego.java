@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instancias;
+package Entidades;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -37,6 +39,7 @@ public class Juego implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idJuego")
     private Integer idJuego;
@@ -52,10 +55,10 @@ public class Juego implements Serializable {
     private String requisitos;
     @Column(name = "Precio")
     private String precio;
-    @JoinColumn(name = "Clasificacion", referencedColumnName = "Nombreclasi")
+    @JoinColumn(name = "Clasificacion", referencedColumnName = "idclasificacion")
     @ManyToOne
     private Clasificacion clasificacion;
-    @JoinColumn(name = "Valoracion", referencedColumnName = "calificacion")
+    @JoinColumn(name = "Valoracion", referencedColumnName = "idvaloracion")
     @ManyToOne
     private Valoracion valoracion;
 
@@ -160,7 +163,7 @@ public class Juego implements Serializable {
 
     @Override
     public String toString() {
-        return "Instancias.Juego[ idJuego=" + idJuego + " ]";
+        return "Entidades.Juego[ idJuego=" + idJuego + " ]";
     }
     
 }

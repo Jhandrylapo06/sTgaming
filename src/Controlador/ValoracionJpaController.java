@@ -6,19 +6,19 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import Controlador.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Instancias.Juego;
-import Instancias.Valoracion;
+import Entidades.Juego;
+import Entidades.Valoracion;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,8 +26,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class ValoracionJpaController implements Serializable {
 
-    public ValoracionJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public ValoracionJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -35,7 +35,7 @@ public class ValoracionJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Valoracion valoracion) throws PreexistingEntityException, Exception {
+    public void create(Valoracion valoracion) {
         if (valoracion.getJuegoCollection() == null) {
             valoracion.setJuegoCollection(new ArrayList<Juego>());
         }
@@ -60,11 +60,6 @@ public class ValoracionJpaController implements Serializable {
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findValoracion(valoracion.getCalificacion()) != null) {
-                throw new PreexistingEntityException("Valoracion " + valoracion + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -77,7 +72,7 @@ public class ValoracionJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Valoracion persistentValoracion = em.find(Valoracion.class, valoracion.getCalificacion());
+            Valoracion persistentValoracion = em.find(Valoracion.class, valoracion.getIdvaloracion());
             Collection<Juego> juegoCollectionOld = persistentValoracion.getJuegoCollection();
             Collection<Juego> juegoCollectionNew = valoracion.getJuegoCollection();
             Collection<Juego> attachedJuegoCollectionNew = new ArrayList<Juego>();
@@ -109,7 +104,7 @@ public class ValoracionJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Short id = valoracion.getCalificacion();
+                Integer id = valoracion.getIdvaloracion();
                 if (findValoracion(id) == null) {
                     throw new NonexistentEntityException("The valoracion with id " + id + " no longer exists.");
                 }
@@ -122,7 +117,7 @@ public class ValoracionJpaController implements Serializable {
         }
     }
 
-    public void destroy(Short id) throws NonexistentEntityException {
+    public void destroy(Integer id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -130,7 +125,7 @@ public class ValoracionJpaController implements Serializable {
             Valoracion valoracion;
             try {
                 valoracion = em.getReference(Valoracion.class, id);
-                valoracion.getCalificacion();
+                valoracion.getIdvaloracion();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The valoracion with id " + id + " no longer exists.", enfe);
             }
@@ -172,7 +167,7 @@ public class ValoracionJpaController implements Serializable {
         }
     }
 
-    public Valoracion findValoracion(Short id) {
+    public Valoracion findValoracion(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Valoracion.class, id);

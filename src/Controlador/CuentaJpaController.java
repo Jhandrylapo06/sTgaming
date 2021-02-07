@@ -6,19 +6,19 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import Controlador.exceptions.PreexistingEntityException;
-import Instancias.Cuenta;
+import Entidades.Cuenta;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Instancias.Usuario;
+import Entidades.Usuario;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,8 +26,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class CuentaJpaController implements Serializable {
 
-    public CuentaJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public CuentaJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -35,7 +35,7 @@ public class CuentaJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Cuenta cuenta) throws PreexistingEntityException, Exception {
+    public void create(Cuenta cuenta) {
         if (cuenta.getUsuarioCollection() == null) {
             cuenta.setUsuarioCollection(new ArrayList<Usuario>());
         }
@@ -60,11 +60,6 @@ public class CuentaJpaController implements Serializable {
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findCuenta(cuenta.getId()) != null) {
-                throw new PreexistingEntityException("Cuenta " + cuenta + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -77,7 +72,7 @@ public class CuentaJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Cuenta persistentCuenta = em.find(Cuenta.class, cuenta.getId());
+            Cuenta persistentCuenta = em.find(Cuenta.class, cuenta.getIdCuenta());
             Collection<Usuario> usuarioCollectionOld = persistentCuenta.getUsuarioCollection();
             Collection<Usuario> usuarioCollectionNew = cuenta.getUsuarioCollection();
             Collection<Usuario> attachedUsuarioCollectionNew = new ArrayList<Usuario>();
@@ -109,7 +104,7 @@ public class CuentaJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Integer id = cuenta.getId();
+                Integer id = cuenta.getIdCuenta();
                 if (findCuenta(id) == null) {
                     throw new NonexistentEntityException("The cuenta with id " + id + " no longer exists.");
                 }
@@ -130,7 +125,7 @@ public class CuentaJpaController implements Serializable {
             Cuenta cuenta;
             try {
                 cuenta = em.getReference(Cuenta.class, id);
-                cuenta.getId();
+                cuenta.getIdCuenta();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The cuenta with id " + id + " no longer exists.", enfe);
             }

@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instancias;
+package Entidades;
 
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -27,30 +29,42 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Rol.findAll", query = "SELECT r FROM Rol r")
-    , @NamedQuery(name = "Rol.findByRol", query = "SELECT r FROM Rol r WHERE r.rol = :rol")})
+    , @NamedQuery(name = "Rol.findByIdrol", query = "SELECT r FROM Rol r WHERE r.idrol = :idrol")
+    , @NamedQuery(name = "Rol.findByTipo", query = "SELECT r FROM Rol r WHERE r.tipo = :tipo")})
 public class Rol implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "Rol")
-    private String rol;
+    @Column(name = "idrol")
+    private Integer idrol;
+    @Column(name = "Tipo")
+    private String tipo;
     @OneToMany(mappedBy = "roluser")
     private Collection<Usuario> usuarioCollection;
 
     public Rol() {
     }
 
-    public Rol(String rol) {
-        this.rol = rol;
+    public Rol(Integer idrol) {
+        this.idrol = idrol;
     }
 
-    public String getRol() {
-        return rol;
+    public Integer getIdrol() {
+        return idrol;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setIdrol(Integer idrol) {
+        this.idrol = idrol;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     @XmlTransient
@@ -65,7 +79,7 @@ public class Rol implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (rol != null ? rol.hashCode() : 0);
+        hash += (idrol != null ? idrol.hashCode() : 0);
         return hash;
     }
 
@@ -76,7 +90,7 @@ public class Rol implements Serializable {
             return false;
         }
         Rol other = (Rol) object;
-        if ((this.rol == null && other.rol != null) || (this.rol != null && !this.rol.equals(other.rol))) {
+        if ((this.idrol == null && other.idrol != null) || (this.idrol != null && !this.idrol.equals(other.idrol))) {
             return false;
         }
         return true;
@@ -84,7 +98,7 @@ public class Rol implements Serializable {
 
     @Override
     public String toString() {
-        return "Instancias.Rol[ rol=" + rol + " ]";
+        return "Entidades.Rol[ idrol=" + idrol + " ]";
     }
     
 }

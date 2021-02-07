@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instancias;
+package Entidades;
 
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -29,7 +31,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Cuenta.findAll", query = "SELECT c FROM Cuenta c")
     , @NamedQuery(name = "Cuenta.findByNickname", query = "SELECT c FROM Cuenta c WHERE c.nickname = :nickname")
     , @NamedQuery(name = "Cuenta.findByContrasena", query = "SELECT c FROM Cuenta c WHERE c.contrasena = :contrasena")
-    , @NamedQuery(name = "Cuenta.findById", query = "SELECT c FROM Cuenta c WHERE c.id = :id")})
+    , @NamedQuery(name = "Cuenta.findByIdCuenta", query = "SELECT c FROM Cuenta c WHERE c.idCuenta = :idCuenta")})
 public class Cuenta implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,21 +42,22 @@ public class Cuenta implements Serializable {
     @Column(name = "Contrasena")
     private String contrasena;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "id_cuenta")
+    private Integer idCuenta;
     @OneToMany(mappedBy = "cuentauser")
     private Collection<Usuario> usuarioCollection;
 
     public Cuenta() {
     }
 
-    public Cuenta(Integer id) {
-        this.id = id;
+    public Cuenta(Integer idCuenta) {
+        this.idCuenta = idCuenta;
     }
 
-    public Cuenta(Integer id, String nickname, String contrasena) {
-        this.id = id;
+    public Cuenta(Integer idCuenta, String nickname, String contrasena) {
+        this.idCuenta = idCuenta;
         this.nickname = nickname;
         this.contrasena = contrasena;
     }
@@ -75,12 +78,12 @@ public class Cuenta implements Serializable {
         this.contrasena = contrasena;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdCuenta() {
+        return idCuenta;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdCuenta(Integer idCuenta) {
+        this.idCuenta = idCuenta;
     }
 
     @XmlTransient
@@ -95,7 +98,7 @@ public class Cuenta implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (idCuenta != null ? idCuenta.hashCode() : 0);
         return hash;
     }
 
@@ -106,7 +109,7 @@ public class Cuenta implements Serializable {
             return false;
         }
         Cuenta other = (Cuenta) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.idCuenta == null && other.idCuenta != null) || (this.idCuenta != null && !this.idCuenta.equals(other.idCuenta))) {
             return false;
         }
         return true;
@@ -114,7 +117,7 @@ public class Cuenta implements Serializable {
 
     @Override
     public String toString() {
-        return "Instancias.Cuenta[ id=" + id + " ]";
+        return "Entidades.Cuenta[ idCuenta=" + idCuenta + " ]";
     }
     
 }

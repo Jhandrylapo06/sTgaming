@@ -6,15 +6,18 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import Instancias.Usuario;
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import Entidades.Cuenta;
+import Entidades.Rol;
+import Entidades.Usuario;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -22,8 +25,8 @@ import javax.persistence.criteria.Root;
  */
 public class UsuarioJpaController implements Serializable {
 
-    public UsuarioJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public UsuarioJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -36,7 +39,25 @@ public class UsuarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            Cuenta cuentauser = usuario.getCuentauser();
+            if (cuentauser != null) {
+                cuentauser = em.getReference(cuentauser.getClass(), cuentauser.getIdCuenta());
+                usuario.setCuentauser(cuentauser);
+            }
+            Rol roluser = usuario.getRoluser();
+            if (roluser != null) {
+                roluser = em.getReference(roluser.getClass(), roluser.getIdrol());
+                usuario.setRoluser(roluser);
+            }
             em.persist(usuario);
+            if (cuentauser != null) {
+                cuentauser.getUsuarioCollection().add(usuario);
+                cuentauser = em.merge(cuentauser);
+            }
+            if (roluser != null) {
+                roluser.getUsuarioCollection().add(usuario);
+                roluser = em.merge(roluser);
+            }
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -50,7 +71,36 @@ public class UsuarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+            Usuario persistentUsuario = em.find(Usuario.class, usuario.getIdusuario());
+            Cuenta cuentauserOld = persistentUsuario.getCuentauser();
+            Cuenta cuentauserNew = usuario.getCuentauser();
+            Rol roluserOld = persistentUsuario.getRoluser();
+            Rol roluserNew = usuario.getRoluser();
+            if (cuentauserNew != null) {
+                cuentauserNew = em.getReference(cuentauserNew.getClass(), cuentauserNew.getIdCuenta());
+                usuario.setCuentauser(cuentauserNew);
+            }
+            if (roluserNew != null) {
+                roluserNew = em.getReference(roluserNew.getClass(), roluserNew.getIdrol());
+                usuario.setRoluser(roluserNew);
+            }
             usuario = em.merge(usuario);
+            if (cuentauserOld != null && !cuentauserOld.equals(cuentauserNew)) {
+                cuentauserOld.getUsuarioCollection().remove(usuario);
+                cuentauserOld = em.merge(cuentauserOld);
+            }
+            if (cuentauserNew != null && !cuentauserNew.equals(cuentauserOld)) {
+                cuentauserNew.getUsuarioCollection().add(usuario);
+                cuentauserNew = em.merge(cuentauserNew);
+            }
+            if (roluserOld != null && !roluserOld.equals(roluserNew)) {
+                roluserOld.getUsuarioCollection().remove(usuario);
+                roluserOld = em.merge(roluserOld);
+            }
+            if (roluserNew != null && !roluserNew.equals(roluserOld)) {
+                roluserNew.getUsuarioCollection().add(usuario);
+                roluserNew = em.merge(roluserNew);
+            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
@@ -79,6 +129,16 @@ public class UsuarioJpaController implements Serializable {
                 usuario.getIdusuario();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.", enfe);
+            }
+            Cuenta cuentauser = usuario.getCuentauser();
+            if (cuentauser != null) {
+                cuentauser.getUsuarioCollection().remove(usuario);
+                cuentauser = em.merge(cuentauser);
+            }
+            Rol roluser = usuario.getRoluser();
+            if (roluser != null) {
+                roluser.getUsuarioCollection().remove(usuario);
+                roluser = em.merge(roluser);
             }
             em.remove(usuario);
             em.getTransaction().commit();

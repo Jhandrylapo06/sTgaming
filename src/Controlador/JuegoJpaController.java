@@ -6,18 +6,18 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import Controlador.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Instancias.Clasificacion;
-import Instancias.Juego;
-import Instancias.Valoracion;
+import Entidades.Clasificacion;
+import Entidades.Juego;
+import Entidades.Valoracion;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -25,8 +25,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class JuegoJpaController implements Serializable {
 
-    public JuegoJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public JuegoJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -34,19 +34,19 @@ public class JuegoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Juego juego) throws PreexistingEntityException, Exception {
+    public void create(Juego juego) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             Clasificacion clasificacion = juego.getClasificacion();
             if (clasificacion != null) {
-                clasificacion = em.getReference(clasificacion.getClass(), clasificacion.getNombreclasi());
+                clasificacion = em.getReference(clasificacion.getClass(), clasificacion.getIdclasificacion());
                 juego.setClasificacion(clasificacion);
             }
             Valoracion valoracion = juego.getValoracion();
             if (valoracion != null) {
-                valoracion = em.getReference(valoracion.getClass(), valoracion.getCalificacion());
+                valoracion = em.getReference(valoracion.getClass(), valoracion.getIdvaloracion());
                 juego.setValoracion(valoracion);
             }
             em.persist(juego);
@@ -59,11 +59,6 @@ public class JuegoJpaController implements Serializable {
                 valoracion = em.merge(valoracion);
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findJuego(juego.getIdJuego()) != null) {
-                throw new PreexistingEntityException("Juego " + juego + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -82,11 +77,11 @@ public class JuegoJpaController implements Serializable {
             Valoracion valoracionOld = persistentJuego.getValoracion();
             Valoracion valoracionNew = juego.getValoracion();
             if (clasificacionNew != null) {
-                clasificacionNew = em.getReference(clasificacionNew.getClass(), clasificacionNew.getNombreclasi());
+                clasificacionNew = em.getReference(clasificacionNew.getClass(), clasificacionNew.getIdclasificacion());
                 juego.setClasificacion(clasificacionNew);
             }
             if (valoracionNew != null) {
-                valoracionNew = em.getReference(valoracionNew.getClass(), valoracionNew.getCalificacion());
+                valoracionNew = em.getReference(valoracionNew.getClass(), valoracionNew.getIdvaloracion());
                 juego.setValoracion(valoracionNew);
             }
             juego = em.merge(juego);

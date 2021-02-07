@@ -6,19 +6,19 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import Controlador.exceptions.PreexistingEntityException;
-import Instancias.Clasificacion;
+import Entidades.Clasificacion;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Instancias.Juego;
+import Entidades.Juego;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,8 +26,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class ClasificacionJpaController implements Serializable {
 
-    public ClasificacionJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public ClasificacionJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -35,7 +35,7 @@ public class ClasificacionJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Clasificacion clasificacion) throws PreexistingEntityException, Exception {
+    public void create(Clasificacion clasificacion) {
         if (clasificacion.getJuegoCollection() == null) {
             clasificacion.setJuegoCollection(new ArrayList<Juego>());
         }
@@ -60,11 +60,6 @@ public class ClasificacionJpaController implements Serializable {
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findClasificacion(clasificacion.getNombreclasi()) != null) {
-                throw new PreexistingEntityException("Clasificacion " + clasificacion + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -77,7 +72,7 @@ public class ClasificacionJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Clasificacion persistentClasificacion = em.find(Clasificacion.class, clasificacion.getNombreclasi());
+            Clasificacion persistentClasificacion = em.find(Clasificacion.class, clasificacion.getIdclasificacion());
             Collection<Juego> juegoCollectionOld = persistentClasificacion.getJuegoCollection();
             Collection<Juego> juegoCollectionNew = clasificacion.getJuegoCollection();
             Collection<Juego> attachedJuegoCollectionNew = new ArrayList<Juego>();
@@ -109,7 +104,7 @@ public class ClasificacionJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                String id = clasificacion.getNombreclasi();
+                Integer id = clasificacion.getIdclasificacion();
                 if (findClasificacion(id) == null) {
                     throw new NonexistentEntityException("The clasificacion with id " + id + " no longer exists.");
                 }
@@ -122,7 +117,7 @@ public class ClasificacionJpaController implements Serializable {
         }
     }
 
-    public void destroy(String id) throws NonexistentEntityException {
+    public void destroy(Integer id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -130,7 +125,7 @@ public class ClasificacionJpaController implements Serializable {
             Clasificacion clasificacion;
             try {
                 clasificacion = em.getReference(Clasificacion.class, id);
-                clasificacion.getNombreclasi();
+                clasificacion.getIdclasificacion();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The clasificacion with id " + id + " no longer exists.", enfe);
             }
@@ -172,7 +167,7 @@ public class ClasificacionJpaController implements Serializable {
         }
     }
 
-    public Clasificacion findClasificacion(String id) {
+    public Clasificacion findClasificacion(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Clasificacion.class, id);

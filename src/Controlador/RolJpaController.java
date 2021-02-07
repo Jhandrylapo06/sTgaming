@@ -6,19 +6,19 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import Controlador.exceptions.PreexistingEntityException;
-import Instancias.Rol;
+import Entidades.Rol;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Instancias.Usuario;
+import Entidades.Usuario;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,8 +26,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class RolJpaController implements Serializable {
 
-    public RolJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public RolJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -35,7 +35,7 @@ public class RolJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Rol rol) throws PreexistingEntityException, Exception {
+    public void create(Rol rol) {
         if (rol.getUsuarioCollection() == null) {
             rol.setUsuarioCollection(new ArrayList<Usuario>());
         }
@@ -60,11 +60,6 @@ public class RolJpaController implements Serializable {
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findRol(rol.getRol()) != null) {
-                throw new PreexistingEntityException("Rol " + rol + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -77,7 +72,7 @@ public class RolJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Rol persistentRol = em.find(Rol.class, rol.getRol());
+            Rol persistentRol = em.find(Rol.class, rol.getIdrol());
             Collection<Usuario> usuarioCollectionOld = persistentRol.getUsuarioCollection();
             Collection<Usuario> usuarioCollectionNew = rol.getUsuarioCollection();
             Collection<Usuario> attachedUsuarioCollectionNew = new ArrayList<Usuario>();
@@ -109,7 +104,7 @@ public class RolJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                String id = rol.getRol();
+                Integer id = rol.getIdrol();
                 if (findRol(id) == null) {
                     throw new NonexistentEntityException("The rol with id " + id + " no longer exists.");
                 }
@@ -122,7 +117,7 @@ public class RolJpaController implements Serializable {
         }
     }
 
-    public void destroy(String id) throws NonexistentEntityException {
+    public void destroy(Integer id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -130,7 +125,7 @@ public class RolJpaController implements Serializable {
             Rol rol;
             try {
                 rol = em.getReference(Rol.class, id);
-                rol.getRol();
+                rol.getIdrol();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The rol with id " + id + " no longer exists.", enfe);
             }
@@ -172,7 +167,7 @@ public class RolJpaController implements Serializable {
         }
     }
 
-    public Rol findRol(String id) {
+    public Rol findRol(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Rol.class, id);

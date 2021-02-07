@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instancias;
+package Entidades;
 
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -27,30 +29,42 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Clasificacion.findAll", query = "SELECT c FROM Clasificacion c")
-    , @NamedQuery(name = "Clasificacion.findByNombreclasi", query = "SELECT c FROM Clasificacion c WHERE c.nombreclasi = :nombreclasi")})
+    , @NamedQuery(name = "Clasificacion.findByIdclasificacion", query = "SELECT c FROM Clasificacion c WHERE c.idclasificacion = :idclasificacion")
+    , @NamedQuery(name = "Clasificacion.findByTipo", query = "SELECT c FROM Clasificacion c WHERE c.tipo = :tipo")})
 public class Clasificacion implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "Nombreclasi")
-    private String nombreclasi;
+    @Column(name = "idclasificacion")
+    private Integer idclasificacion;
+    @Column(name = "Tipo")
+    private String tipo;
     @OneToMany(mappedBy = "clasificacion")
     private Collection<Juego> juegoCollection;
 
     public Clasificacion() {
     }
 
-    public Clasificacion(String nombreclasi) {
-        this.nombreclasi = nombreclasi;
+    public Clasificacion(Integer idclasificacion) {
+        this.idclasificacion = idclasificacion;
     }
 
-    public String getNombreclasi() {
-        return nombreclasi;
+    public Integer getIdclasificacion() {
+        return idclasificacion;
     }
 
-    public void setNombreclasi(String nombreclasi) {
-        this.nombreclasi = nombreclasi;
+    public void setIdclasificacion(Integer idclasificacion) {
+        this.idclasificacion = idclasificacion;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     @XmlTransient
@@ -65,7 +79,7 @@ public class Clasificacion implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (nombreclasi != null ? nombreclasi.hashCode() : 0);
+        hash += (idclasificacion != null ? idclasificacion.hashCode() : 0);
         return hash;
     }
 
@@ -76,7 +90,7 @@ public class Clasificacion implements Serializable {
             return false;
         }
         Clasificacion other = (Clasificacion) object;
-        if ((this.nombreclasi == null && other.nombreclasi != null) || (this.nombreclasi != null && !this.nombreclasi.equals(other.nombreclasi))) {
+        if ((this.idclasificacion == null && other.idclasificacion != null) || (this.idclasificacion != null && !this.idclasificacion.equals(other.idclasificacion))) {
             return false;
         }
         return true;
@@ -84,7 +98,7 @@ public class Clasificacion implements Serializable {
 
     @Override
     public String toString() {
-        return "Instancias.Clasificacion[ nombreclasi=" + nombreclasi + " ]";
+        return "Entidades.Clasificacion[ idclasificacion=" + idclasificacion + " ]";
     }
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instancias;
+package Entidades;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -31,16 +31,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Usuario.findByIdusuario", query = "SELECT u FROM Usuario u WHERE u.idusuario = :idusuario")
     , @NamedQuery(name = "Usuario.findByNombre", query = "SELECT u FROM Usuario u WHERE u.nombre = :nombre")
     , @NamedQuery(name = "Usuario.findByApellido", query = "SELECT u FROM Usuario u WHERE u.apellido = :apellido")
-    , @NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo")
-    , @NamedQuery(name = "Usuario.findByRol", query = "SELECT u FROM Usuario u WHERE u.rol = :rol")})
+    , @NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo")})
 public class Usuario implements Serializable {
-
-    @JoinColumn(name = "cuentauser", referencedColumnName = "id")
-    @ManyToOne
-    private Cuenta cuentauser;
-    @JoinColumn(name = "roluser", referencedColumnName = "Rol")
-    @ManyToOne
-    private Rol roluser;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -54,8 +46,12 @@ public class Usuario implements Serializable {
     private String apellido;
     @Column(name = "correo")
     private String correo;
-    @Column(name = "rol")
-    private String rol;
+    @JoinColumn(name = "cuentauser", referencedColumnName = "id_cuenta")
+    @ManyToOne
+    private Cuenta cuentauser;
+    @JoinColumn(name = "roluser", referencedColumnName = "idrol")
+    @ManyToOne
+    private Rol roluser;
 
     public Usuario() {
     }
@@ -63,6 +59,15 @@ public class Usuario implements Serializable {
     public Usuario(Integer idusuario) {
         this.idusuario = idusuario;
     }
+
+    public Usuario(String nombre, String apellido, String correo, Cuenta cuentauser, Rol roluser) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.cuentauser = cuentauser;
+        this.roluser = roluser;
+    }
+    
 
     public Integer getIdusuario() {
         return idusuario;
@@ -96,12 +101,20 @@ public class Usuario implements Serializable {
         this.correo = correo;
     }
 
-    public String getRol() {
-        return rol;
+    public Cuenta getCuentauser() {
+        return cuentauser;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setCuentauser(Cuenta cuentauser) {
+        this.cuentauser = cuentauser;
+    }
+
+    public Rol getRoluser() {
+        return roluser;
+    }
+
+    public void setRoluser(Rol roluser) {
+        this.roluser = roluser;
     }
 
     @Override
@@ -126,23 +139,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "Instancias.Usuario[ idusuario=" + idusuario + " ]";
-    }
-
-    public Cuenta getCuentauser() {
-        return cuentauser;
-    }
-
-    public void setCuentauser(Cuenta cuentauser) {
-        this.cuentauser = cuentauser;
-    }
-
-    public Rol getRoluser() {
-        return roluser;
-    }
-
-    public void setRoluser(Rol roluser) {
-        this.roluser = roluser;
+        return "Entidades.Usuario[ idusuario=" + idusuario + " ]";
     }
     
 }
