@@ -5,6 +5,12 @@
  */
 package Vista;
 
+import Controlador.CuentaJpaController;
+import Controlador.UsuarioJpaController;
+import Entidades.Cuenta_;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario iTC
@@ -18,8 +24,9 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocation(800, 200);
-        TextPrompt user=new TextPrompt("Correo o nombre de usuario", txtNombreusuario);
-        TextPrompt pass=new TextPrompt("Contraseña", txtcontrasena);
+        TextPrompt user = new TextPrompt("Nombre de usuario", txtNombreusuario);
+        TextPrompt pass = new TextPrompt("Contraseña", txtcontrasena);
+
     }
 
     /**
@@ -206,14 +213,35 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblBRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBRegistrarMouseClicked
-        
+
     }//GEN-LAST:event_lblBRegistrarMouseClicked
 
     private void lblBingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBingresarMouseClicked
-//        
-          INICIOTENDENCIAS n=new INICIOTENDENCIAS();
-          n.setVisible(true);
-          this.setVisible(false);
+        Controlador.UsuarioJpaController cusuarios = new UsuarioJpaController();
+
+        List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
+        boolean verificador=false;
+        for (int i = 0; i < listaU.size(); i++) {
+            if (listaU.get(i).getCuentauser().getNickname().equals(txtNombreusuario.getText()) && listaU.get(i).getCuentauser().getContrasena().equals(txtcontrasena.getText())) {
+                verificador=true;
+                if (listaU.get(i).getRoluser().getTipo().equals("admin")) {
+                    INICIOADMINISTRACION nadmin = new INICIOADMINISTRACION();
+                    nadmin.setVisible(true);
+                    this.setVisible(false);
+                    break;
+                } else if (listaU.get(i).getRoluser().getTipo().equals("user")){
+                    INICIOTENDENCIAS n = new INICIOTENDENCIAS();
+                    n.setVisible(true);
+                    this.setVisible(false);
+                    break;
+                }
+            }else{
+                verificador=false;
+            }
+        }
+        if (verificador==false) {
+            JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectas intente de nuevo");
+        }
     }//GEN-LAST:event_lblBingresarMouseClicked
 
     private void txtcontrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontrasenaActionPerformed
@@ -221,13 +249,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcontrasenaActionPerformed
 
     private void lblRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistrarMouseClicked
-        Registro registrar=new Registro();
+        Registro registrar = new Registro();
         registrar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lblRegistrarMouseClicked
 
     private void lblOlvidePSSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOlvidePSSMouseClicked
-        RecuperarContrasena n=new RecuperarContrasena();
+        RecuperarContrasena n = new RecuperarContrasena();
         n.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lblOlvidePSSMouseClicked

@@ -5,6 +5,11 @@
  */
 package Vista;
 
+import Controlador.JuegoJpaController;
+import Entidades.Clasificacion;
+import Entidades.Juego;
+import Entidades.Valoracion;
+
 /**
  *
  * @author Usuario iTC
@@ -14,6 +19,7 @@ public class AnadirJuego extends javax.swing.JFrame {
     /**
      * Creates new form AnadirJuego
      */
+    Controlador.JuegoJpaController cjuego=new JuegoJpaController();
     public AnadirJuego() {
         initComponents();
                 setResizable(false);
@@ -235,6 +241,12 @@ public class AnadirJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarJuegoActionPerformed
+        
+        Entidades.Clasificacion clasi=new Clasificacion();
+        
+        Entidades.Valoracion valora=new Valoracion();
+        Juego juego=new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtRequerimientosRe.getText(),txtPrecioJuego.getText() , clasi, valora);
+        cjuego.create(juego);
         this.setVisible(false);
     }//GEN-LAST:event_btnGuardarJuegoActionPerformed
 

@@ -47,9 +47,12 @@ public class Clasificacion implements Serializable {
     public Clasificacion() {
     }
 
-    public Clasificacion(Integer idclasificacion) {
+    public Clasificacion(Integer idclasificacion, String tipo) {
         this.idclasificacion = idclasificacion;
+        this.tipo = tipo;
     }
+
+    
 
     public Integer getIdclasificacion() {
         return idclasificacion;
