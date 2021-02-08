@@ -220,26 +220,34 @@ public class Login extends javax.swing.JFrame {
         Controlador.UsuarioJpaController cusuarios = new UsuarioJpaController();
 
         List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
-        boolean verificador=false;
+        boolean verificador = false;
         for (int i = 0; i < listaU.size(); i++) {
             if (listaU.get(i).getCuentauser().getNickname().equals(txtNombreusuario.getText()) && listaU.get(i).getCuentauser().getContrasena().equals(txtcontrasena.getText())) {
-                verificador=true;
+                verificador = true;
                 if (listaU.get(i).getRoluser().getTipo().equals("admin")) {
-                    INICIOADMINISTRACION nadmin = new INICIOADMINISTRACION();
-                    nadmin.setVisible(true);
+
+                    paginaInicio n = new paginaInicio();
+                    n.setVisible(true);
+                    n.btnAdministrar.setVisible(true);
+                    n.lblUsuario.setText(listaU.get(i).getCuentauser().getNickname());
                     this.setVisible(false);
                     break;
-                } else if (listaU.get(i).getRoluser().getTipo().equals("user")){
-                    INICIOTENDENCIAS n = new INICIOTENDENCIAS();
+
+                } else if (listaU.get(i).getRoluser().getTipo().equals("user")) {
+
+                    paginaInicio n = new paginaInicio();
                     n.setVisible(true);
+                    n.btnAdministrar.setVisible(false);
+                    n.lblUsuario.setText(listaU.get(i).getCuentauser().getNickname());
                     this.setVisible(false);
+
                     break;
                 }
-            }else{
-                verificador=false;
+            } else {
+                verificador = false;
             }
         }
-        if (verificador==false) {
+        if (verificador == false) {
             JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectas intente de nuevo");
         }
     }//GEN-LAST:event_lblBingresarMouseClicked

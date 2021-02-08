@@ -50,7 +50,6 @@ public class Registro extends javax.swing.JFrame {
 
     }
 
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -339,9 +338,7 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(JPRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(JPRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,11 +362,11 @@ public class Registro extends javax.swing.JFrame {
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
 
-       // try {
+        try {
             List<Usuario> listausuarios = Cusuario.findUsuarioEntities();
             boolean e = false;
             boolean c = true;
-            
+
             //comprueba que el tag no este registrado
             for (int i = 0; i < listausuarios.size(); i++) {
                 if (listausuarios.get(i).getCuentauser().getNickname().equals(txtTag.getText())) {
@@ -385,7 +382,7 @@ public class Registro extends javax.swing.JFrame {
                 if (listausuarios.get(i).getCorreo().equals(txtCorreoUs.getText())) {
                     e = true;
                     JOptionPane.showMessageDialog(null, "El correo ingresado ya se encuentra registrado, ingresa otro");
-                    
+
                 }
 
             }
@@ -396,7 +393,7 @@ public class Registro extends javax.swing.JFrame {
             }
             if (txtPasUS.getText().length() < 8) {
                 JOptionPane.showMessageDialog(null, "Las contraseñas debe contener almenos 8 caracteres");
-                c=true;
+                c = true;
 
             }
 
@@ -437,9 +434,9 @@ public class Registro extends javax.swing.JFrame {
 
             }
 
-        //} catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("hubo un error");
-       // }
+        }
 
     }//GEN-LAST:event_btnGuardarMouseClicked
 
@@ -460,7 +457,7 @@ public class Registro extends javax.swing.JFrame {
                 log.setVisible(true);
 
                 Entidades.Cuenta cuenta = new Cuenta(1, txtTag.getText(), txtPasUS.getText());
-                Entidades.Rol rool = new Rol(1);
+                Entidades.Rol rool = new Rol(1, "user");
                 Entidades.Usuario usuario = new Usuario(txtNombreUs.getText(), txtApellidoUs.getText(), txtCorreoUs.getText(), cuenta, rool);
 
                 CCuenta.create(cuenta);
@@ -474,7 +471,10 @@ public class Registro extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
-            System.out.println("se chingo compadre");
+            System.out.println("Ha ocurrido un error");
+            Login n=new Login();
+            this.setVisible(false);
+            n.setVisible(true);
         }
 
     }//GEN-LAST:event_btnConfirmarMouseClicked

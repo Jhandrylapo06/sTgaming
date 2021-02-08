@@ -63,6 +63,11 @@ public class Rol implements Serializable {
         return tipo;
     }
 
+    public Rol(Integer idrol, String tipo) {
+        this.idrol = idrol;
+        this.tipo = tipo;
+    }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }

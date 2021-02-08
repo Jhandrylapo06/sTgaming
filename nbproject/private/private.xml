@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Instancias/Clasificacion.java</file>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Modelo/Usuario.java</file>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Controlador/RolJpaController.java</file>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Vista/INICIOTENDENCIAS.java</file>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Vista/RecuperarContrasena.java</file>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/META-INF/persistence.xml</file>
-            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Controlador/UsuarioJpaController.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Modelo/Juego.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Vista/Registro.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Modelo/Cuenta.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Entidades/Usuario.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Documents/NetBeansProjects/sTgaming/src/Modelo/Clasificacion.java</file>
         </group>
     </open-files>
 </project-private>
