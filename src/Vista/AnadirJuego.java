@@ -5,10 +5,13 @@
  */
 package Vista;
 
+import Controlador.ClasificacionJpaController;
 import Controlador.JuegoJpaController;
+import Controlador.ValoracionJpaController;
 import Entidades.Clasificacion;
 import Entidades.Juego;
 import Entidades.Valoracion;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,10 +22,13 @@ public class AnadirJuego extends javax.swing.JFrame {
     /**
      * Creates new form AnadirJuego
      */
-    Controlador.JuegoJpaController cjuego=new JuegoJpaController();
+    Controlador.JuegoJpaController cjuego = new JuegoJpaController();
+    Controlador.ClasificacionJpaController cclasificacion=new ClasificacionJpaController();
+    Controlador.ValoracionJpaController cvaloracion= new ValoracionJpaController();
+
     public AnadirJuego() {
         initComponents();
-                setResizable(false);
+        setResizable(false);
         setLocation(800, 200);
     }
 
@@ -36,6 +42,7 @@ public class AnadirJuego extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jScrollPane1 = new javax.swing.JScrollPane();
         PanelNuevoJuego = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -62,6 +69,11 @@ public class AnadirJuego extends javax.swing.JFrame {
         btnGuardarJuego = new javax.swing.JButton();
         SPRM = new javax.swing.JScrollPane();
         txtRequerimientosMin = new javax.swing.JTextArea();
+        jLabel20 = new javax.swing.JLabel();
+        txtrutaportada1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo juego");
@@ -104,7 +116,7 @@ public class AnadirJuego extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("IMAGEN");
-        PanelNuevoJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+        PanelNuevoJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
@@ -169,7 +181,7 @@ public class AnadirJuego extends javax.swing.JFrame {
         txtrutaportada.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtrutaportada.setForeground(new java.awt.Color(255, 255, 255));
         txtrutaportada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PanelNuevoJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 460, -1));
+        PanelNuevoJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 460, -1));
 
         btnAccion.setBackground(new java.awt.Color(6, 11, 25));
         btnAccion.setForeground(new java.awt.Color(204, 204, 204));
@@ -189,7 +201,7 @@ public class AnadirJuego extends javax.swing.JFrame {
         btnAventura.setBackground(new java.awt.Color(6, 11, 25));
         btnAventura.setForeground(new java.awt.Color(204, 204, 204));
         btnAventura.setText("Aventura");
-        PanelNuevoJuego.add(btnAventura, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 720, -1, -1));
+        PanelNuevoJuego.add(btnAventura, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 720, -1, -1));
 
         btnMultijugador.setBackground(new java.awt.Color(6, 11, 25));
         btnMultijugador.setForeground(new java.awt.Color(204, 204, 204));
@@ -224,35 +236,120 @@ public class AnadirJuego extends javax.swing.JFrame {
 
         PanelNuevoJuego.add(SPRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 350, 120));
 
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel20.setText("IMAGEN");
+        PanelNuevoJuego.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+
+        txtrutaportada1.setBackground(new java.awt.Color(6, 11, 25));
+        txtrutaportada1.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtrutaportada1.setForeground(new java.awt.Color(255, 255, 255));
+        txtrutaportada1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PanelNuevoJuego.add(txtrutaportada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 460, -1));
+
+        jButton1.setBackground(new java.awt.Color(6, 11, 25));
+        jButton1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 330, -1, 30));
+
+        jButton2.setBackground(new java.awt.Color(6, 11, 25));
+        jButton2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, 30));
+
+        jButton3.setBackground(new java.awt.Color(6, 11, 25));
+        jButton3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Buscar");
+        PanelNuevoJuego.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, -1, 30));
+
+        jScrollPane1.setViewportView(PanelNuevoJuego);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelNuevoJuego, javax.swing.GroupLayout.DEFAULT_SIZE, 1027, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1027, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelNuevoJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 851, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(249, 249, 249))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarJuegoActionPerformed
+        System.out.println("Entra boton");
+        Entidades.Clasificacion clasi = new Clasificacion();
+        String clasificacion = "";
+        if (btnAccion.isSelected()) {
+            clasificacion = "Accion";
+        }
+        if (btnAventura.isSelected()) {
+            clasificacion = clasificacion + "Aventura";
+        }
+        if (btnMultijugador.isSelected()) {
+            clasificacion = clasificacion + "Multijugador";
+        }
+        if (btnMundoAbierto.isSelected()) {
+            clasificacion = clasificacion + "Mundo Abierto";
+        }
+        if (btnTerror.isSelected()) {
+            clasificacion = clasificacion + "Terror";
+        }
+        clasi.setTipo(clasificacion);
         
-        Entidades.Clasificacion clasi=new Clasificacion();
-        
-        Entidades.Valoracion valora=new Valoracion();
-        Juego juego=new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtRequerimientosRe.getText(),txtPrecioJuego.getText() , clasi, valora);
-        cjuego.create(juego);
-        this.setVisible(false);
+        if (clasificacion.equals("")) {
+            JOptionPane.showMessageDialog(null, "Porfavor Ingrese una clasificacion al Juego");
+        } else {
+            cclasificacion.create(clasi);
+            Entidades.Valoracion valora = new Valoracion();
+            valora.setValor("0.0");
+            cvaloracion.create(valora);
+            System.out.println("Valoracion");
+            Juego juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(), clasi, valora);
+            System.out.println("Se crea juego");
+            System.out.println(juego.getNombre());
+            System.out.println(juego.getDescripcion());
+            System.out.println(juego.getPrecio());
+            System.out.println(juego.getRequisitosMIn());
+            System.out.println(juego.getRequisitosRec());
+            System.out.println(juego.getValoracion().getValor());
+            System.out.println(juego.getClasificacion().getTipo());
+            cjuego.create(juego);
+            System.out.println("Añadido");
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_btnGuardarJuegoActionPerformed
 
     private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,6 +398,9 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnMundoAbierto;
     private javax.swing.JRadioButton btnTerror;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -310,6 +410,8 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtDescripcion;
     private javax.swing.JTextField txtPrecioJuego;
     private javax.swing.JTextArea txtRequerimientosMin;
@@ -317,5 +419,6 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JTextField txtRutaimg;
     private javax.swing.JTextField txtTituloJuego;
     private javax.swing.JTextField txtrutaportada;
+    private javax.swing.JTextField txtrutaportada1;
     // End of variables declaration//GEN-END:variables
 }

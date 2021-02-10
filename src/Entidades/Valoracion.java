@@ -22,17 +22,18 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Usuario iTC
+ * @author ordon
  */
 @Entity
 @Table(name = "valoracion")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Valoracion.findAll", query = "SELECT v FROM Valoracion v")
-    , @NamedQuery(name = "Valoracion.findByIdvaloracion", query = "SELECT v FROM Valoracion v WHERE v.idvaloracion = :idvaloracion")
-    , @NamedQuery(name = "Valoracion.findByValor", query = "SELECT v FROM Valoracion v WHERE v.valor = :valor")})
+    @NamedQuery(name = "Valoracion.findAll", query = "SELECT v FROM Valoracion v"),
+    @NamedQuery(name = "Valoracion.findByIdvaloracion", query = "SELECT v FROM Valoracion v WHERE v.idvaloracion = :idvaloracion"),
+    @NamedQuery(name = "Valoracion.findByValor", query = "SELECT v FROM Valoracion v WHERE v.valor = :valor")})
 public class Valoracion implements Serializable {
-
+    @OneToMany(mappedBy = "valoracion")
+    private Collection<Juego> juegoCollection;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,9 +41,7 @@ public class Valoracion implements Serializable {
     @Column(name = "idvaloracion")
     private Integer idvaloracion;
     @Column(name = "Valor")
-    private Short valor;
-    @OneToMany(mappedBy = "valoracion")
-    private Collection<Juego> juegoCollection;
+    private String valor;
 
     public Valoracion() {
     }
@@ -59,21 +58,12 @@ public class Valoracion implements Serializable {
         this.idvaloracion = idvaloracion;
     }
 
-    public Short getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Short valor) {
+    public void setValor(String valor) {
         this.valor = valor;
-    }
-
-    @XmlTransient
-    public Collection<Juego> getJuegoCollection() {
-        return juegoCollection;
-    }
-
-    public void setJuegoCollection(Collection<Juego> juegoCollection) {
-        this.juegoCollection = juegoCollection;
     }
 
     @Override
@@ -99,6 +89,15 @@ public class Valoracion implements Serializable {
     @Override
     public String toString() {
         return "Entidades.Valoracion[ idvaloracion=" + idvaloracion + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Juego> getJuegoCollection() {
+        return juegoCollection;
+    }
+
+    public void setJuegoCollection(Collection<Juego> juegoCollection) {
+        this.juegoCollection = juegoCollection;
     }
     
 }

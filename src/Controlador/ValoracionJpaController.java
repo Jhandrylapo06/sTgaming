@@ -6,28 +6,26 @@
 package Controlador;
 
 import Controlador.exceptions.NonexistentEntityException;
-import java.io.Serializable;
-import javax.persistence.Query;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import Entidades.Juego;
 import Entidades.Valoracion;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 /**
  *
- * @author Usuario iTC
+ * @author ordon
  */
 public class ValoracionJpaController implements Serializable {
 
     public ValoracionJpaController() {
         this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
+
     }
     private EntityManagerFactory emf = null;
 
@@ -36,29 +34,11 @@ public class ValoracionJpaController implements Serializable {
     }
 
     public void create(Valoracion valoracion) {
-        if (valoracion.getJuegoCollection() == null) {
-            valoracion.setJuegoCollection(new ArrayList<Juego>());
-        }
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Collection<Juego> attachedJuegoCollection = new ArrayList<Juego>();
-            for (Juego juegoCollectionJuegoToAttach : valoracion.getJuegoCollection()) {
-                juegoCollectionJuegoToAttach = em.getReference(juegoCollectionJuegoToAttach.getClass(), juegoCollectionJuegoToAttach.getIdJuego());
-                attachedJuegoCollection.add(juegoCollectionJuegoToAttach);
-            }
-            valoracion.setJuegoCollection(attachedJuegoCollection);
             em.persist(valoracion);
-            for (Juego juegoCollectionJuego : valoracion.getJuegoCollection()) {
-                Valoracion oldValoracionOfJuegoCollectionJuego = juegoCollectionJuego.getValoracion();
-                juegoCollectionJuego.setValoracion(valoracion);
-                juegoCollectionJuego = em.merge(juegoCollectionJuego);
-                if (oldValoracionOfJuegoCollectionJuego != null) {
-                    oldValoracionOfJuegoCollectionJuego.getJuegoCollection().remove(juegoCollectionJuego);
-                    oldValoracionOfJuegoCollectionJuego = em.merge(oldValoracionOfJuegoCollectionJuego);
-                }
-            }
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -72,34 +52,7 @@ public class ValoracionJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Valoracion persistentValoracion = em.find(Valoracion.class, valoracion.getIdvaloracion());
-            Collection<Juego> juegoCollectionOld = persistentValoracion.getJuegoCollection();
-            Collection<Juego> juegoCollectionNew = valoracion.getJuegoCollection();
-            Collection<Juego> attachedJuegoCollectionNew = new ArrayList<Juego>();
-            for (Juego juegoCollectionNewJuegoToAttach : juegoCollectionNew) {
-                juegoCollectionNewJuegoToAttach = em.getReference(juegoCollectionNewJuegoToAttach.getClass(), juegoCollectionNewJuegoToAttach.getIdJuego());
-                attachedJuegoCollectionNew.add(juegoCollectionNewJuegoToAttach);
-            }
-            juegoCollectionNew = attachedJuegoCollectionNew;
-            valoracion.setJuegoCollection(juegoCollectionNew);
             valoracion = em.merge(valoracion);
-            for (Juego juegoCollectionOldJuego : juegoCollectionOld) {
-                if (!juegoCollectionNew.contains(juegoCollectionOldJuego)) {
-                    juegoCollectionOldJuego.setValoracion(null);
-                    juegoCollectionOldJuego = em.merge(juegoCollectionOldJuego);
-                }
-            }
-            for (Juego juegoCollectionNewJuego : juegoCollectionNew) {
-                if (!juegoCollectionOld.contains(juegoCollectionNewJuego)) {
-                    Valoracion oldValoracionOfJuegoCollectionNewJuego = juegoCollectionNewJuego.getValoracion();
-                    juegoCollectionNewJuego.setValoracion(valoracion);
-                    juegoCollectionNewJuego = em.merge(juegoCollectionNewJuego);
-                    if (oldValoracionOfJuegoCollectionNewJuego != null && !oldValoracionOfJuegoCollectionNewJuego.equals(valoracion)) {
-                        oldValoracionOfJuegoCollectionNewJuego.getJuegoCollection().remove(juegoCollectionNewJuego);
-                        oldValoracionOfJuegoCollectionNewJuego = em.merge(oldValoracionOfJuegoCollectionNewJuego);
-                    }
-                }
-            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
@@ -128,11 +81,6 @@ public class ValoracionJpaController implements Serializable {
                 valoracion.getIdvaloracion();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The valoracion with id " + id + " no longer exists.", enfe);
-            }
-            Collection<Juego> juegoCollection = valoracion.getJuegoCollection();
-            for (Juego juegoCollectionJuego : juegoCollection) {
-                juegoCollectionJuego.setValoracion(null);
-                juegoCollectionJuego = em.merge(juegoCollectionJuego);
             }
             em.remove(valoracion);
             em.getTransaction().commit();
@@ -188,5 +136,5 @@ public class ValoracionJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

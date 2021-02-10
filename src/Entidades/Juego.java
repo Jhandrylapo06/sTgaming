@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Juego.findByDirportada", query = "SELECT j FROM Juego j WHERE j.dirportada = :dirportada"),
     @NamedQuery(name = "Juego.findByDirminiatura", query = "SELECT j FROM Juego j WHERE j.dirminiatura = :dirminiatura"),
     @NamedQuery(name = "Juego.findByRequisitosMIn", query = "SELECT j FROM Juego j WHERE j.requisitosMIn = :requisitosMIn"),
-    @NamedQuery(name = "Juego.findByRequisitosRec", query = "SELECT j FROM Juego j WHERE j.requisitosRec = :requisitosRec"),
-    @NamedQuery(name = "Juego.findByPrecio", query = "SELECT j FROM Juego j WHERE j.precio = :precio")})
+    @NamedQuery(name = "Juego.findByPrecio", query = "SELECT j FROM Juego j WHERE j.precio = :precio"),
+    @NamedQuery(name = "Juego.findByRequisitosRec", query = "SELECT j FROM Juego j WHERE j.requisitosRec = :requisitosRec")})
 public class Juego implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -53,10 +53,10 @@ public class Juego implements Serializable {
     private String dirminiatura;
     @Column(name = "RequisitosMIn")
     private String requisitosMIn;
-    @Column(name = "RequisitosRec")
-    private String requisitosRec;
     @Column(name = "Precio")
     private String precio;
+    @Column(name = "RequisitosRec")
+    private String requisitosRec;
     @JoinColumn(name = "Clasificacion", referencedColumnName = "idclasificacion")
     @ManyToOne
     private Clasificacion clasificacion;
@@ -67,20 +67,22 @@ public class Juego implements Serializable {
     public Juego() {
     }
 
-    public Juego(Integer idJuego, String nombre, String descripcion, String dirportada, String dirminiatura, String requisitosMIn, String requisitosRec, String precio, Clasificacion clasificacion, Valoracion valoracion) {
+    public Juego(Integer idJuego, String nombre, String descripcion, String dirportada, String dirminiatura, String requisitosMIn, String precio, String requisitosRec, Clasificacion clasificacion, Valoracion valoracion) {
         this.idJuego = idJuego;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.dirportada = dirportada;
         this.dirminiatura = dirminiatura;
         this.requisitosMIn = requisitosMIn;
-        this.requisitosRec = requisitosRec;
         this.precio = precio;
+        this.requisitosRec = requisitosRec;
         this.clasificacion = clasificacion;
         this.valoracion = valoracion;
     }
 
-    
+    public Juego(Integer idJuego) {
+        this.idJuego = idJuego;
+    }
 
     public Integer getIdJuego() {
         return idJuego;
@@ -130,20 +132,20 @@ public class Juego implements Serializable {
         this.requisitosMIn = requisitosMIn;
     }
 
-    public String getRequisitosRec() {
-        return requisitosRec;
-    }
-
-    public void setRequisitosRec(String requisitosRec) {
-        this.requisitosRec = requisitosRec;
-    }
-
     public String getPrecio() {
         return precio;
     }
 
     public void setPrecio(String precio) {
         this.precio = precio;
+    }
+
+    public String getRequisitosRec() {
+        return requisitosRec;
+    }
+
+    public void setRequisitosRec(String requisitosRec) {
+        this.requisitosRec = requisitosRec;
     }
 
     public Clasificacion getClasificacion() {
