@@ -5,19 +5,62 @@
  */
 package Vista;
 
+import Controlador.JuegoJpaController;
+import Entidades.Juego;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario iTC
  */
 public class EditarJuego extends javax.swing.JFrame {
-
+    Controlador.JuegoJpaController cjuego= new JuegoJpaController();
+     List<Entidades.Juego> listaju = cjuego.findJuegoEntities();
+     Entidades.Juego j=new Juego();
+     
     /**
      * Creates new form AnadirJuego
      */
-    public EditarJuego() {
+    public EditarJuego(int id) {  
         initComponents();
-                setResizable(false);
+        setResizable(false);
         setLocation(800, 200);
+        for (int i = 0; i < listaju.size(); i++) {
+            if(id==listaju.get(i).getIdJuego()){
+                j=listaju.get(i);
+                txtDescripcion.setText(listaju.get(i).getDescripcion());
+                txtNombreJuego.setText(listaju.get(i).getNombre());
+                txtPrecio.setText(listaju.get(i).getPrecio());
+                txtRequisitosMin.setText(listaju.get(i).getRequisitosMIn());
+                txtRequisitosrec.setText(listaju.get(i).getRequisitosRec());
+                txtRutajuego.setText(listaju.get(i).getDirjuego());
+                txtRutaminiatura.setText(listaju.get(i).getDirminiatura());
+                txtrutaportada.setText(listaju.get(i).getDirportada());
+                if(listaju.get(i).getClasificacion().getTipo().equals("Accion")){
+                    btnAccion.doClick();
+                }
+                 if(listaju.get(i).getClasificacion().getTipo().equals("Terror")){
+                    btnTerror.doClick();
+                }
+                  if(listaju.get(i).getClasificacion().getTipo().equals("Aventura")){
+                    btnAventura.doClick();
+                }
+                 if(listaju.get(i).getClasificacion().getTipo().equals("Multijugador")){
+                    btnMultijugador.doClick();
+                }
+                  if(listaju.get(i).getClasificacion().getTipo().equals("Mundo abierto")){
+                    btnMundoAbierto.doClick();
+                }
+            }
+        }
+        
+    }
+
+    private EditarJuego() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -46,8 +89,8 @@ public class EditarJuego extends javax.swing.JFrame {
         txtDescripcion = new javax.swing.JTextArea();
         txtRutajuego = new javax.swing.JTextField();
         SCRR = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        txtRutaportada = new javax.swing.JTextField();
+        txtRequisitosrec = new javax.swing.JTextArea();
+        txtRutaminiatura = new javax.swing.JTextField();
         btnAccion = new javax.swing.JRadioButton();
         btnTerror = new javax.swing.JRadioButton();
         btnAventura = new javax.swing.JRadioButton();
@@ -56,6 +99,10 @@ public class EditarJuego extends javax.swing.JFrame {
         GuardarEdicion = new javax.swing.JButton();
         SCRM = new javax.swing.JScrollPane();
         txtRequisitosMin = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        txtrutaportada = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editar Juego");
@@ -97,8 +144,8 @@ public class EditarJuego extends javax.swing.JFrame {
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel16.setText("IMAGEN");
-        JPeditarJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+        jLabel16.setText("IMAGEN Miniatura");
+        JPeditarJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, 30));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
@@ -125,6 +172,7 @@ public class EditarJuego extends javax.swing.JFrame {
         txtPrecio.setText("99.99");
         JPeditarJuego.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 460, -1));
 
+        txtNombreJuego.setEditable(false);
         txtNombreJuego.setBackground(new java.awt.Color(6, 11, 25));
         txtNombreJuego.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtNombreJuego.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,7 +190,7 @@ public class EditarJuego extends javax.swing.JFrame {
         txtDescripcion.setWrapStyleWord(true);
         SCdes.setViewportView(txtDescripcion);
 
-        JPeditarJuego.add(SCdes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 460, -1));
+        JPeditarJuego.add(SCdes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 460, -1));
 
         txtRutajuego.setBackground(new java.awt.Color(6, 11, 25));
         txtRutajuego.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
@@ -156,28 +204,32 @@ public class EditarJuego extends javax.swing.JFrame {
         });
         JPeditarJuego.add(txtRutajuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, 460, -1));
 
-        jTextArea3.setBackground(new java.awt.Color(6, 11, 25));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Sistema Operativo: Windows 10 64-Bit\nCPU: Intel Core i5-2500K o AMD Ryzen R5 1600X\nRAM: 12 GB de RAM\nHDD (de lanzamiento): 175 GB\nGráficos: NVIDIA GeForce GTX 970 / GTX 1660 Super o Radeon R9 390 / AMD RX 580\nDirectX 12\nConexión a internet");
-        jTextArea3.setWrapStyleWord(true);
-        SCRR.setViewportView(jTextArea3);
+        txtRequisitosrec.setBackground(new java.awt.Color(6, 11, 25));
+        txtRequisitosrec.setColumns(20);
+        txtRequisitosrec.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtRequisitosrec.setForeground(new java.awt.Color(255, 255, 255));
+        txtRequisitosrec.setLineWrap(true);
+        txtRequisitosrec.setRows(5);
+        txtRequisitosrec.setText("Sistema Operativo: Windows 10 64-Bit\nCPU: Intel Core i5-2500K o AMD Ryzen R5 1600X\nRAM: 12 GB de RAM\nHDD (de lanzamiento): 175 GB\nGráficos: NVIDIA GeForce GTX 970 / GTX 1660 Super o Radeon R9 390 / AMD RX 580\nDirectX 12\nConexión a internet");
+        txtRequisitosrec.setWrapStyleWord(true);
+        SCRR.setViewportView(txtRequisitosrec);
 
         JPeditarJuego.add(SCRR, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 350, 120));
 
-        txtRutaportada.setBackground(new java.awt.Color(6, 11, 25));
-        txtRutaportada.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        txtRutaportada.setForeground(new java.awt.Color(255, 255, 255));
-        txtRutaportada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtRutaportada.setText("rutaimagen");
-        JPeditarJuego.add(txtRutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 460, -1));
+        txtRutaminiatura.setBackground(new java.awt.Color(6, 11, 25));
+        txtRutaminiatura.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtRutaminiatura.setForeground(new java.awt.Color(255, 255, 255));
+        txtRutaminiatura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtRutaminiatura.setText("rutaimagen");
+        txtRutaminiatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRutaminiaturaActionPerformed(evt);
+            }
+        });
+        JPeditarJuego.add(txtRutaminiatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 460, -1));
 
         btnAccion.setBackground(new java.awt.Color(6, 11, 25));
         btnAccion.setForeground(new java.awt.Color(204, 204, 204));
-        btnAccion.setSelected(true);
         btnAccion.setText("Accion");
         btnAccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +250,6 @@ public class EditarJuego extends javax.swing.JFrame {
 
         btnMultijugador.setBackground(new java.awt.Color(6, 11, 25));
         btnMultijugador.setForeground(new java.awt.Color(204, 204, 204));
-        btnMultijugador.setSelected(true);
         btnMultijugador.setText("Multijugador");
         JPeditarJuego.add(btnMultijugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 720, -1, -1));
 
@@ -216,7 +267,7 @@ public class EditarJuego extends javax.swing.JFrame {
                 GuardarEdicionActionPerformed(evt);
             }
         });
-        JPeditarJuego.add(GuardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 770, 400, 70));
+        JPeditarJuego.add(GuardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 770, 400, 70));
 
         txtRequisitosMin.setBackground(new java.awt.Color(6, 11, 25));
         txtRequisitosMin.setColumns(20);
@@ -229,6 +280,40 @@ public class EditarJuego extends javax.swing.JFrame {
         SCRM.setViewportView(txtRequisitosMin);
 
         JPeditarJuego.add(SCRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 350, 120));
+
+        jButton1.setBackground(new java.awt.Color(6, 11, 25));
+        jButton1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        JPeditarJuego.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 370, -1, 30));
+
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel20.setText("IMAGEN Portada");
+        JPeditarJuego.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+
+        txtrutaportada.setBackground(new java.awt.Color(6, 11, 25));
+        txtrutaportada.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtrutaportada.setForeground(new java.awt.Color(255, 255, 255));
+        txtrutaportada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JPeditarJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 460, -1));
+
+        jButton2.setBackground(new java.awt.Color(6, 11, 25));
+        jButton2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        JPeditarJuego.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -247,7 +332,41 @@ public class EditarJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GuardarEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarEdicionActionPerformed
-        this.setVisible(false);
+        
+        
+        
+        try {
+            j.setDescripcion(txtDescripcion.getText());
+            j.setPrecio(txtPrecio.getText());
+            j.setDirminiatura(txtRutaminiatura.getText());
+            j.setDirportada(txtrutaportada.getText());
+            j.setRequisitosMIn(txtRequisitosMin.getText());
+            j.setRequisitosRec(txtRequisitosrec.getText());
+            j.setDirjuego(txtRutajuego.getText());
+            String clasificacion = "";
+            if (btnAccion.isSelected()) {
+                clasificacion = "Accion";
+            }
+            if (btnAventura.isSelected()) {
+                clasificacion = clasificacion + "Aventura";
+            }
+            if (btnMultijugador.isSelected()) {
+                clasificacion = clasificacion + "Multijugador";
+            }
+            if (btnMundoAbierto.isSelected()) {
+                clasificacion = clasificacion + "Mundo Abierto";
+            }
+            if (btnTerror.isSelected()) {
+                clasificacion = clasificacion + "Terror";
+            }
+            j.getClasificacion().setTipo(clasificacion);
+            
+            cjuego.edit(j);
+            
+            this.setVisible(false);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al editar el juego");
+        }
                 
     }//GEN-LAST:event_GuardarEdicionActionPerformed
 
@@ -258,6 +377,18 @@ public class EditarJuego extends javax.swing.JFrame {
     private void txtRutajuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutajuegoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutajuegoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtRutaminiaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutaminiaturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRutaminiaturaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,6 +422,7 @@ public class EditarJuego extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EditarJuego().setVisible(true);
+                
             }
         });
     }
@@ -307,6 +439,8 @@ public class EditarJuego extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnMundoAbierto;
     private javax.swing.JRadioButton btnTerror;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -316,12 +450,14 @@ public class EditarJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JTextArea txtDescripcion;
     private javax.swing.JTextField txtNombreJuego;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextArea txtRequisitosMin;
+    private javax.swing.JTextArea txtRequisitosrec;
     private javax.swing.JTextField txtRutajuego;
-    private javax.swing.JTextField txtRutaportada;
+    private javax.swing.JTextField txtRutaminiatura;
+    private javax.swing.JTextField txtrutaportada;
     // End of variables declaration//GEN-END:variables
 }

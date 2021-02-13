@@ -9,6 +9,8 @@ import Controlador.JuegoJpaController;
 import Entidades.Juego;
 import java.awt.Color;
 import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,15 +20,24 @@ import javax.swing.JOptionPane;
 public class paginaInicio extends javax.swing.JFrame {
 
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
-
+    List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+    List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
     /**
      * Creates new form INICIO
      */
     public paginaInicio() {
+
         // Codigo de ordenacion de valoraciones de juego para las tendencias (mayor a menor valorados)
         initComponents();
         setResizable(false);
-        List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+
+        DefaultListModel modelo = new DefaultListModel();
+        for (int i = 0; i < listaJ.size(); i++) {
+            modelo.addElement(listaJ.get(i).getNombre());
+        }
+        JlistJuegosadmin.setModel(modelo);
+        JlistJuegosadmin.setVisible(true);
+
         Entidades.Juego[] ListaT = new Entidades.Juego[9];
         double may = 0;
         double actual = 0;
@@ -192,7 +203,7 @@ public class paginaInicio extends javax.swing.JFrame {
         Pjuegos = new javax.swing.JPanel();
         PAdministrarJuegos = new javax.swing.JPanel();
         SPjuegos = new javax.swing.JScrollPane();
-        JlistJuegos = new javax.swing.JList<String>();
+        JlistJuegosadmin = new javax.swing.JList<String>();
         btnAgregarJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -832,16 +843,11 @@ public class paginaInicio extends javax.swing.JFrame {
         PAdministrarJuegos.setBackground(new java.awt.Color(6, 11, 25));
         PAdministrarJuegos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JlistJuegos.setBackground(new java.awt.Color(6, 11, 25));
-        JlistJuegos.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        JlistJuegos.setForeground(new java.awt.Color(255, 255, 255));
-        JlistJuegos.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Assassins creed: Valhala", "Call of duty black ops cold war", "Crisis 1", "Counter Strike global ofensive", "Halo Mastershif collletion", "Need for speed Hot persuit" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        JlistJuegos.setToolTipText("");
-        SPjuegos.setViewportView(JlistJuegos);
+        JlistJuegosadmin.setBackground(new java.awt.Color(6, 11, 25));
+        JlistJuegosadmin.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        JlistJuegosadmin.setForeground(new java.awt.Color(255, 255, 255));
+        JlistJuegosadmin.setToolTipText("");
+        SPjuegos.setViewportView(JlistJuegosadmin);
 
         PAdministrarJuegos.add(SPjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
 
@@ -1096,8 +1102,15 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        EditarJuego nuevo = new EditarJuego();
-        nuevo.setVisible(true);
+        int id=0;
+        for (int i = 0; i < listaedit.size(); i++) {
+            if (JlistJuegosadmin.getSelectedValue().equals(listaedit.get(i).getNombre())) {
+                id=listaedit.get(i).getIdJuego();
+                EditarJuego nuevo = new EditarJuego(id);
+                nuevo.setVisible(true);
+            }
+        }
+        
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -1245,7 +1258,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JPanel JPtendencia7;
     private javax.swing.JPanel JPtendencia8;
     private javax.swing.JPanel JPtendencia9;
-    private javax.swing.JList<String> JlistJuegos;
+    private javax.swing.JList<String> JlistJuegosadmin;
     private javax.swing.JPanel PAdministrarJuegos;
     private javax.swing.JTabbedPane PesstaañasAdmin;
     private javax.swing.JPanel Pjuegos;

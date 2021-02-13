@@ -296,7 +296,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="txtRutaimg">
+            <Component class="javax.swing.JTextField" name="txtRutaarchivo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="19" green="b" red="6" type="rgb"/>

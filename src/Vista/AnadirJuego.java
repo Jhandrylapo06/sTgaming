@@ -57,7 +57,7 @@ public class AnadirJuego extends javax.swing.JFrame {
         txtTituloJuego = new javax.swing.JTextField();
         SPdes = new javax.swing.JScrollPane();
         txtDescripcion = new javax.swing.JTextArea();
-        txtRutaimg = new javax.swing.JTextField();
+        txtRutaarchivo = new javax.swing.JTextField();
         SCRR = new javax.swing.JScrollPane();
         txtRequerimientosRe = new javax.swing.JTextArea();
         txtrutaportada = new javax.swing.JTextField();
@@ -159,11 +159,11 @@ public class AnadirJuego extends javax.swing.JFrame {
 
         PanelNuevoJuego.add(SPdes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 460, -1));
 
-        txtRutaimg.setBackground(new java.awt.Color(6, 11, 25));
-        txtRutaimg.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        txtRutaimg.setForeground(new java.awt.Color(255, 255, 255));
-        txtRutaimg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PanelNuevoJuego.add(txtRutaimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, 460, -1));
+        txtRutaarchivo.setBackground(new java.awt.Color(6, 11, 25));
+        txtRutaarchivo.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtRutaarchivo.setForeground(new java.awt.Color(255, 255, 255));
+        txtRutaarchivo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PanelNuevoJuego.add(txtRutaarchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, 460, -1));
 
         txtRequerimientosRe.setBackground(new java.awt.Color(6, 11, 25));
         txtRequerimientosRe.setColumns(20);
@@ -321,7 +321,7 @@ public class AnadirJuego extends javax.swing.JFrame {
             valora.setValor("0.0");
             cvaloracion.create(valora);
             System.out.println("Valoracion");
-            Juego juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(), clasi, valora);
+            Juego juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(),txtRutaarchivo.getText(), clasi, valora);
             System.out.println("Se crea juego");
             System.out.println(juego.getNombre());
             System.out.println(juego.getDescripcion());
@@ -413,7 +413,7 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JTextField txtPrecioJuego;
     private javax.swing.JTextArea txtRequerimientosMin;
     private javax.swing.JTextArea txtRequerimientosRe;
-    private javax.swing.JTextField txtRutaimg;
+    private javax.swing.JTextField txtRutaarchivo;
     private javax.swing.JTextField txtTituloJuego;
     private javax.swing.JTextField txtrutaportada;
     private javax.swing.JTextField txtrutaportada1;
