@@ -5,11 +5,28 @@
  */
 package Vista;
 
+import Controlador.CuentaJpaController;
+import Controlador.UsuarioJpaController;
+import Entidades.Usuario;
+import java.util.List;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario iTC
  */
 public class RecuperarContrasena extends javax.swing.JFrame {
+    
+    int codigo = (int) Math.floor(Math.random() * 5000 + 1);
 
     /**
      * Creates new form RecuperarContrasena
@@ -18,10 +35,11 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocation(800, 200);
+        btnCancelar.setVisible(false);
         panelguardar.setVisible(false);
         panelverificar.setVisible(false);
-        TextPrompt crecuperar=new TextPrompt("Correo o nombre de usuario", txtmailrecuperar);
-        TextPrompt codigp=new TextPrompt("Escriba el codigo de verificación", txtcodConf);
+        TextPrompt crecuperar = new TextPrompt("Ingrese el correo con el que se registro", txtMailR);
+        TextPrompt codigp = new TextPrompt("Escriba el codigo de verificación", txtcodConf);
     }
 
     /**
@@ -34,16 +52,17 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     private void initComponents() {
 
         panelenviarC = new javax.swing.JPanel();
-        txtmailrecuperar = new javax.swing.JTextField();
+        txtMailR = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnEnviarCodigo = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         panelverificar = new javax.swing.JPanel();
         txtcodConf = new javax.swing.JTextField();
-        btnVerificar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
+        btnVerificar1 = new javax.swing.JButton();
         panelguardar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnGuardarNPs = new javax.swing.JButton();
@@ -61,17 +80,12 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         panelenviarC.setBackground(new java.awt.Color(6, 11, 25));
         panelenviarC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtmailrecuperar.setBackground(new java.awt.Color(6, 11, 25));
-        txtmailrecuperar.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 18)); // NOI18N
-        txtmailrecuperar.setForeground(new java.awt.Color(255, 255, 255));
-        txtmailrecuperar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtmailrecuperar.setBorder(null);
-        txtmailrecuperar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtmailrecuperarActionPerformed(evt);
-            }
-        });
-        panelenviarC.add(txtmailrecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 377, 30));
+        txtMailR.setBackground(new java.awt.Color(6, 11, 25));
+        txtMailR.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 18)); // NOI18N
+        txtMailR.setForeground(new java.awt.Color(255, 255, 255));
+        txtMailR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtMailR.setBorder(null);
+        panelenviarC.add(txtMailR, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 377, 30));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,28 +117,23 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         panelverificar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtcodConf.setBackground(new java.awt.Color(6, 11, 25));
-        txtcodConf.setFont(new java.awt.Font("ROG Fonts", 0, 24)); // NOI18N
+        txtcodConf.setFont(new java.awt.Font("Candara Light", 0, 24)); // NOI18N
         txtcodConf.setForeground(new java.awt.Color(255, 255, 255));
         txtcodConf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtcodConf.setBorder(null);
-        txtcodConf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcodConfActionPerformed(evt);
-            }
-        });
         panelverificar.add(txtcodConf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 560, 70));
 
-        btnVerificar.setBackground(new java.awt.Color(6, 11, 25));
-        btnVerificar.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        btnVerificar.setForeground(new java.awt.Color(102, 153, 255));
-        btnVerificar.setText("Verificar");
-        btnVerificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelar.setBackground(new java.awt.Color(6, 11, 25));
+        btnCancelar.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(102, 153, 255));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerificarActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
-        panelverificar.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 50));
+        panelverificar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 120, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         panelverificar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 510, 10));
@@ -134,6 +143,18 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Ingrese el codigo de verificación");
         panelverificar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 360, 40));
+
+        btnVerificar1.setBackground(new java.awt.Color(6, 11, 25));
+        btnVerificar1.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnVerificar1.setForeground(new java.awt.Color(102, 153, 255));
+        btnVerificar1.setText("Verificar");
+        btnVerificar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVerificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificar1ActionPerformed(evt);
+            }
+        });
+        panelverificar.add(btnVerificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 220, 50));
 
         panelguardar.setBackground(new java.awt.Color(6, 11, 25));
         panelguardar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -213,33 +234,134 @@ public class RecuperarContrasena extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtmailrecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmailrecuperarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtmailrecuperarActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.setVisible(false);
+        Login n = new Login();
+        n.setVisible(true);
+        
 
-    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
-        panelverificar.setVisible(false);
-        panelguardar.setVisible(true);
-    }//GEN-LAST:event_btnVerificarActionPerformed
-
-    private void txtcodConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodConfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcodConfActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEnviarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarCodigoActionPerformed
-    panelenviarC.setVisible(false);
-    panelverificar.setVisible(true);
+        try {
+            Controlador.UsuarioJpaController cusuarios = new UsuarioJpaController();
+            List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
+            boolean verificador = true;
+            for (int i = 0; i < listaU.size(); i++) {
+                if (listaU.get(i).getCorreo().equals(txtMailR.getText())) {
+                    verificador = true;
+                    try {
+                        //envio de codigo a correo
+                        Properties prop = new Properties();
+                        prop.setProperty("mail.smtp.host", "smtp.gmail.com");
+                        prop.setProperty("mail.smtp.starttls.enable", "true");
+                        prop.setProperty("mail.smtp.port", "587");
+                        prop.setProperty("mail.smtp.auth", "true");
+                        
+                        Session sesion = Session.getDefaultInstance(prop);
+                        
+                        String Remitente = "sstgaming9@gmail.com";
+                        String contra = "proyectofinal123";
+                        String correoenviar = txtMailR.getText();
+                        String asunto = "CODIGO DE CONFIRMACION";
+                        String codigoenvio = String.valueOf(codigo);
+                        
+                        MimeMessage mensaje = new MimeMessage(sesion);
+                        mensaje.setFrom(new InternetAddress(Remitente));
+                        
+                        mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(correoenviar));
+                        mensaje.setSubject(asunto);
+                        mensaje.setText(codigoenvio);
+                        
+                        Transport t = sesion.getTransport("smtp");
+                        t.connect(Remitente, contra);
+                        t.sendMessage(mensaje, mensaje.getRecipients(Message.RecipientType.TO));
+                        t.close();
+                        panelenviarC.setVisible(false);
+                        panelverificar.setVisible(true);
+                    } catch (MessagingException ex) {
+                        Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+                        JOptionPane.showMessageDialog(null, "VERIFICAR EL CORREO INGRESADO");
+                    }
+                    break;
+                } else {
+                    verificador = false;
+                }
+                
+            }
+            if (verificador == false) {
+                JOptionPane.showMessageDialog(null, "El correo que se ingreso no esta registrado");
+                
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error");
+            Login n = new Login();
+            n.setVisible(true);
+            this.setVisible(false);
+        }
+        
+
     }//GEN-LAST:event_btnEnviarCodigoActionPerformed
 
     private void btnGuardarNPsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarNPsActionPerformed
-        this.setVisible(false);
-        Login g=new Login();
-        g.setVisible(true);
+        
+        Login n = new Login();
+        
+        try {
+            boolean c = true;
+            
+            if (txtPassnueva.getText().equals(txtPassCOnfir.getText())) {
+                c = false;
+                if (txtPassnueva.getText().length() < 8) {
+                    JOptionPane.showMessageDialog(null, "Las contraseñas debe contener almenos 8 caracteres");
+                    c = true;
+                    
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden, verificar");
+            }
+            
+            if (c == false) {
+                Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
+                Controlador.UsuarioJpaController cusuarios = new UsuarioJpaController();
+                List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
+                boolean verificador = true;
+                for (int i = 0; i < listaU.size(); i++) {
+                    
+                    if (listaU.get(i).getCorreo().equals(txtMailR.getText())) {
+                        listaU.get(i).getCuentauser().setContrasena(txtPassnueva.getText());
+                        ccuenta.edit(listaU.get(i).getCuentauser());
+                        n.setVisible(true);
+                        this.setVisible(false);
+                    }
+                }
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error");
+            
+            n.setVisible(true);
+            this.setVisible(false);
+        }
+
     }//GEN-LAST:event_btnGuardarNPsActionPerformed
 
     private void txtPassnuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassnuevaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassnuevaActionPerformed
+
+    private void btnVerificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificar1ActionPerformed
+        if (txtcodConf.getText().equals(String.valueOf(codigo))) {
+            panelverificar.setVisible(false);
+            panelguardar.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "El codigo ingresado es incorrecto");
+            btnCancelar.setVisible(true);
+            
+        }
+        
+
+    }//GEN-LAST:event_btnVerificar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,9 +399,10 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEnviarCodigo;
     private javax.swing.JButton btnGuardarNPs;
-    private javax.swing.JButton btnVerificar;
+    private javax.swing.JButton btnVerificar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -293,9 +416,9 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     private javax.swing.JPanel panelenviarC;
     private javax.swing.JPanel panelguardar;
     private javax.swing.JPanel panelverificar;
+    private javax.swing.JTextField txtMailR;
     private javax.swing.JPasswordField txtPassCOnfir;
     private javax.swing.JPasswordField txtPassnueva;
     private javax.swing.JTextField txtcodConf;
-    private javax.swing.JTextField txtmailrecuperar;
     // End of variables declaration//GEN-END:variables
 }

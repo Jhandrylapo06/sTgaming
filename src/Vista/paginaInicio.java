@@ -34,6 +34,8 @@ public class paginaInicio extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
+        SPgeneral = new javax.swing.JScrollPane();
+        pGeneral = new javax.swing.JPanel();
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
         SPMisjuegos = new javax.swing.JScrollPane();
@@ -175,8 +177,14 @@ public class paginaInicio extends javax.swing.JFrame {
         menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1440, 1080));
+        setSize(new java.awt.Dimension(1024, 780));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        SPgeneral.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+        pGeneral.setMinimumSize(new java.awt.Dimension(1922, 780));
+        pGeneral.setPreferredSize(new java.awt.Dimension(1922, 720));
+        pGeneral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JPMisjuegos.setBackground(new java.awt.Color(0, 0, 0, 50));
         JPMisjuegos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -205,11 +213,12 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPMisjuegos.add(SPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 250, 380));
 
-        getContentPane().add(JPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 960));
+        pGeneral.add(JPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 870));
 
         JPApartadoTendencias.setBackground(new java.awt.Color(0, 0, 0, 100));
         JPApartadoTendencias.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        SPtendencias.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         SPtendencias.setToolTipText("");
         SPtendencias.setHorizontalScrollBar(null);
 
@@ -408,9 +417,9 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPtendencias.setViewportView(jPanel5);
 
-        JPApartadoTendencias.add(SPtendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
+        JPApartadoTendencias.add(SPtendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
 
-        getContentPane().add(JPApartadoTendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
+        pGeneral.add(JPApartadoTendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         JPapartadoTienda.setBackground(new java.awt.Color(0, 0, 0, 100));
         JPapartadoTienda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -601,7 +610,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPjuegosTienda.setViewportView(JPjuegoBuscado);
 
-        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 910));
+        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 810));
 
         txtbuscar2.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar2.setFont(new java.awt.Font("Eras Light ITC", 0, 24)); // NOI18N
@@ -620,7 +629,7 @@ public class paginaInicio extends javax.swing.JFrame {
         });
         JPapartadoTienda.add(btnBuscarJuegoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
 
-        getContentPane().add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
+        pGeneral.add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         JPapartadoComprar.setBackground(new java.awt.Color(0, 0, 0, 100));
         JPapartadoComprar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -744,7 +753,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPJuego.setViewportView(JPjuego);
 
-        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 910));
+        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 810));
 
         txtbuscar3.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar3.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
@@ -763,7 +772,7 @@ public class paginaInicio extends javax.swing.JFrame {
         });
         JPapartadoComprar.add(btnBuscarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
 
-        getContentPane().add(JPapartadoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
+        pGeneral.add(JPapartadoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         jPApartadoAdmin.setBackground(new java.awt.Color(0, 0, 0, 100));
         jPApartadoAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -937,9 +946,9 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SCadministracion.setViewportView(jPanel6);
 
-        jPApartadoAdmin.add(SCadministracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 930));
+        jPApartadoAdmin.add(SCadministracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
 
-        getContentPane().add(jPApartadoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 960));
+        pGeneral.add(jPApartadoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         JPmenu.setBackground(new java.awt.Color(0, 0, 0, 50));
         JPmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -996,10 +1005,14 @@ public class paginaInicio extends javax.swing.JFrame {
         });
         JPmenu.add(btnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 20, 200, 50));
 
-        getContentPane().add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
+        pGeneral.add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/FONDOA1.jpg"))); // NOI18N
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1920, -1));
+        pGeneral.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1920, 970));
+
+        SPgeneral.setViewportView(pGeneral);
+
+        getContentPane().add(SPgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1214,6 +1227,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JScrollPane SPJuego;
     private javax.swing.JScrollPane SPMisjuegos;
     private javax.swing.JScrollPane SPRRe;
+    private javax.swing.JScrollPane SPgeneral;
     private javax.swing.JScrollPane SPjuegos;
     private javax.swing.JScrollPane SPtendencias;
     private javax.swing.JScrollPane SpUsers;
@@ -1310,6 +1324,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
+    private javax.swing.JPanel pGeneral;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtbuscar1;
     private javax.swing.JTextField txtbuscar2;

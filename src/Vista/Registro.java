@@ -388,13 +388,13 @@ public class Registro extends javax.swing.JFrame {
             }
             if (txtPasUS.getText().equals(txtPasCon.getText())) {
                 c = false;
+                if (txtPasUS.getText().length() < 8) {
+                    JOptionPane.showMessageDialog(null, "Las contraseñas debe contener almenos 8 caracteres");
+                    c = true;
+
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden, verificar");
-            }
-            if (txtPasUS.getText().length() < 8) {
-                JOptionPane.showMessageDialog(null, "Las contraseñas debe contener almenos 8 caracteres");
-                c = true;
-
             }
 
             if (e == false && c == false) {
@@ -472,7 +472,7 @@ public class Registro extends javax.swing.JFrame {
 
         } catch (Exception e) {
             System.out.println("Ha ocurrido un error");
-            Login n=new Login();
+            Login n = new Login();
             this.setVisible(false);
             n.setVisible(true);
         }
