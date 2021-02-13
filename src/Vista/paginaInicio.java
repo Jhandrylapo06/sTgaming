@@ -8,6 +8,7 @@ package Vista;
 import Controlador.JuegoJpaController;
 import Controlador.RolJpaController;
 import Controlador.UsuarioJpaController;
+import Controlador.exceptions.NonexistentEntityException;
 import Entidades.Juego;
 import Entidades.Rol;
 import java.awt.Color;
@@ -30,6 +31,7 @@ public class paginaInicio extends javax.swing.JFrame {
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
     List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
+    DefaultListModel modelo = new DefaultListModel();
 
     /**
      * Creates new form INICIO
@@ -46,7 +48,7 @@ public class paginaInicio extends javax.swing.JFrame {
         }
         JListUsuarios.setModel(modelousu);
         JLMisjuegos.setVisible(true);
-        DefaultListModel modelo = new DefaultListModel();
+
         for (int i = 0; i < listaJ.size(); i++) {
             modelo.addElement(listaJ.get(i).getNombre());
         }
@@ -1117,10 +1119,44 @@ public class paginaInicio extends javax.swing.JFrame {
     private void btnAgregarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJuegoActionPerformed
         AnadirJuego nuevo = new AnadirJuego();
         nuevo.setVisible(true);
+        nuevo.modelo(modelo);
+        JlistJuegosadmin.setModel(modelo);
+        JlistJuegosadmin.setVisible(true);
+        
+        
+        
+       
+        
+       
     }//GEN-LAST:event_btnAgregarJuegoActionPerformed
-
+    
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         JOptionPane.showConfirmDialog(null, "Estas seguro de dar de baja/eliminar este juego", "Confirmar", WIDTH);
+        int id = 0;
+        DefaultListModel modelo2= new DefaultListModel();
+       
+            for (int i = 0; i < listaedit.size(); i++) {
+            if (JlistJuegosadmin.getSelectedValue().equals(listaedit.get(i).getNombre())) {
+                try {
+                    id = listaedit.get(i).getIdJuego();
+                    
+                    cjuego.destroy(id);
+                    modelo.remove(i);
+                    listaedit.remove(listaedit.get(i));
+                    
+                    JlistJuegosadmin.setModel(modelo);
+                    JlistJuegosadmin.setVisible(true);
+
+                } catch (NonexistentEntityException ex) {
+                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+        }
+        
+        
+
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

@@ -65,7 +65,7 @@ public class JuegoJpaController implements Serializable {
             }
         }
     }
-
+    
     public void edit(Juego juego) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {

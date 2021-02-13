@@ -11,6 +11,7 @@ import Controlador.ValoracionJpaController;
 import Entidades.Clasificacion;
 import Entidades.Juego;
 import Entidades.Valoracion;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,7 +26,8 @@ public class AnadirJuego extends javax.swing.JFrame {
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
     Controlador.ClasificacionJpaController cclasificacion=new ClasificacionJpaController();
     Controlador.ValoracionJpaController cvaloracion= new ValoracionJpaController();
-
+    
+    Entidades.Juego juego = null;
     public AnadirJuego() {
         initComponents();
         setResizable(false);
@@ -291,9 +293,8 @@ public class AnadirJuego extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void btnGuardarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarJuegoActionPerformed
-        System.out.println("Entra boton");
         Entidades.Clasificacion clasi = new Clasificacion();
         String clasificacion = "";
         if (btnAccion.isSelected()) {
@@ -320,22 +321,17 @@ public class AnadirJuego extends javax.swing.JFrame {
             Entidades.Valoracion valora = new Valoracion();
             valora.setValor("0.0");
             cvaloracion.create(valora);
-            System.out.println("Valoracion");
-            Juego juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(),txtRutaarchivo.getText(), clasi, valora);
-            System.out.println("Se crea juego");
-            System.out.println(juego.getNombre());
-            System.out.println(juego.getDescripcion());
-            System.out.println(juego.getPrecio());
-            System.out.println(juego.getRequisitosMIn());
-            System.out.println(juego.getRequisitosRec());
-            System.out.println(juego.getValoracion().getValor());
-            System.out.println(juego.getClasificacion().getTipo());
+            juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(),txtRutaarchivo.getText(), clasi, valora);
             cjuego.create(juego);
-            System.out.println("Añadido");
             this.setVisible(false);
         }
+       
+        
     }//GEN-LAST:event_btnGuardarJuegoActionPerformed
-
+    public DefaultListModel modelo (DefaultListModel model){
+        model.addElement(juego.getNombre());
+        return model;
+    }
     private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccionActionPerformed
