@@ -8,6 +8,7 @@
     <class>Entidades.Usuario</class>
     <class>Entidades.Juego</class>
     <class>Entidades.Cuenta</class>
+    <class>Entidades.ListaJuegos</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/stgaming?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="jhandry"/>

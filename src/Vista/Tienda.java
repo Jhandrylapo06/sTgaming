@@ -86,12 +86,22 @@ public class Tienda extends javax.swing.JFrame {
         txtCodigo.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
         txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyTyped(evt);
+            }
+        });
         JPProcesoCompra.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 460, -1));
 
         txtNumtarjeta.setBackground(new java.awt.Color(6, 11, 25));
         txtNumtarjeta.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtNumtarjeta.setForeground(new java.awt.Color(255, 255, 255));
         txtNumtarjeta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumtarjeta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumtarjetaKeyTyped(evt);
+            }
+        });
         JPProcesoCompra.add(txtNumtarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 460, -1));
 
         lblPrecioTotal.setEditable(false);
@@ -156,6 +166,11 @@ public class Tienda extends javax.swing.JFrame {
         txtfVencimiento.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtfVencimiento.setForeground(new java.awt.Color(255, 255, 255));
         txtfVencimiento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtfVencimiento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtfVencimientoKeyTyped(evt);
+            }
+        });
         JPProcesoCompra.add(txtfVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 460, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,6 +188,8 @@ public class Tienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
+        
+        
         this.setVisible(false);
         
                 
@@ -189,6 +206,27 @@ public class Tienda extends javax.swing.JFrame {
     private void lblPrecioTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblPrecioTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblPrecioTotalActionPerformed
+
+    private void txtNumtarjetaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumtarjetaKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNumtarjetaKeyTyped
+
+    private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCodigoKeyTyped
+
+    private void txtfVencimientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfVencimientoKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtfVencimientoKeyTyped
 
     /**
      * @param args the command line arguments
