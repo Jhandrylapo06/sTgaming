@@ -194,5 +194,14 @@ public class UsuarioJpaController implements Serializable {
             em.close();
         }
     }
+    public List<Entidades.Usuario> Buscarusuario(String nombreb){
+    
+        Entidades.Usuario jbuscado;
+        EntityManager em= getEntityManager();
+        Query query=em.createQuery("SELECT j FROM Usuario j WHERE j.nombre LIKE :nombre");
+        query.setParameter("nombre" ,nombreb+"%");
+        List<Entidades.Usuario> buscado= query.getResultList();
+        return buscado;
+    }
     
 }

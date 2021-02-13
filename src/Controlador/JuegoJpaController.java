@@ -24,7 +24,7 @@ import javax.persistence.Persistence;
  * @author ordon
  */
 public class JuegoJpaController implements Serializable {
-
+    
     public JuegoJpaController() {
         this.emf = Persistence.createEntityManagerFactory("sTgamingPU");
     }
@@ -193,6 +193,15 @@ public class JuegoJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    public List<Entidades.Juego> Buscarjuego(String nombreb){
+    
+        Entidades.Juego jbuscado;
+        EntityManager em= getEntityManager();
+        Query query=em.createQuery("SELECT j FROM Juego j WHERE j.nombre LIKE :nombre");
+        query.setParameter("nombre" ,nombreb+"%");
+        List<Entidades.Juego> buscado= query.getResultList();
+        return buscado;
     }
     
 }

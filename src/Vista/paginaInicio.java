@@ -6,10 +6,14 @@
 package Vista;
 
 import Controlador.JuegoJpaController;
+import Controlador.RolJpaController;
 import Controlador.UsuarioJpaController;
 import Entidades.Juego;
+import Entidades.Rol;
 import java.awt.Color;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -22,6 +26,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
     Controlador.UsuarioJpaController cusuario = new UsuarioJpaController();
+    Controlador.RolJpaController crol= new RolJpaController();
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
     List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
@@ -34,9 +39,11 @@ public class paginaInicio extends javax.swing.JFrame {
         // Codigo de ordenacion de valoraciones de juego para las tendencias (mayor a menor valorados)
         initComponents();
         setResizable(false);
+        
+                
         DefaultListModel modelousu = new DefaultListModel();
         for (int i = 0; i <listauser.size(); i++) {
-            modelousu.addElement(listauser.get(i).getNombre()+" "+listauser.get(i).getApellido());
+            modelousu.addElement(listauser.get(i).getCuentauser().getNickname());
         }
         JListUsuarios.setModel(modelousu);
         JLMisjuegos.setVisible(true);
@@ -98,12 +105,13 @@ public class paginaInicio extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         SPgeneral = new javax.swing.JScrollPane();
         pGeneral = new javax.swing.JPanel();
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
         SPMisjuegos = new javax.swing.JScrollPane();
-        JLMisjuegos = new javax.swing.JList<String>();
+        JLMisjuegos = new javax.swing.JList<>();
         JPApartadoTendencias = new javax.swing.JPanel();
         SPtendencias = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
@@ -212,7 +220,7 @@ public class paginaInicio extends javax.swing.JFrame {
         Pjuegos = new javax.swing.JPanel();
         PAdministrarJuegos = new javax.swing.JPanel();
         SPjuegos = new javax.swing.JScrollPane();
-        JlistJuegosadmin = new javax.swing.JList<String>();
+        JlistJuegosadmin = new javax.swing.JList<>();
         btnAgregarJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -221,8 +229,8 @@ public class paginaInicio extends javax.swing.JFrame {
         JPAdminRol = new javax.swing.JPanel();
         JPadministrarRoles = new javax.swing.JPanel();
         SpUsers = new javax.swing.JScrollPane();
-        JListUsuarios = new javax.swing.JList<String>();
-        txtbuscar1 = new javax.swing.JTextField();
+        JListUsuarios = new javax.swing.JList<>();
+        txtbuscarusuario = new javax.swing.JTextField();
         btnBuscarUsuario = new javax.swing.JButton();
         btnAsignarAdmin = new javax.swing.JRadioButton();
         btnAsignarUser = new javax.swing.JRadioButton();
@@ -896,7 +904,11 @@ public class paginaInicio extends javax.swing.JFrame {
         txtbuscar.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
-        txtbuscar.setText("Call of duty cold war");
+        txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtbuscarKeyReleased(evt);
+            }
+        });
         PAdministrarJuegos.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
 
         btnBuscar.setBackground(new java.awt.Color(6, 11, 25));
@@ -929,10 +941,15 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPadministrarRoles.add(SpUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
 
-        txtbuscar1.setBackground(new java.awt.Color(51, 51, 51));
-        txtbuscar1.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
-        txtbuscar1.setForeground(new java.awt.Color(204, 204, 204));
-        JPadministrarRoles.add(txtbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
+        txtbuscarusuario.setBackground(new java.awt.Color(51, 51, 51));
+        txtbuscarusuario.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
+        txtbuscarusuario.setForeground(new java.awt.Color(204, 204, 204));
+        txtbuscarusuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtbuscarusuarioKeyReleased(evt);
+            }
+        });
+        JPadministrarRoles.add(txtbuscarusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 420, 50));
 
         btnBuscarUsuario.setBackground(new java.awt.Color(6, 11, 25));
         btnBuscarUsuario.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
@@ -946,6 +963,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPadministrarRoles.add(btnBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 200, 50));
 
         btnAsignarAdmin.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup1.add(btnAsignarAdmin);
         btnAsignarAdmin.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
         btnAsignarAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnAsignarAdmin.setText("ADMINISTRADOR");
@@ -962,6 +980,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPadministrarRoles.add(btnAsignarAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, -1, -1));
 
         btnAsignarUser.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup1.add(btnAsignarUser);
         btnAsignarUser.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
         btnAsignarUser.setForeground(new java.awt.Color(255, 255, 255));
         btnAsignarUser.setText("USUARIO");
@@ -1126,15 +1145,70 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
 
     private void btnAsignarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarAdminMouseClicked
-
+        
+       
+        
+        
+        
+        
     }//GEN-LAST:event_btnAsignarAdminMouseClicked
 
     private void btnAsignarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarAdminActionPerformed
-        JOptionPane.showConfirmDialog(null, "Estas seguro de asignar este rol", "Confirmar", WIDTH);
+        
+        Entidades.Usuario user;
+        try {
+            for (int i = 0; i < listauser.size(); i++) {
+            System.out.println("for");
+            if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
+                System.out.println("encontrado");
+                try {
+                    user=listauser.get(i);
+                    System.out.println("user");
+                   
+                    
+                    user.getRoluser().setIdrol(2);
+                    System.out.println("asa");
+                    cusuario.edit(user);
+                    System.out.println("cambiado");
+                    
+                } catch (Exception ex) {
+                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+        }
+        } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(null, "Rol ya asignado");
+        }
+        
     }//GEN-LAST:event_btnAsignarAdminActionPerformed
 
     private void btnAsignarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarUserActionPerformed
-        JOptionPane.showConfirmDialog(null, "Estas seguro de asignar este rol", "Confirmar", WIDTH);
+        Entidades.Usuario user;
+        try {
+            for (int i = 0; i < listauser.size(); i++) {
+            System.out.println("for");
+            if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
+                System.out.println("encontrado");
+                try {
+                    user=listauser.get(i);
+                    System.out.println("user");
+                   
+                    
+                    user.getRoluser().setIdrol(1);
+                    System.out.println("asa");
+                    cusuario.edit(user);
+                    System.out.println("cambiado");
+                    
+                } catch (Exception ex) {
+                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+        }
+        } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(null, "Rol ya asignado");
+        }
     }//GEN-LAST:event_btnAsignarUserActionPerformed
 
     private void JPBuscado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado1MouseClicked
@@ -1166,6 +1240,37 @@ public class paginaInicio extends javax.swing.JFrame {
     private void btnBuscarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJuegoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarJuegoActionPerformed
+
+    private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
+        cjuego.Buscarjuego(txtbuscar.getText());
+        
+        DefaultListModel modelbus=new DefaultListModel();
+        for (int i = 0; i <cjuego.Buscarjuego(txtbuscar.getText()).size() ; i++) {
+            modelbus.addElement(cjuego.Buscarjuego(txtbuscar.getText()).get(i).getNombre());
+        }
+        JlistJuegosadmin.setModel(modelbus);
+        JlistJuegosadmin.setVisible(true);
+       
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_txtbuscarKeyReleased
+
+    private void txtbuscarusuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarusuarioKeyReleased
+        
+        cusuario.Buscarusuario(txtbuscarusuario.getText());
+        
+        DefaultListModel modelbus=new DefaultListModel();
+        for (int i = 0; i <cusuario.Buscarusuario(txtbuscarusuario.getText()).size() ; i++) {
+            modelbus.addElement(cusuario.Buscarusuario(txtbuscarusuario.getText()).get(i).getCuentauser().getNickname());
+        }
+        JListUsuarios.setModel(modelbus);
+        JListUsuarios.setVisible(true);
+        
+        
+    }//GEN-LAST:event_txtbuscarusuarioKeyReleased
 
     /**
      * @param args the command line arguments
@@ -1285,6 +1390,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnComprarJuego;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1369,8 +1475,8 @@ public class paginaInicio extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private javax.swing.JPanel pGeneral;
     private javax.swing.JTextField txtbuscar;
-    private javax.swing.JTextField txtbuscar1;
     private javax.swing.JTextField txtbuscar2;
     private javax.swing.JTextField txtbuscar3;
+    private javax.swing.JTextField txtbuscarusuario;
     // End of variables declaration//GEN-END:variables
 }
