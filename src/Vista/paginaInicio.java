@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.JuegoJpaController;
+import Controlador.UsuarioJpaController;
 import Entidades.Juego;
 import java.awt.Color;
 import java.util.List;
@@ -20,8 +21,11 @@ import javax.swing.JOptionPane;
 public class paginaInicio extends javax.swing.JFrame {
 
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
+    Controlador.UsuarioJpaController cusuario = new UsuarioJpaController();
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
+    List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
+
     /**
      * Creates new form INICIO
      */
@@ -30,7 +34,12 @@ public class paginaInicio extends javax.swing.JFrame {
         // Codigo de ordenacion de valoraciones de juego para las tendencias (mayor a menor valorados)
         initComponents();
         setResizable(false);
-
+        DefaultListModel modelousu = new DefaultListModel();
+        for (int i = 0; i <listauser.size(); i++) {
+            modelousu.addElement(listauser.get(i).getNombre()+" "+listauser.get(i).getApellido());
+        }
+        JListUsuarios.setModel(modelousu);
+        JLMisjuegos.setVisible(true);
         DefaultListModel modelo = new DefaultListModel();
         for (int i = 0; i < listaJ.size(); i++) {
             modelo.addElement(listaJ.get(i).getNombre());
@@ -915,11 +924,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JListUsuarios.setBackground(new java.awt.Color(6, 11, 25));
         JListUsuarios.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         JListUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        JListUsuarios.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Carlos Ordoñes", "Jhandry Lapo" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         JListUsuarios.setToolTipText("");
         SpUsers.setViewportView(JListUsuarios);
 
