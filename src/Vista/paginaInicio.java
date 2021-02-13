@@ -26,7 +26,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
     Controlador.UsuarioJpaController cusuario = new UsuarioJpaController();
-    Controlador.RolJpaController crol= new RolJpaController();
+    Controlador.RolJpaController crol = new RolJpaController();
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
     List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
@@ -39,10 +39,9 @@ public class paginaInicio extends javax.swing.JFrame {
         // Codigo de ordenacion de valoraciones de juego para las tendencias (mayor a menor valorados)
         initComponents();
         setResizable(false);
-        
-                
+
         DefaultListModel modelousu = new DefaultListModel();
-        for (int i = 0; i <listauser.size(); i++) {
+        for (int i = 0; i < listauser.size(); i++) {
             modelousu.addElement(listauser.get(i).getCuentauser().getNickname());
         }
         JListUsuarios.setModel(modelousu);
@@ -1125,15 +1124,15 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        int id=0;
+        int id = 0;
         for (int i = 0; i < listaedit.size(); i++) {
             if (JlistJuegosadmin.getSelectedValue().equals(listaedit.get(i).getNombre())) {
-                id=listaedit.get(i).getIdJuego();
+                id = listaedit.get(i).getIdJuego();
                 EditarJuego nuevo = new EditarJuego(id);
                 nuevo.setVisible(true);
             }
         }
-        
+
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -1145,67 +1144,59 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
 
     private void btnAsignarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarAdminMouseClicked
-        
-       
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_btnAsignarAdminMouseClicked
 
     private void btnAsignarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarAdminActionPerformed
-        
+
         Entidades.Usuario user;
         try {
             for (int i = 0; i < listauser.size(); i++) {
-            System.out.println("for");
-            if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
-                System.out.println("encontrado");
-                try {
-                    user=listauser.get(i);
-                    System.out.println("user");
-                   
-                    
-                    user.getRoluser().setIdrol(2);
-                    System.out.println("asa");
-                    cusuario.edit(user);
-                    System.out.println("cambiado");
-                    
-                } catch (Exception ex) {
-                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("for");
+                if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
+
+                    try {
+                        user = listauser.get(i);
+
+                        user.getRoluser().setIdrol(2);
+
+                        cusuario.edit(user);
+
+                    } catch (Exception ex) {
+                        Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    break;
                 }
-                break;
             }
-        }
         } catch (Exception e) {
             JOptionPane.showInternalMessageDialog(null, "Rol ya asignado");
         }
-        
+
     }//GEN-LAST:event_btnAsignarAdminActionPerformed
 
     private void btnAsignarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarUserActionPerformed
         Entidades.Usuario user;
         try {
             for (int i = 0; i < listauser.size(); i++) {
-            System.out.println("for");
-            if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
-                System.out.println("encontrado");
-                try {
-                    user=listauser.get(i);
-                    System.out.println("user");
-                   
-                    
-                    user.getRoluser().setIdrol(1);
-                    System.out.println("asa");
-                    cusuario.edit(user);
-                    System.out.println("cambiado");
-                    
-                } catch (Exception ex) {
-                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("for");
+                if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
+                    System.out.println("encontrado");
+                    try {
+                        user = listauser.get(i);
+                        System.out.println("user");
+
+                        user.getRoluser().setIdrol(1);
+                        System.out.println("asa");
+                        cusuario.edit(user);
+                        System.out.println("cambiado");
+
+                    } catch (Exception ex) {
+                        Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    break;
                 }
-                break;
             }
-        }
         } catch (Exception e) {
             JOptionPane.showInternalMessageDialog(null, "Rol ya asignado");
         }
@@ -1243,33 +1234,29 @@ public class paginaInicio extends javax.swing.JFrame {
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         cjuego.Buscarjuego(txtbuscar.getText());
-        
-        DefaultListModel modelbus=new DefaultListModel();
-        for (int i = 0; i <cjuego.Buscarjuego(txtbuscar.getText()).size() ; i++) {
+
+        DefaultListModel modelbus = new DefaultListModel();
+        for (int i = 0; i < cjuego.Buscarjuego(txtbuscar.getText()).size(); i++) {
             modelbus.addElement(cjuego.Buscarjuego(txtbuscar.getText()).get(i).getNombre());
         }
         JlistJuegosadmin.setModel(modelbus);
         JlistJuegosadmin.setVisible(true);
-       
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_txtbuscarKeyReleased
 
     private void txtbuscarusuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarusuarioKeyReleased
-        
+
         cusuario.Buscarusuario(txtbuscarusuario.getText());
-        
-        DefaultListModel modelbus=new DefaultListModel();
-        for (int i = 0; i <cusuario.Buscarusuario(txtbuscarusuario.getText()).size() ; i++) {
+
+        DefaultListModel modelbus = new DefaultListModel();
+        for (int i = 0; i < cusuario.Buscarusuario(txtbuscarusuario.getText()).size(); i++) {
             modelbus.addElement(cusuario.Buscarusuario(txtbuscarusuario.getText()).get(i).getCuentauser().getNickname());
         }
         JListUsuarios.setModel(modelbus);
         JListUsuarios.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_txtbuscarusuarioKeyReleased
 
     /**
