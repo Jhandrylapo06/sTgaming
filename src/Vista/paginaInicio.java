@@ -6,9 +6,12 @@
 package Vista;
 
 import Controlador.JuegoJpaController;
+import Controlador.UsuarioJpaController;
 import Entidades.Juego;
 import java.awt.Color;
 import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,15 +21,32 @@ import javax.swing.JOptionPane;
 public class paginaInicio extends javax.swing.JFrame {
 
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
+    Controlador.UsuarioJpaController cusuario = new UsuarioJpaController();
+    List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+    List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
+    List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
 
     /**
      * Creates new form INICIO
      */
     public paginaInicio() {
+
         // Codigo de ordenacion de valoraciones de juego para las tendencias (mayor a menor valorados)
         initComponents();
-        //setResizable(false);
-        List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+        setResizable(false);
+        DefaultListModel modelousu = new DefaultListModel();
+        for (int i = 0; i <listauser.size(); i++) {
+            modelousu.addElement(listauser.get(i).getNombre()+" "+listauser.get(i).getApellido());
+        }
+        JListUsuarios.setModel(modelousu);
+        JLMisjuegos.setVisible(true);
+        DefaultListModel modelo = new DefaultListModel();
+        for (int i = 0; i < listaJ.size(); i++) {
+            modelo.addElement(listaJ.get(i).getNombre());
+        }
+        JlistJuegosadmin.setModel(modelo);
+        JlistJuegosadmin.setVisible(true);
+
         Entidades.Juego[] ListaT = new Entidades.Juego[9];
         double may = 0;
         double actual = 0;
@@ -83,7 +103,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
         SPMisjuegos = new javax.swing.JScrollPane();
-        JLMisjuegos = new javax.swing.JList<>();
+        JLMisjuegos = new javax.swing.JList<String>();
         JPApartadoTendencias = new javax.swing.JPanel();
         SPtendencias = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
@@ -192,7 +212,7 @@ public class paginaInicio extends javax.swing.JFrame {
         Pjuegos = new javax.swing.JPanel();
         PAdministrarJuegos = new javax.swing.JPanel();
         SPjuegos = new javax.swing.JScrollPane();
-        JlistJuegos = new javax.swing.JList<>();
+        JlistJuegosadmin = new javax.swing.JList<String>();
         btnAgregarJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -201,7 +221,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPAdminRol = new javax.swing.JPanel();
         JPadministrarRoles = new javax.swing.JPanel();
         SpUsers = new javax.swing.JScrollPane();
-        JListUsuarios = new javax.swing.JList<>();
+        JListUsuarios = new javax.swing.JList<String>();
         txtbuscar1 = new javax.swing.JTextField();
         btnBuscarUsuario = new javax.swing.JButton();
         btnAsignarAdmin = new javax.swing.JRadioButton();
@@ -225,7 +245,6 @@ public class paginaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SPgeneral.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        SPgeneral.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         pGeneral.setMinimumSize(new java.awt.Dimension(1922, 780));
         pGeneral.setPreferredSize(new java.awt.Dimension(1922, 720));
@@ -253,7 +272,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPMisjuegos.add(SPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 250, 380));
 
-        pGeneral.add(JPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 920));
+        pGeneral.add(JPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 870));
 
         JPApartadoTendencias.setBackground(new java.awt.Color(0, 0, 0, 100));
         JPApartadoTendencias.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -448,9 +467,9 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPtendencias.setViewportView(jPanel5);
 
-        JPApartadoTendencias.add(SPtendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 910));
+        JPApartadoTendencias.add(SPtendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
 
-        pGeneral.add(JPApartadoTendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 920));
+        pGeneral.add(JPApartadoTendencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         JPapartadoTienda.setBackground(new java.awt.Color(0, 0, 0, 100));
         JPapartadoTienda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -641,11 +660,12 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPjuegosTienda.setViewportView(JPjuegoBuscado);
 
-        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 860));
+        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 810));
 
         txtbuscar2.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar2.setFont(new java.awt.Font("Eras Light ITC", 0, 24)); // NOI18N
         txtbuscar2.setForeground(new java.awt.Color(204, 204, 204));
+        txtbuscar2.setText("Call of duty black ops");
         JPapartadoTienda.add(txtbuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
 
         btnBuscarJuegoT.setBackground(new java.awt.Color(6, 11, 25));
@@ -659,7 +679,7 @@ public class paginaInicio extends javax.swing.JFrame {
         });
         JPapartadoTienda.add(btnBuscarJuegoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
 
-        pGeneral.add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 1060));
+        pGeneral.add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         JPapartadoComprar.setBackground(new java.awt.Color(0, 0, 0, 100));
         JPapartadoComprar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -783,7 +803,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPJuego.setViewportView(JPjuego);
 
-        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 860));
+        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 810));
 
         txtbuscar3.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar3.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
@@ -802,7 +822,7 @@ public class paginaInicio extends javax.swing.JFrame {
         });
         JPapartadoComprar.add(btnBuscarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
 
-        pGeneral.add(JPapartadoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 1060));
+        pGeneral.add(JPapartadoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         jPApartadoAdmin.setBackground(new java.awt.Color(0, 0, 0, 100));
         jPApartadoAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -832,16 +852,11 @@ public class paginaInicio extends javax.swing.JFrame {
         PAdministrarJuegos.setBackground(new java.awt.Color(6, 11, 25));
         PAdministrarJuegos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JlistJuegos.setBackground(new java.awt.Color(6, 11, 25));
-        JlistJuegos.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
-        JlistJuegos.setForeground(new java.awt.Color(255, 255, 255));
-        JlistJuegos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Assassins creed: Valhala", "Call of duty black ops cold war", "Crisis 1", "Counter Strike global ofensive", "Halo Mastershif collletion", "Need for speed Hot persuit" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        JlistJuegos.setToolTipText("");
-        SPjuegos.setViewportView(JlistJuegos);
+        JlistJuegosadmin.setBackground(new java.awt.Color(6, 11, 25));
+        JlistJuegosadmin.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        JlistJuegosadmin.setForeground(new java.awt.Color(255, 255, 255));
+        JlistJuegosadmin.setToolTipText("");
+        SPjuegos.setViewportView(JlistJuegosadmin);
 
         PAdministrarJuegos.add(SPjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 680, 550));
 
@@ -909,11 +924,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JListUsuarios.setBackground(new java.awt.Color(6, 11, 25));
         JListUsuarios.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         JListUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        JListUsuarios.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Carlos Ordoñes", "Jhandry Lapo" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         JListUsuarios.setToolTipText("");
         SpUsers.setViewportView(JListUsuarios);
 
@@ -976,9 +986,9 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SCadministracion.setViewportView(jPanel6);
 
-        jPApartadoAdmin.add(SCadministracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 910));
+        jPApartadoAdmin.add(SCadministracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
 
-        pGeneral.add(jPApartadoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 1060));
+        pGeneral.add(jPApartadoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
         JPmenu.setBackground(new java.awt.Color(0, 0, 0, 50));
         JPmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1035,14 +1045,14 @@ public class paginaInicio extends javax.swing.JFrame {
         });
         JPmenu.add(btnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 20, 200, 50));
 
-        pGeneral.add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 80));
+        pGeneral.add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/FONDOA1.jpg"))); // NOI18N
-        pGeneral.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1920, 1160));
+        pGeneral.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1920, 970));
 
         SPgeneral.setViewportView(pGeneral);
 
-        getContentPane().add(SPgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1160));
+        getContentPane().add(SPgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1096,8 +1106,15 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        EditarJuego nuevo = new EditarJuego();
-        nuevo.setVisible(true);
+        int id=0;
+        for (int i = 0; i < listaedit.size(); i++) {
+            if (JlistJuegosadmin.getSelectedValue().equals(listaedit.get(i).getNombre())) {
+                id=listaedit.get(i).getIdJuego();
+                EditarJuego nuevo = new EditarJuego(id);
+                nuevo.setVisible(true);
+            }
+        }
+        
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -1245,7 +1262,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JPanel JPtendencia7;
     private javax.swing.JPanel JPtendencia8;
     private javax.swing.JPanel JPtendencia9;
-    private javax.swing.JList<String> JlistJuegos;
+    private javax.swing.JList<String> JlistJuegosadmin;
     private javax.swing.JPanel PAdministrarJuegos;
     private javax.swing.JTabbedPane PesstaañasAdmin;
     private javax.swing.JPanel Pjuegos;

@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Juego.findByDirminiatura", query = "SELECT j FROM Juego j WHERE j.dirminiatura = :dirminiatura"),
     @NamedQuery(name = "Juego.findByRequisitosMIn", query = "SELECT j FROM Juego j WHERE j.requisitosMIn = :requisitosMIn"),
     @NamedQuery(name = "Juego.findByPrecio", query = "SELECT j FROM Juego j WHERE j.precio = :precio"),
-    @NamedQuery(name = "Juego.findByRequisitosRec", query = "SELECT j FROM Juego j WHERE j.requisitosRec = :requisitosRec")})
+    @NamedQuery(name = "Juego.findByRequisitosRec", query = "SELECT j FROM Juego j WHERE j.requisitosRec = :requisitosRec"),
+    @NamedQuery(name = "Juego.findByDirjuego", query = "SELECT j FROM Juego j WHERE j.dirjuego = :dirjuego")})
 public class Juego implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -57,6 +58,8 @@ public class Juego implements Serializable {
     private String precio;
     @Column(name = "RequisitosRec")
     private String requisitosRec;
+    @Column(name = "Dirjuego")
+    private String dirjuego;
     @JoinColumn(name = "Clasificacion", referencedColumnName = "idclasificacion")
     @ManyToOne
     private Clasificacion clasificacion;
@@ -67,7 +70,7 @@ public class Juego implements Serializable {
     public Juego() {
     }
 
-    public Juego(Integer idJuego, String nombre, String descripcion, String dirportada, String dirminiatura, String requisitosMIn, String precio, String requisitosRec, Clasificacion clasificacion, Valoracion valoracion) {
+    public Juego(Integer idJuego, String nombre, String descripcion, String dirportada, String dirminiatura, String requisitosMIn, String precio, String requisitosRec, String dirjuego, Clasificacion clasificacion, Valoracion valoracion) {
         this.idJuego = idJuego;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -76,6 +79,7 @@ public class Juego implements Serializable {
         this.requisitosMIn = requisitosMIn;
         this.precio = precio;
         this.requisitosRec = requisitosRec;
+        this.dirjuego = dirjuego;
         this.clasificacion = clasificacion;
         this.valoracion = valoracion;
     }
@@ -146,6 +150,14 @@ public class Juego implements Serializable {
 
     public void setRequisitosRec(String requisitosRec) {
         this.requisitosRec = requisitosRec;
+    }
+
+    public String getDirjuego() {
+        return dirjuego;
+    }
+
+    public void setDirjuego(String dirjuego) {
+        this.dirjuego = dirjuego;
     }
 
     public Clasificacion getClasificacion() {
