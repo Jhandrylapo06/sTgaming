@@ -33,6 +33,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Cuenta.findByContrasena", query = "SELECT c FROM Cuenta c WHERE c.contrasena = :contrasena")
     , @NamedQuery(name = "Cuenta.findByIdCuenta", query = "SELECT c FROM Cuenta c WHERE c.idCuenta = :idCuenta")})
 public class Cuenta implements Serializable {
+    @OneToMany(mappedBy = "cuenta")
+    private Collection<ListaJuegos> listaJuegosCollection;
 
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
@@ -118,6 +120,15 @@ public class Cuenta implements Serializable {
     @Override
     public String toString() {
         return "Entidades.Cuenta[ idCuenta=" + idCuenta + " ]";
+    }
+
+    @XmlTransient
+    public Collection<ListaJuegos> getListaJuegosCollection() {
+        return listaJuegosCollection;
+    }
+
+    public void setListaJuegosCollection(Collection<ListaJuegos> listaJuegosCollection) {
+        this.listaJuegosCollection = listaJuegosCollection;
     }
     
 }
