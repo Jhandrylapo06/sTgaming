@@ -242,6 +242,7 @@ public class paginaInicio extends javax.swing.JFrame {
         lblTendencias = new javax.swing.JLabel();
         lblTienda = new javax.swing.JLabel();
         btnAdministrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         menu1.setLabel("File");
@@ -1016,13 +1017,14 @@ public class paginaInicio extends javax.swing.JFrame {
 
         lblUsuario.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuario.setText("eLJhandRy");
         lblUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblUsuarioMouseEntered(evt);
             }
         });
-        JPmenu.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1800, 20, 110, 40));
+        JPmenu.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 10, 220, 40));
 
         lblTendencias.setFont(new java.awt.Font("Lucida Bright", 0, 28)); // NOI18N
         lblTendencias.setForeground(new java.awt.Color(102, 153, 255));
@@ -1064,7 +1066,17 @@ public class paginaInicio extends javax.swing.JFrame {
                 btnAdministrarActionPerformed(evt);
             }
         });
-        JPmenu.add(btnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 20, 200, 50));
+        JPmenu.add(btnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 20, 200, 50));
+
+        jLabel2.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Cerrar sesion");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        JPmenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1760, 50, -1, -1));
 
         pGeneral.add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
 
@@ -1290,6 +1302,12 @@ public class paginaInicio extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtbuscarusuarioKeyReleased
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        Login n=new Login();
+        n.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1414,6 +1432,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
