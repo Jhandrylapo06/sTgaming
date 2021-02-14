@@ -32,6 +32,7 @@ public class paginaInicio extends javax.swing.JFrame {
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
     List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
     DefaultListModel modelo = new DefaultListModel();
+    boolean verificador;
 
     /**
      * Creates new form INICIO
@@ -1119,15 +1120,9 @@ public class paginaInicio extends javax.swing.JFrame {
     private void btnAgregarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJuegoActionPerformed
         AnadirJuego nuevo = new AnadirJuego();
         nuevo.setVisible(true);
-        nuevo.modelo(modelo);
-        JlistJuegosadmin.setModel(modelo);
-        JlistJuegosadmin.setVisible(true);
+        this.setVisible(false);
         
         
-        
-       
-        
-       
     }//GEN-LAST:event_btnAgregarJuegoActionPerformed
     
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

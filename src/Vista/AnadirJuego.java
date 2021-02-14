@@ -26,6 +26,7 @@ public class AnadirJuego extends javax.swing.JFrame {
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
     Controlador.ClasificacionJpaController cclasificacion=new ClasificacionJpaController();
     Controlador.ValoracionJpaController cvaloracion= new ValoracionJpaController();
+    boolean verificar;
     
     Entidades.Juego juego = null;
     public AnadirJuego() {
@@ -323,14 +324,18 @@ public class AnadirJuego extends javax.swing.JFrame {
             cvaloracion.create(valora);
             juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(),txtRutaarchivo.getText(), clasi, valora);
             cjuego.create(juego);
+            paginaInicio pi= new paginaInicio();
+            pi.setVisible(true);
+            verificar=true;
             this.setVisible(false);
         }
        
         
     }//GEN-LAST:event_btnGuardarJuegoActionPerformed
-    public DefaultListModel modelo (DefaultListModel model){
-        model.addElement(juego.getNombre());
-        return model;
+    public boolean verificador (boolean verificador){
+        verificador=verificar;
+        return verificador;
+        
     }
     private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
         // TODO add your handling code here:
