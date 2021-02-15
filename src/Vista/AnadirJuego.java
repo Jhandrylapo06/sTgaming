@@ -11,8 +11,16 @@ import Controlador.ValoracionJpaController;
 import Entidades.Clasificacion;
 import Entidades.Juego;
 import Entidades.Valoracion;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -24,11 +32,12 @@ public class AnadirJuego extends javax.swing.JFrame {
      * Creates new form AnadirJuego
      */
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
-    Controlador.ClasificacionJpaController cclasificacion=new ClasificacionJpaController();
-    Controlador.ValoracionJpaController cvaloracion= new ValoracionJpaController();
+    Controlador.ClasificacionJpaController cclasificacion = new ClasificacionJpaController();
+    Controlador.ValoracionJpaController cvaloracion = new ValoracionJpaController();
     boolean verificar;
-    
+
     Entidades.Juego juego = null;
+
     public AnadirJuego() {
         initComponents();
         setResizable(false);
@@ -63,7 +72,7 @@ public class AnadirJuego extends javax.swing.JFrame {
         txtRutaarchivo = new javax.swing.JTextField();
         SCRR = new javax.swing.JScrollPane();
         txtRequerimientosRe = new javax.swing.JTextArea();
-        txtrutaportada = new javax.swing.JTextField();
+        txtrutaMiniatura = new javax.swing.JTextField();
         btnAccion = new javax.swing.JRadioButton();
         btnTerror = new javax.swing.JRadioButton();
         btnAventura = new javax.swing.JRadioButton();
@@ -73,10 +82,10 @@ public class AnadirJuego extends javax.swing.JFrame {
         SPRM = new javax.swing.JScrollPane();
         txtRequerimientosMin = new javax.swing.JTextArea();
         jLabel20 = new javax.swing.JLabel();
-        txtrutaportada1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtrutaportada = new javax.swing.JTextField();
+        btnBuscarPortada = new javax.swing.JButton();
+        btnArchivo = new javax.swing.JButton();
+        bntBuscarMiniatura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo juego");
@@ -118,7 +127,7 @@ public class AnadirJuego extends javax.swing.JFrame {
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel16.setText("IMAGEN");
+        jLabel16.setText("IMAGEN DE PORTADA");
         PanelNuevoJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,6 +171,7 @@ public class AnadirJuego extends javax.swing.JFrame {
 
         PanelNuevoJuego.add(SPdes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 460, -1));
 
+        txtRutaarchivo.setEditable(false);
         txtRutaarchivo.setBackground(new java.awt.Color(6, 11, 25));
         txtRutaarchivo.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtRutaarchivo.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,11 +190,12 @@ public class AnadirJuego extends javax.swing.JFrame {
 
         PanelNuevoJuego.add(SCRR, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 350, 120));
 
-        txtrutaportada.setBackground(new java.awt.Color(6, 11, 25));
-        txtrutaportada.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        txtrutaportada.setForeground(new java.awt.Color(255, 255, 255));
-        txtrutaportada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PanelNuevoJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 460, -1));
+        txtrutaMiniatura.setEditable(false);
+        txtrutaMiniatura.setBackground(new java.awt.Color(6, 11, 25));
+        txtrutaMiniatura.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtrutaMiniatura.setForeground(new java.awt.Color(255, 255, 255));
+        txtrutaMiniatura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PanelNuevoJuego.add(txtrutaMiniatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 460, -1));
 
         btnAccion.setBackground(new java.awt.Color(6, 11, 25));
         btnAccion.setForeground(new java.awt.Color(204, 204, 204));
@@ -242,42 +253,48 @@ public class AnadirJuego extends javax.swing.JFrame {
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
         jLabel20.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel20.setText("IMAGEN");
+        jLabel20.setText("IMAGEN DE MINIATURA");
         PanelNuevoJuego.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
-        txtrutaportada1.setBackground(new java.awt.Color(6, 11, 25));
-        txtrutaportada1.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
-        txtrutaportada1.setForeground(new java.awt.Color(255, 255, 255));
-        txtrutaportada1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PanelNuevoJuego.add(txtrutaportada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 460, -1));
+        txtrutaportada.setEditable(false);
+        txtrutaportada.setBackground(new java.awt.Color(6, 11, 25));
+        txtrutaportada.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtrutaportada.setForeground(new java.awt.Color(255, 255, 255));
+        txtrutaportada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PanelNuevoJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 460, -1));
 
-        jButton1.setBackground(new java.awt.Color(6, 11, 25));
-        jButton1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarPortada.setBackground(new java.awt.Color(6, 11, 25));
+        btnBuscarPortada.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnBuscarPortada.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarPortada.setText("Buscar");
+        btnBuscarPortada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarPortadaActionPerformed(evt);
             }
         });
-        PanelNuevoJuego.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 330, -1, 30));
+        PanelNuevoJuego.add(btnBuscarPortada, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 330, -1, 30));
 
-        jButton2.setBackground(new java.awt.Color(6, 11, 25));
-        jButton2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnArchivo.setBackground(new java.awt.Color(6, 11, 25));
+        btnArchivo.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnArchivo.setForeground(new java.awt.Color(255, 255, 255));
+        btnArchivo.setText("Buscar");
+        btnArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnArchivoActionPerformed(evt);
             }
         });
-        PanelNuevoJuego.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, 30));
+        PanelNuevoJuego.add(btnArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, 30));
 
-        jButton3.setBackground(new java.awt.Color(6, 11, 25));
-        jButton3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Buscar");
-        PanelNuevoJuego.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, -1, 30));
+        bntBuscarMiniatura.setBackground(new java.awt.Color(6, 11, 25));
+        bntBuscarMiniatura.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        bntBuscarMiniatura.setForeground(new java.awt.Color(255, 255, 255));
+        bntBuscarMiniatura.setText("Buscar");
+        bntBuscarMiniatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntBuscarMiniaturaActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(bntBuscarMiniatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, -1, 30));
 
         jScrollPane1.setViewportView(PanelNuevoJuego);
 
@@ -294,7 +311,7 @@ public class AnadirJuego extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void btnGuardarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarJuegoActionPerformed
         Entidades.Clasificacion clasi = new Clasificacion();
         String clasificacion = "";
@@ -314,7 +331,7 @@ public class AnadirJuego extends javax.swing.JFrame {
             clasificacion = clasificacion + "Terror";
         }
         clasi.setTipo(clasificacion);
-        
+
         if (clasificacion.equals("")) {
             JOptionPane.showMessageDialog(null, "Porfavor Ingrese una clasificacion al Juego");
         } else {
@@ -322,32 +339,98 @@ public class AnadirJuego extends javax.swing.JFrame {
             Entidades.Valoracion valora = new Valoracion();
             valora.setValor("0.0");
             cvaloracion.create(valora);
-            juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(),txtRequerimientosRe.getText(),txtRutaarchivo.getText(), clasi, valora);
+            juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(), txtRequerimientosRe.getText(), txtRutaarchivo.getText(), clasi, valora);
             cjuego.create(juego);
-            paginaInicio pi= new paginaInicio();
+            paginaInicio pi = new paginaInicio();
             pi.setVisible(true);
-            verificar=true;
+            verificar = true;
             this.setVisible(false);
         }
-       
-        
+
+
     }//GEN-LAST:event_btnGuardarJuegoActionPerformed
-    public boolean verificador (boolean verificador){
-        verificador=verificar;
+    public boolean verificador(boolean verificador) {
+        verificador = verificar;
         return verificador;
-        
+
     }
     private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccionActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnBuscarPortadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPortadaActionPerformed
+        if (txtTituloJuego.getText().equals("")) {
+            JOptionPane.showConfirmDialog(null, "Para buscar una portada primero debe ingresar el nombre del juego");
+            
+        } else {
+            JFileChooser fc = new JFileChooser();
+            fc.setDialogTitle("BUSCA LA IMAGEN DE PORTADA");
+            if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                File imagenP = new File(fc.getSelectedFile().toString());
+                BufferedImage imagencopiar;
+                try {
+                    imagencopiar = ImageIO.read(imagenP);
+                    
+                    System.out.println(fc.getSelectedFile().toString());
+                    ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Portada.png"));
+                    txtrutaportada.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Portada.png");
+                    
+                } catch (Exception e) {
+                }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+            }
+        }
+    }//GEN-LAST:event_btnBuscarPortadaActionPerformed
+
+    private void btnArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArchivoActionPerformed
+        if (txtTituloJuego.getText().equals("")) {
+            JOptionPane.showConfirmDialog(null, "Para buscar el archivo del juego primero debe ingresar el nombre del juego");
+            
+        } else {
+            JFileChooser fc = new JFileChooser();
+            fc.setDialogTitle("BUSCA El ARCHIVO");
+            if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                File imagenP = new File(fc.getSelectedFile().toString());
+                BufferedImage imagencopiar;
+                try {
+                    imagencopiar = ImageIO.read(imagenP);
+                    
+                    System.out.println(fc.getSelectedFile().toString());
+                    ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png"));
+                    txtRutaarchivo.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png");
+                    
+                } catch (Exception e) {
+                }
+
+            }
+        }
+    }//GEN-LAST:event_btnArchivoActionPerformed
+
+    private void bntBuscarMiniaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBuscarMiniaturaActionPerformed
+        if (txtTituloJuego.getText().equals("")) {
+            JOptionPane.showConfirmDialog(null, "Para buscar una miniatura primero debe ingresar el nombre del juego");
+            
+        } else {
+            JFileChooser fc = new JFileChooser();
+            fc.setDialogTitle("BUSCA LA IMAGEN DE MINIATURA");
+            if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                File imagenP = new File(fc.getSelectedFile().toString());
+                BufferedImage imagencopiar;
+                try {
+                    imagencopiar = ImageIO.read(imagenP);
+                    
+                    System.out.println(fc.getSelectedFile().toString());
+                    ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png"));
+                    txtrutaMiniatura.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png");
+                    
+                } catch (Exception e) {
+                }
+
+            }
+        }
+
+
+    }//GEN-LAST:event_bntBuscarMiniaturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,6 +463,11 @@ public class AnadirJuego extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AnadirJuego().setVisible(true);
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(AnadirJuego.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -389,16 +477,16 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JScrollPane SCRR;
     private javax.swing.JScrollPane SPRM;
     private javax.swing.JScrollPane SPdes;
+    private javax.swing.JButton bntBuscarMiniatura;
     private javax.swing.JRadioButton btnAccion;
+    private javax.swing.JButton btnArchivo;
     private javax.swing.JRadioButton btnAventura;
+    private javax.swing.JButton btnBuscarPortada;
     private javax.swing.JButton btnGuardarJuego;
     private javax.swing.JRadioButton btnMultijugador;
     private javax.swing.JRadioButton btnMundoAbierto;
     private javax.swing.JRadioButton btnTerror;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -416,7 +504,7 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JTextArea txtRequerimientosRe;
     private javax.swing.JTextField txtRutaarchivo;
     private javax.swing.JTextField txtTituloJuego;
+    private javax.swing.JTextField txtrutaMiniatura;
     private javax.swing.JTextField txtrutaportada;
-    private javax.swing.JTextField txtrutaportada1;
     // End of variables declaration//GEN-END:variables
 }

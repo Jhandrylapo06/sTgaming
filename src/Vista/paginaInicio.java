@@ -1069,14 +1069,15 @@ public class paginaInicio extends javax.swing.JFrame {
         JPmenu.add(btnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 20, 200, 50));
 
         jLabel2.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cerrar sesion");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
         });
-        JPmenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1760, 50, -1, -1));
+        JPmenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 50, 120, -1));
 
         pGeneral.add(JPmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 80));
 
