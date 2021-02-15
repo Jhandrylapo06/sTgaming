@@ -238,7 +238,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="99.99"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -259,7 +258,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Call of duty black ops cold war"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -293,7 +291,6 @@
                 </Property>
                 <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Call of Duty: Black Ops Cold War es un nueva entrega de la saga de acci&#xf3;n b&#xe9;lica first person shooter a cargo de Treyarch junto a Raven y Activision para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series X que nos lleva a la convulsa &#xe9;poca de la Guerra Fr&#xed;a. Como operador de &#xe9;lite, seguir&#xe1;s los pasos de una misteriosa figura llamada Perseus, cuya misi&#xf3;n es desestabilizar el equilibrio de poder mundial y cambiar el curso de la historia. Ad&#xe9;ntrate en esta conspiraci&#xf3;n global junto con los legendarios personajes Woods, Mason y Hudson, as&#xed; como con un nuevo plantel de operadores dispuestos a detener una conspiraci&#xf3;n que lleva d&#xe9;cadas urdi&#xe9;ndose. Adem&#xe1;s de la campa&#xf1;a, los jugadores llevar&#xe1;n un arsenal de armas y equipamiento de la Guerra Fr&#xed;a a la siguiente generaci&#xf3;n de los modos Multijugador y Zombis."/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -366,7 +363,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="rutaimagen"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRutaminiaturaActionPerformed"/>

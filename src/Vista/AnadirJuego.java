@@ -73,7 +73,6 @@ public class AnadirJuego extends javax.swing.JFrame {
         SCRR = new javax.swing.JScrollPane();
         txtRequerimientosRe = new javax.swing.JTextArea();
         txtrutaMiniatura = new javax.swing.JTextField();
-        btnAccion = new javax.swing.JRadioButton();
         btnTerror = new javax.swing.JRadioButton();
         btnAventura = new javax.swing.JRadioButton();
         btnMultijugador = new javax.swing.JRadioButton();
@@ -86,6 +85,10 @@ public class AnadirJuego extends javax.swing.JFrame {
         btnBuscarPortada = new javax.swing.JButton();
         btnArchivo = new javax.swing.JButton();
         bntBuscarMiniatura = new javax.swing.JButton();
+        btnAccion = new javax.swing.JRadioButton();
+        btnCampana = new javax.swing.JRadioButton();
+        btnArcade = new javax.swing.JRadioButton();
+        btnEstrategia = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo juego");
@@ -197,16 +200,6 @@ public class AnadirJuego extends javax.swing.JFrame {
         txtrutaMiniatura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PanelNuevoJuego.add(txtrutaMiniatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 460, -1));
 
-        btnAccion.setBackground(new java.awt.Color(6, 11, 25));
-        btnAccion.setForeground(new java.awt.Color(204, 204, 204));
-        btnAccion.setText("Accion");
-        btnAccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccionActionPerformed(evt);
-            }
-        });
-        PanelNuevoJuego.add(btnAccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 720, -1, -1));
-
         btnTerror.setBackground(new java.awt.Color(6, 11, 25));
         btnTerror.setForeground(new java.awt.Color(204, 204, 204));
         btnTerror.setText("Terror");
@@ -236,7 +229,7 @@ public class AnadirJuego extends javax.swing.JFrame {
                 btnGuardarJuegoActionPerformed(evt);
             }
         });
-        PanelNuevoJuego.add(btnGuardarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 770, 400, 70));
+        PanelNuevoJuego.add(btnGuardarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 810, 400, 70));
 
         txtRequerimientosMin.setBackground(new java.awt.Color(6, 11, 25));
         txtRequerimientosMin.setColumns(20);
@@ -296,6 +289,46 @@ public class AnadirJuego extends javax.swing.JFrame {
         });
         PanelNuevoJuego.add(bntBuscarMiniatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, -1, 30));
 
+        btnAccion.setBackground(new java.awt.Color(6, 11, 25));
+        btnAccion.setForeground(new java.awt.Color(204, 204, 204));
+        btnAccion.setText("Accion");
+        btnAccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccionActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(btnAccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 720, -1, -1));
+
+        btnCampana.setBackground(new java.awt.Color(6, 11, 25));
+        btnCampana.setForeground(new java.awt.Color(204, 204, 204));
+        btnCampana.setText("Campaña");
+        btnCampana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCampanaActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(btnCampana, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 760, -1, -1));
+
+        btnArcade.setBackground(new java.awt.Color(6, 11, 25));
+        btnArcade.setForeground(new java.awt.Color(204, 204, 204));
+        btnArcade.setText("Arcade");
+        btnArcade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArcadeActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(btnArcade, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 760, -1, -1));
+
+        btnEstrategia.setBackground(new java.awt.Color(6, 11, 25));
+        btnEstrategia.setForeground(new java.awt.Color(204, 204, 204));
+        btnEstrategia.setText("Estrategia");
+        btnEstrategia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstrategiaActionPerformed(evt);
+            }
+        });
+        PanelNuevoJuego.add(btnEstrategia, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 760, -1, -1));
+
         jScrollPane1.setViewportView(PanelNuevoJuego);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -330,6 +363,15 @@ public class AnadirJuego extends javax.swing.JFrame {
         if (btnTerror.isSelected()) {
             clasificacion = clasificacion + "Terror";
         }
+        if (btnCampana.isSelected()) {
+            clasificacion = clasificacion + "Campaña";
+        }
+        if (btnArcade.isSelected()) {
+            clasificacion = clasificacion + "Arcade";
+        }
+        if (btnEstrategia.isSelected()) {
+            clasificacion = clasificacion + "Estrategia";
+        }
         clasi.setTipo(clasificacion);
 
         if (clasificacion.equals("")) {
@@ -354,10 +396,6 @@ public class AnadirJuego extends javax.swing.JFrame {
         return verificador;
 
     }
-    private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAccionActionPerformed
-
     private void btnBuscarPortadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPortadaActionPerformed
         if (txtTituloJuego.getText().equals("")) {
             JOptionPane.showConfirmDialog(null, "Para buscar una portada primero debe ingresar el nombre del juego");
@@ -432,6 +470,22 @@ public class AnadirJuego extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bntBuscarMiniaturaActionPerformed
 
+    private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAccionActionPerformed
+
+    private void btnCampanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampanaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCampanaActionPerformed
+
+    private void btnArcadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnArcadeActionPerformed
+
+    private void btnEstrategiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstrategiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEstrategiaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -479,9 +533,12 @@ public class AnadirJuego extends javax.swing.JFrame {
     private javax.swing.JScrollPane SPdes;
     private javax.swing.JButton bntBuscarMiniatura;
     private javax.swing.JRadioButton btnAccion;
+    private javax.swing.JRadioButton btnArcade;
     private javax.swing.JButton btnArchivo;
     private javax.swing.JRadioButton btnAventura;
     private javax.swing.JButton btnBuscarPortada;
+    private javax.swing.JRadioButton btnCampana;
+    private javax.swing.JRadioButton btnEstrategia;
     private javax.swing.JButton btnGuardarJuego;
     private javax.swing.JRadioButton btnMultijugador;
     private javax.swing.JRadioButton btnMundoAbierto;

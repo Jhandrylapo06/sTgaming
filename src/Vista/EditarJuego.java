@@ -169,7 +169,6 @@ public class EditarJuego extends javax.swing.JFrame {
         txtPrecio.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtPrecio.setForeground(new java.awt.Color(255, 255, 255));
         txtPrecio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPrecio.setText("99.99");
         JPeditarJuego.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 460, -1));
 
         txtNombreJuego.setEditable(false);
@@ -177,7 +176,6 @@ public class EditarJuego extends javax.swing.JFrame {
         txtNombreJuego.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtNombreJuego.setForeground(new java.awt.Color(255, 255, 255));
         txtNombreJuego.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNombreJuego.setText("Call of duty black ops cold war");
         JPeditarJuego.add(txtNombreJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 460, -1));
 
         txtDescripcion.setBackground(new java.awt.Color(6, 11, 25));
@@ -186,7 +184,6 @@ public class EditarJuego extends javax.swing.JFrame {
         txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
         txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(5);
-        txtDescripcion.setText("Call of Duty: Black Ops Cold War es un nueva entrega de la saga de acción bélica first person shooter a cargo de Treyarch junto a Raven y Activision para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series X que nos lleva a la convulsa época de la Guerra Fría. Como operador de élite, seguirás los pasos de una misteriosa figura llamada Perseus, cuya misión es desestabilizar el equilibrio de poder mundial y cambiar el curso de la historia. Adéntrate en esta conspiración global junto con los legendarios personajes Woods, Mason y Hudson, así como con un nuevo plantel de operadores dispuestos a detener una conspiración que lleva décadas urdiéndose. Además de la campaña, los jugadores llevarán un arsenal de armas y equipamiento de la Guerra Fría a la siguiente generación de los modos Multijugador y Zombis.");
         txtDescripcion.setWrapStyleWord(true);
         SCdes.setViewportView(txtDescripcion);
 
@@ -220,7 +217,6 @@ public class EditarJuego extends javax.swing.JFrame {
         txtRutaminiatura.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtRutaminiatura.setForeground(new java.awt.Color(255, 255, 255));
         txtRutaminiatura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtRutaminiatura.setText("rutaimagen");
         txtRutaminiatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRutaminiaturaActionPerformed(evt);
