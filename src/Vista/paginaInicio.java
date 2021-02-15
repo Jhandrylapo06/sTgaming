@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.CuentaJpaController;
 import Controlador.JuegoJpaController;
 import Controlador.RolJpaController;
 import Controlador.UsuarioJpaController;
@@ -500,9 +501,6 @@ public class paginaInicio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JPBuscado1MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                JPBuscado1MouseEntered(evt);
-            }
         });
         JPBuscado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -510,6 +508,11 @@ public class paginaInicio extends javax.swing.JFrame {
         lblNombreB1.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
         lblNombreB1.setForeground(new java.awt.Color(204, 204, 204));
         lblNombreB1.setText("Call of Duty®: Black Ops Cold War");
+        lblNombreB1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNombreB1MouseClicked(evt);
+            }
+        });
         JPBuscado1.add(lblNombreB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -529,12 +532,22 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPBuscado2.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBuscado2MouseClicked(evt);
+            }
+        });
         JPBuscado2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNombreB2.setBackground(new java.awt.Color(255, 255, 255));
         lblNombreB2.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
         lblNombreB2.setForeground(new java.awt.Color(204, 204, 204));
         lblNombreB2.setText("Call of Duty®: Black Ops IV");
+        lblNombreB2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNombreB2MouseClicked(evt);
+            }
+        });
         JPBuscado2.add(lblNombreB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -554,12 +567,22 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPBuscado3.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBuscado3MouseClicked(evt);
+            }
+        });
         JPBuscado3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNombreB3.setBackground(new java.awt.Color(255, 255, 255));
         lblNombreB3.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
         lblNombreB3.setForeground(new java.awt.Color(204, 204, 204));
         lblNombreB3.setText("Call of Duty®: Black Ops III");
+        lblNombreB3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNombreB3MouseClicked(evt);
+            }
+        });
         JPBuscado3.add(lblNombreB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -579,12 +602,22 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPBuscado4.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBuscado4MouseClicked(evt);
+            }
+        });
         JPBuscado4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNombreB4.setBackground(new java.awt.Color(255, 255, 255));
         lblNombreB4.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
         lblNombreB4.setForeground(new java.awt.Color(204, 204, 204));
         lblNombreB4.setText("Call of Duty®: Black Ops II");
+        lblNombreB4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNombreB4MouseClicked(evt);
+            }
+        });
         JPBuscado4.add(lblNombreB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -646,12 +679,22 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPBuscado5.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        JPBuscado5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBuscado5MouseClicked(evt);
+            }
+        });
         JPBuscado5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNombreB5.setBackground(new java.awt.Color(255, 255, 255));
         lblNombreB5.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
         lblNombreB5.setForeground(new java.awt.Color(204, 204, 204));
         lblNombreB5.setText("Call of Duty®: Black Ops I");
+        lblNombreB5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNombreB5MouseClicked(evt);
+            }
+        });
         JPBuscado5.add(lblNombreB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -823,7 +866,6 @@ public class paginaInicio extends javax.swing.JFrame {
         txtbuscar3.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar3.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
         txtbuscar3.setForeground(new java.awt.Color(204, 204, 204));
-        txtbuscar3.setText("Call of duty cold war");
         JPapartadoComprar.add(txtbuscar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
 
         btnBuscarJuego.setBackground(new java.awt.Color(6, 11, 25));
@@ -1201,7 +1243,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private void btnAgregarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJuegoActionPerformed
         AnadirJuego nuevo = new AnadirJuego();
         nuevo.setVisible(true);
-        this.setVisible(false);
+        
 
 
     }//GEN-LAST:event_btnAgregarJuegoActionPerformed
@@ -1319,7 +1361,6 @@ public class paginaInicio extends javax.swing.JFrame {
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if(lblNombreB1.getText().equals(listaJuegos.get(i).getNombre())){
-                System.out.println("Entro");
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
@@ -1328,11 +1369,8 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
                 
-            }else{
-                System.out.println("No entra");
             }
         }
-        System.out.println(lblNombre.getText());
         
         
     }//GEN-LAST:event_JPBuscado1MouseClicked
@@ -1353,14 +1391,21 @@ public class paginaInicio extends javax.swing.JFrame {
 
     private void btnComprarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarJuegoActionPerformed
         int id=0;
+        int iduser=0;
         List<Entidades.Juego> listajuegos = cjuego.findJuegoEntities();
+        Controlador.CuentaJpaController ccuenta=new CuentaJpaController();
+        List<Entidades.Cuenta> listadecuentas =ccuenta.findCuentaEntities();
         for (int i = 0; i < listajuegos.size(); i++) {
-            if(lblNombre.equals(listajuegos.get(i).getNombre())){
+            if(lblNombre.getText().equals(listajuegos.get(i).getNombre())){
                 id=listajuegos.get(i).getIdJuego();
             }
-                
         }
-        Tienda tienda = new Tienda(id);
+        for (int i = 0; i < listadecuentas.size(); i++) {
+            if(lblUsuario.getText().equals(listadecuentas.get(i).getNickname())){
+                iduser=listadecuentas.get(i).getIdCuenta();
+            }
+        }
+        Tienda tienda = new Tienda(id,iduser);
         tienda.setVisible(true);
     }//GEN-LAST:event_btnComprarJuegoActionPerformed
 
@@ -1481,9 +1526,185 @@ public class paginaInicio extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtbuscar2KeyReleased
 
-    private void JPBuscado1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado1MouseEntered
+    private void JPBuscado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado2MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_JPBuscado1MouseEntered
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB2.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_JPBuscado2MouseClicked
+
+    private void JPBuscado3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado3MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB3.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_JPBuscado3MouseClicked
+
+    private void JPBuscado4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado4MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB4.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_JPBuscado4MouseClicked
+
+    private void JPBuscado5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado5MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB5.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_JPBuscado5MouseClicked
+
+    private void lblNombreB1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB1MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB1.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_lblNombreB1MouseClicked
+
+    private void lblNombreB2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB2MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB2.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_lblNombreB2MouseClicked
+
+    private void lblNombreB3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB3MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB3.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_lblNombreB3MouseClicked
+
+    private void lblNombreB4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB4MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB4.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_lblNombreB4MouseClicked
+
+    private void lblNombreB5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB5MouseClicked
+        // TODO add your handling code here:
+        jPApartadoAdmin.setVisible(false);
+        JPapartadoTienda.setVisible(false);
+        JPApartadoTendencias.setVisible(false);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB5.getText().equals(listaJuegos.get(i).getNombre())){
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }
+        }
+    }//GEN-LAST:event_lblNombreB5MouseClicked
 
     /**
      * @param args the command line arguments

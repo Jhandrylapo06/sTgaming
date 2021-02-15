@@ -383,8 +383,7 @@ public class AnadirJuego extends javax.swing.JFrame {
             cvaloracion.create(valora);
             juego = new Juego(1, txtTituloJuego.getText(), txtDescripcion.getText(), "Null", "Null", txtRequerimientosMin.getText(), txtPrecioJuego.getText(), txtRequerimientosRe.getText(), txtRutaarchivo.getText(), clasi, valora);
             cjuego.create(juego);
-            paginaInicio pi = new paginaInicio();
-            pi.setVisible(true);
+            
             verificar = true;
             this.setVisible(false);
         }

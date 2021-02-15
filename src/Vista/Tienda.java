@@ -17,7 +17,7 @@ public class Tienda extends javax.swing.JFrame {
     /**
      * Creates new form AnadirJuego
      */
-    public Tienda(int id) {
+    public Tienda(int id,int iduser) {
         initComponents();
         setResizable(false);
         setLocation(800, 200);
