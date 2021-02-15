@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Controlador.JuegoJpaController;
+import java.util.List;
+
 /**
  *
  * @author Usuario iTC
@@ -14,10 +17,22 @@ public class Tienda extends javax.swing.JFrame {
     /**
      * Creates new form AnadirJuego
      */
-    public Tienda() {
+    public Tienda(int id) {
         initComponents();
-                setResizable(false);
+        setResizable(false);
         setLocation(800, 200);
+        
+        Controlador.JuegoJpaController cjuego= new JuegoJpaController();
+        List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJ.size(); i++) {
+            if(id==listaJ.get(i).getIdJuego()){
+                lblPrecioTotal.setText(listaJ.get(i).getPrecio());
+            }
+        }
+    }
+
+    private Tienda() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

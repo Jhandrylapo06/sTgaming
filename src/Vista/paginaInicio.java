@@ -115,7 +115,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
         SPMisjuegos = new javax.swing.JScrollPane();
-        JLMisjuegos = new javax.swing.JList<>();
+        JLMisjuegos = new javax.swing.JList<String>();
         JPApartadoTendencias = new javax.swing.JPanel();
         SPtendencias = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
@@ -203,12 +203,12 @@ public class paginaInicio extends javax.swing.JFrame {
         btnComprarJuego = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         SPRRe = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextrecomendados = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         JPdescripcionjuego = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        jTextdescripcion = new javax.swing.JTextArea();
         JPrequisitosMi = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jTextminimos = new javax.swing.JTextArea();
         lblPrecio = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -224,7 +224,7 @@ public class paginaInicio extends javax.swing.JFrame {
         Pjuegos = new javax.swing.JPanel();
         PAdministrarJuegos = new javax.swing.JPanel();
         SPjuegos = new javax.swing.JScrollPane();
-        JlistJuegosadmin = new javax.swing.JList<>();
+        JlistJuegosadmin = new javax.swing.JList<String>();
         btnAgregarJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -233,7 +233,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPAdminRol = new javax.swing.JPanel();
         JPadministrarRoles = new javax.swing.JPanel();
         SpUsers = new javax.swing.JScrollPane();
-        JListUsuarios = new javax.swing.JList<>();
+        JListUsuarios = new javax.swing.JList<String>();
         txtbuscarusuario = new javax.swing.JTextField();
         btnBuscarUsuario = new javax.swing.JButton();
         btnAsignarAdmin = new javax.swing.JRadioButton();
@@ -500,6 +500,9 @@ public class paginaInicio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JPBuscado1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JPBuscado1MouseEntered(evt);
+            }
         });
         JPBuscado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -689,7 +692,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPjuegosTienda.setViewportView(JPjuegoBuscado);
 
-        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
+        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 1370));
 
         pGeneral.add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
@@ -727,19 +730,19 @@ public class paginaInicio extends javax.swing.JFrame {
         jLabel1.setText("Todos los derechos reservados");
         JPjuego.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 1660, -1, 30));
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(6, 11, 25));
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Maiandra GD", 0, 18)); // NOI18N
-        jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Sistema Operativo: Windows 10 64-Bit\nCPU: Intel Core i5-2500K o AMD Ryzen R5 1600X\nRAM: 12 GB de RAM\nHDD (de lanzamiento): 175 GB\nGráficos: NVIDIA GeForce GTX 970 / GTX 1660 Super o Radeon R9 390 / AMD RX 580\nDirectX 12\nConexión a internet");
-        jTextArea2.setWrapStyleWord(true);
-        jTextArea2.setBorder(null);
-        jTextArea2.setCaretColor(new java.awt.Color(6, 11, 25));
-        jTextArea2.setSelectionColor(new java.awt.Color(6, 11, 25));
-        SPRRe.setViewportView(jTextArea2);
+        jTextrecomendados.setEditable(false);
+        jTextrecomendados.setBackground(new java.awt.Color(6, 11, 25));
+        jTextrecomendados.setColumns(20);
+        jTextrecomendados.setFont(new java.awt.Font("Maiandra GD", 0, 18)); // NOI18N
+        jTextrecomendados.setForeground(new java.awt.Color(255, 255, 255));
+        jTextrecomendados.setLineWrap(true);
+        jTextrecomendados.setRows(5);
+        jTextrecomendados.setText("Sistema Operativo: Windows 10 64-Bit\nCPU: Intel Core i5-2500K o AMD Ryzen R5 1600X\nRAM: 12 GB de RAM\nHDD (de lanzamiento): 175 GB\nGráficos: NVIDIA GeForce GTX 970 / GTX 1660 Super o Radeon R9 390 / AMD RX 580\nDirectX 12\nConexión a internet");
+        jTextrecomendados.setWrapStyleWord(true);
+        jTextrecomendados.setBorder(null);
+        jTextrecomendados.setCaretColor(new java.awt.Color(6, 11, 25));
+        jTextrecomendados.setSelectionColor(new java.awt.Color(6, 11, 25));
+        SPRRe.setViewportView(jTextrecomendados);
 
         JPjuego.add(SPRRe, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1260, 730, 300));
 
@@ -749,35 +752,35 @@ public class paginaInicio extends javax.swing.JFrame {
         jLabel7.setText("Recomendados");
         JPjuego.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1210, -1, -1));
 
-        jTextArea3.setEditable(false);
-        jTextArea3.setBackground(new java.awt.Color(6, 11, 25));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Maiandra GD", 0, 18)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Call of Duty: Black Ops Cold War es un nueva entrega de la saga de acción bélica first person shooter a cargo de Treyarch junto a Raven y Activision para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series X que nos lleva a la convulsa época de la Guerra Fría. Como operador de élite, seguirás los pasos de una misteriosa figura llamada Perseus, cuya misión es desestabilizar el equilibrio de poder mundial y cambiar el curso de la historia. Adéntrate en esta conspiración global junto con los legendarios personajes Woods, Mason y Hudson, así como con un nuevo plantel de operadores dispuestos a detener una conspiración que lleva décadas urdiéndose. Además de la campaña, los jugadores llevarán un arsenal de armas y equipamiento de la Guerra Fría a la siguiente generación de los modos Multijugador y Zombis.");
-        jTextArea3.setWrapStyleWord(true);
-        jTextArea3.setBorder(null);
-        jTextArea3.setCaretColor(new java.awt.Color(6, 11, 25));
-        jTextArea3.setSelectionColor(new java.awt.Color(6, 11, 25));
-        JPdescripcionjuego.setViewportView(jTextArea3);
+        jTextdescripcion.setEditable(false);
+        jTextdescripcion.setBackground(new java.awt.Color(6, 11, 25));
+        jTextdescripcion.setColumns(20);
+        jTextdescripcion.setFont(new java.awt.Font("Maiandra GD", 0, 18)); // NOI18N
+        jTextdescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        jTextdescripcion.setLineWrap(true);
+        jTextdescripcion.setRows(5);
+        jTextdescripcion.setText("Call of Duty: Black Ops Cold War es un nueva entrega de la saga de acción bélica first person shooter a cargo de Treyarch junto a Raven y Activision para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series X que nos lleva a la convulsa época de la Guerra Fría. Como operador de élite, seguirás los pasos de una misteriosa figura llamada Perseus, cuya misión es desestabilizar el equilibrio de poder mundial y cambiar el curso de la historia. Adéntrate en esta conspiración global junto con los legendarios personajes Woods, Mason y Hudson, así como con un nuevo plantel de operadores dispuestos a detener una conspiración que lleva décadas urdiéndose. Además de la campaña, los jugadores llevarán un arsenal de armas y equipamiento de la Guerra Fría a la siguiente generación de los modos Multijugador y Zombis.");
+        jTextdescripcion.setWrapStyleWord(true);
+        jTextdescripcion.setBorder(null);
+        jTextdescripcion.setCaretColor(new java.awt.Color(6, 11, 25));
+        jTextdescripcion.setSelectionColor(new java.awt.Color(6, 11, 25));
+        JPdescripcionjuego.setViewportView(jTextdescripcion);
 
-        JPjuego.add(JPdescripcionjuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 970, 1510, 160));
+        JPjuego.add(JPdescripcionjuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 970, 1510, 150));
 
-        jTextArea4.setEditable(false);
-        jTextArea4.setBackground(new java.awt.Color(6, 11, 25));
-        jTextArea4.setColumns(20);
-        jTextArea4.setFont(new java.awt.Font("Maiandra GD", 0, 18)); // NOI18N
-        jTextArea4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Sistema Operativo: Windows 7 64-Bit (SP1) o Windows 10 64-Bit (v.1803)\nCPU: Intel Core i3-4340 o AMD FX-6300\nRAM: 8 GB de RAM\nHDD: 50 GB (solo multijugador), 175 GB (todos los modos de juego)\nGráficos: NVIDIA GeForce GTX 670 / GeForce GTX 1650 o Radeon HD 7950\nDirectX 12\nConexión a internet ");
-        jTextArea4.setWrapStyleWord(true);
-        jTextArea4.setBorder(null);
-        jTextArea4.setCaretColor(new java.awt.Color(6, 11, 25));
-        jTextArea4.setSelectionColor(new java.awt.Color(6, 11, 25));
-        JPrequisitosMi.setViewportView(jTextArea4);
+        jTextminimos.setEditable(false);
+        jTextminimos.setBackground(new java.awt.Color(6, 11, 25));
+        jTextminimos.setColumns(20);
+        jTextminimos.setFont(new java.awt.Font("Maiandra GD", 0, 18)); // NOI18N
+        jTextminimos.setForeground(new java.awt.Color(255, 255, 255));
+        jTextminimos.setLineWrap(true);
+        jTextminimos.setRows(5);
+        jTextminimos.setText("Sistema Operativo: Windows 7 64-Bit (SP1) o Windows 10 64-Bit (v.1803)\nCPU: Intel Core i3-4340 o AMD FX-6300\nRAM: 8 GB de RAM\nHDD: 50 GB (solo multijugador), 175 GB (todos los modos de juego)\nGráficos: NVIDIA GeForce GTX 670 / GeForce GTX 1650 o Radeon HD 7950\nDirectX 12\nConexión a internet ");
+        jTextminimos.setWrapStyleWord(true);
+        jTextminimos.setBorder(null);
+        jTextminimos.setCaretColor(new java.awt.Color(6, 11, 25));
+        jTextminimos.setSelectionColor(new java.awt.Color(6, 11, 25));
+        JPrequisitosMi.setViewportView(jTextminimos);
 
         JPjuego.add(JPrequisitosMi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1260, 730, 300));
 
@@ -815,7 +818,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPJuego.setViewportView(JPjuego);
 
-        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 810));
+        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1630, 1710));
 
         txtbuscar3.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar3.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
@@ -1313,7 +1316,25 @@ public class paginaInicio extends javax.swing.JFrame {
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
-        JPapartadoComprar.setVisible(true);
+        List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listaJuegos.size(); i++) {
+            if(lblNombreB1.getText().equals(listaJuegos.get(i).getNombre())){
+                System.out.println("Entro");
+                lblNombre.setText(listaJuegos.get(i).getNombre());
+                lblValoracion.setText("Valoracion: "+listaJuegos.get(i).getValoracion().getValor());
+                lblPrecio.setText("Precio: "+listaJuegos.get(i).getPrecio());
+                jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
+                jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
+                jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                JPapartadoComprar.setVisible(true);
+                
+            }else{
+                System.out.println("No entra");
+            }
+        }
+        System.out.println(lblNombre.getText());
+        
+        
     }//GEN-LAST:event_JPBuscado1MouseClicked
 
     private void btnBuscarJuegoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJuegoTActionPerformed
@@ -1331,7 +1352,15 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTendenciasMouseClicked
 
     private void btnComprarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarJuegoActionPerformed
-        Tienda tienda = new Tienda();
+        int id=0;
+        List<Entidades.Juego> listajuegos = cjuego.findJuegoEntities();
+        for (int i = 0; i < listajuegos.size(); i++) {
+            if(lblNombre.equals(listajuegos.get(i).getNombre())){
+                id=listajuegos.get(i).getIdJuego();
+            }
+                
+        }
+        Tienda tienda = new Tienda(id);
         tienda.setVisible(true);
     }//GEN-LAST:event_btnComprarJuegoActionPerformed
 
@@ -1373,8 +1402,8 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void txtbuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscar2KeyReleased
-
-        try {
+        
+//        try {
             Icon Imagenes;
             JPapartadoTienda.setVisible(true);
             jPApartadoAdmin.setVisible(false);
@@ -1388,70 +1417,73 @@ public class paginaInicio extends javax.swing.JFrame {
             JPBuscado4.setVisible(false);
             JPBuscado5.setVisible(false);
             List<Entidades.Juego> buscado = cjuego.Buscarjuego(txtbuscar2.getText());
-            int contador = -1;
+            int contador =0;
             System.out.println(contador);
             for (int i = 0; i < buscado.size(); i++) {
-                contador++;
-                System.out.println(contador);
+                System.out.println("i: "+i);
+                System.out.println("Contador: "+contador);
                 if (contador == 0) {
-                    
-                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(0).getNombre() + "Miniatura.jpg");
                     System.out.println("E1");
                     JPBuscado1.setVisible(true);
-                    lblNombreB1.setText(buscado.get(1).getNombre());
-                    lblPrecioB1.setText("PVP:" + buscado.get(1).getPrecio());
-                    lblValorB1.setText("V:" + buscado.get(1).getValoracion().getValor());
+                    lblNombreB1.setText(buscado.get(0).getNombre());
+                    lblPrecioB1.setText("PVP:" + buscado.get(0).getPrecio());
+                    lblValorB1.setText("V:" + buscado.get(0).getValoracion().getValor());
                     lblMiniatura1.setIcon(Imagenes);
 
                 }
                 if (contador == 1) {
-                    System.out.println("E22");
-                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
                     System.out.println("E2");
                     JPBuscado2.setVisible(true);
-                    lblNombreB2.setText(buscado.get(2).getNombre());
-                    lblPrecioB2.setText("PVP:" + buscado.get(2).getPrecio());
-                    lblValorB2.setText("V:" + buscado.get(2).getValoracion().getValor());
+                    lblNombreB2.setText(buscado.get(1).getNombre());
+                    lblPrecioB2.setText("PVP:" + buscado.get(1).getPrecio());
+                    lblValorB2.setText("V:" + buscado.get(1).getValoracion().getValor());
                     lblMiniatura2.setIcon(Imagenes);
 
                 }
                 if (contador == 2) {
-                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
                     System.out.println("E3");
                     JPBuscado3.setVisible(true);
-                    lblNombreB3.setText(buscado.get(3).getNombre());
-                    lblPrecioB3.setText("PVP:" + buscado.get(3).getPrecio());
-                    lblValorB3.setText("V:" + buscado.get(3).getValoracion().getValor());
+                    lblNombreB3.setText(buscado.get(2).getNombre());
+                    lblPrecioB3.setText("PVP:" + buscado.get(2).getPrecio());
+                    lblValorB3.setText("V:" + buscado.get(2).getValoracion().getValor());
                     lblMiniatura3.setIcon(Imagenes);
 
                 }
                 if (contador == 3) {
-                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
                     System.out.println("E4");
                     JPBuscado4.setVisible(true);
-                    lblNombreB4.setText(buscado.get(4).getNombre());
-                    lblPrecioB4.setText("PVP:" + buscado.get(4).getPrecio());
-                    lblValorB4.setText("V:" + buscado.get(4).getValoracion().getValor());
+                    lblNombreB4.setText(buscado.get(3).getNombre());
+                    lblPrecioB4.setText("PVP:" + buscado.get(3).getPrecio());
+                    lblValorB4.setText("V:" + buscado.get(3).getValoracion().getValor());
                     lblMiniatura4.setIcon(Imagenes);
 
                 }
                 if (contador == 4) {
-                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(5).getNombre() + "Miniatura.jpg");
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
                     System.out.println("E5");
                     JPBuscado5.setVisible(true);
-                    lblNombreB5.setText(buscado.get(5).getNombre());
-                    lblPrecioB5.setText("PVP:" + buscado.get(5).getPrecio());
-                    lblValorB5.setText("V:" + buscado.get(5).getValoracion().getValor());
+                    lblNombreB5.setText(buscado.get(4).getNombre());
+                    lblPrecioB5.setText("PVP:" + buscado.get(4).getPrecio());
+                    lblValorB5.setText("V:" + buscado.get(4).getValoracion().getValor());
                     lblMiniatura5.setIcon(Imagenes);
 
                 }
+                contador++;
             }
 
-        } catch (Exception e) {
-        }
+//        } catch (Exception e) {
+//        }
 
 
     }//GEN-LAST:event_txtbuscar2KeyReleased
+
+    private void JPBuscado1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JPBuscado1MouseEntered
 
     /**
      * @param args the command line arguments
@@ -1593,9 +1625,9 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextdescripcion;
+    private javax.swing.JTextArea jTextminimos;
+    private javax.swing.JTextArea jTextrecomendados;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblMinT1;
     private javax.swing.JLabel lblMinT2;
