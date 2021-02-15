@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
@@ -508,7 +510,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JPBuscado1.add(lblNombreB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMiniatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cold war 2_miniatura.jpg"))); // NOI18N
         JPBuscado1.add(lblMiniatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         lblPrecioB1.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
@@ -521,7 +522,7 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValorB1.setText("V: 4.8/5");
         JPBuscado1.add(lblValorB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
 
-        JPjuegoBuscado.add(JPBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1550, 230));
+        JPjuegoBuscado.add(JPBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 1550, 230));
 
         JPBuscado2.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -534,7 +535,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JPBuscado2.add(lblNombreB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMiniatura2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops4_miniatura.jpg"))); // NOI18N
         JPBuscado2.add(lblMiniatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         lblPrecioB2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
@@ -547,7 +547,7 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValorB2.setText("V: 4.0/5");
         JPBuscado2.add(lblValorB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
 
-        JPjuegoBuscado.add(JPBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 230));
+        JPjuegoBuscado.add(JPBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 230));
 
         JPBuscado3.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -560,7 +560,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JPBuscado3.add(lblNombreB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMiniatura3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops3_miniatura.jpg"))); // NOI18N
         JPBuscado3.add(lblMiniatura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         lblPrecioB3.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
@@ -573,7 +572,7 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValorB3.setText("V: 4.9/5");
         JPBuscado3.add(lblValorB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
 
-        JPjuegoBuscado.add(JPBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 1550, 230));
+        JPjuegoBuscado.add(JPBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 1550, 230));
 
         JPBuscado4.setBackground(new java.awt.Color(6, 11, 25));
         JPBuscado4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -586,7 +585,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JPBuscado4.add(lblNombreB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMiniatura4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops2_miniatura.jpg"))); // NOI18N
         JPBuscado4.add(lblMiniatura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         lblPrecioB4.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
@@ -654,7 +652,6 @@ public class paginaInicio extends javax.swing.JFrame {
         JPBuscado5.add(lblNombreB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 110));
 
         lblMiniatura5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMiniatura5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/blackops1_miniatura.jpg"))); // NOI18N
         JPBuscado5.add(lblMiniatura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         lblPrecioB5.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
@@ -667,17 +664,13 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValorB5.setText("V: 4.8/5");
         JPBuscado5.add(lblValorB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 0, 180, 100));
 
-        JPjuegoBuscado.add(JPBuscado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1030, -1, 230));
-
-        JPjuegosTienda.setViewportView(JPjuegoBuscado);
-
-        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1610, 810));
+        JPjuegoBuscado.add(JPBuscado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1020, -1, 230));
 
         txtbuscar2.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar2.setFont(new java.awt.Font("Eras Light ITC", 0, 24)); // NOI18N
         txtbuscar2.setForeground(new java.awt.Color(204, 204, 204));
         txtbuscar2.setText("Call of duty black ops");
-        JPapartadoTienda.add(txtbuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
+        JPjuegoBuscado.add(txtbuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
 
         btnBuscarJuegoT.setBackground(new java.awt.Color(6, 11, 25));
         btnBuscarJuegoT.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
@@ -688,7 +681,11 @@ public class paginaInicio extends javax.swing.JFrame {
                 btnBuscarJuegoTActionPerformed(evt);
             }
         });
-        JPapartadoTienda.add(btnBuscarJuegoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
+        JPjuegoBuscado.add(btnBuscarJuegoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 200, 50));
+
+        JPjuegosTienda.setViewportView(JPjuegoBuscado);
+
+        JPapartadoTienda.add(JPjuegosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 860));
 
         pGeneral.add(JPapartadoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 860));
 
@@ -1108,11 +1105,77 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblUsuarioMouseEntered
 
     private void lblTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTiendaMouseClicked
-        JPapartadoTienda.setVisible(true);
-        jPApartadoAdmin.setVisible(false);
-        JPApartadoTendencias.setVisible(false);
-        lblTienda.setForeground(new java.awt.Color(102, 153, 255));
-        lblTendencias.setForeground(new java.awt.Color(255, 255, 255));
+        try {
+            Icon Imagenes;
+            JPapartadoTienda.setVisible(true);
+            jPApartadoAdmin.setVisible(false);
+            JPApartadoTendencias.setVisible(false);
+            lblTienda.setForeground(new java.awt.Color(102, 153, 255));
+            lblTendencias.setForeground(new java.awt.Color(255, 255, 255));
+            //CONSULTA INICIAL
+            JPBuscado1.setVisible(false);
+            JPBuscado2.setVisible(false);
+            JPBuscado3.setVisible(false);
+            JPBuscado4.setVisible(false);
+            JPBuscado5.setVisible(false);
+            List<Entidades.Juego> buscado = cjuego.Buscarjuego("a");
+            int contador = -1;
+            for (int i = 0; i < buscado.size(); i++) {
+                contador++;
+                System.out.println(contador);
+                if (contador == 0) {
+                    
+
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+buscado.get(1).getNombre()+"Miniatura.jpg");
+                    JPBuscado1.setVisible(true);
+                    lblNombreB1.setText(buscado.get(1).getNombre());
+                    lblPrecioB1.setText("PVP:" + buscado.get(1).getPrecio());
+                    lblValorB1.setText("V:" + buscado.get(1).getValoracion().getValor());
+                    lblMiniatura1.setIcon(Imagenes);
+                    
+
+                }
+                if (contador == 1) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+buscado.get(2).getNombre()+"Miniatura.jpg");
+                    JPBuscado2.setVisible(true);
+                    lblNombreB2.setText(buscado.get(2).getNombre());
+                    lblPrecioB2.setText("PVP:" + buscado.get(2).getPrecio());
+                    lblValorB2.setText("V:" + buscado.get(2).getValoracion().getValor());
+                    lblMiniatura2.setIcon(Imagenes);
+                    
+                }
+                if (contador == 2) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+buscado.get(3).getNombre()+"Miniatura.jpg");
+                    JPBuscado3.setVisible(true);
+                    lblNombreB3.setText(buscado.get(3).getNombre());
+                    lblPrecioB3.setText("PVP:" + buscado.get(3).getPrecio());
+                    lblValorB3.setText("V:" + buscado.get(3).getValoracion().getValor());
+                    lblMiniatura3.setIcon(Imagenes);
+                    
+                }
+                if (contador == 3) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+buscado.get(4).getNombre()+"Miniatura.jpg");
+                    JPBuscado4.setVisible(true);
+                    lblNombreB4.setText(buscado.get(4).getNombre());
+                    lblPrecioB4.setText("PVP:" + buscado.get(4).getPrecio());
+                    lblValorB4.setText("V:" + buscado.get(4).getValoracion().getValor());
+                    lblMiniatura4.setIcon(Imagenes);
+                    
+                }
+                if (contador == 4) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+buscado.get(5).getNombre()+"Miniatura.jpg");
+                    JPBuscado5.setVisible(true);
+                    lblNombreB5.setText(buscado.get(5).getNombre());
+                    lblPrecioB5.setText("PVP:" + buscado.get(5).getPrecio());
+                    lblValorB5.setText("V:" + buscado.get(5).getValoracion().getValor());
+                    lblMiniatura5.setIcon(Imagenes);
+                    
+                }
+            }
+
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_lblTiendaMouseClicked
 
     private void btnAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrarActionPerformed
@@ -1134,24 +1197,24 @@ public class paginaInicio extends javax.swing.JFrame {
         AnadirJuego nuevo = new AnadirJuego();
         nuevo.setVisible(true);
         this.setVisible(false);
-        
-        
+
+
     }//GEN-LAST:event_btnAgregarJuegoActionPerformed
-    
+
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         JOptionPane.showConfirmDialog(null, "Estas seguro de dar de baja/eliminar este juego", "Confirmar", WIDTH);
         int id = 0;
-        DefaultListModel modelo2= new DefaultListModel();
-       
-            for (int i = 0; i < listaedit.size(); i++) {
+        DefaultListModel modelo2 = new DefaultListModel();
+
+        for (int i = 0; i < listaedit.size(); i++) {
             if (JlistJuegosadmin.getSelectedValue().equals(listaedit.get(i).getNombre())) {
                 try {
                     id = listaedit.get(i).getIdJuego();
-                    
+
                     cjuego.destroy(id);
                     modelo.remove(i);
                     listaedit.remove(listaedit.get(i));
-                    
+
                     JlistJuegosadmin.setModel(modelo);
                     JlistJuegosadmin.setVisible(true);
 
@@ -1161,8 +1224,6 @@ public class paginaInicio extends javax.swing.JFrame {
                 break;
             }
         }
-        
-        
 
 
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -1304,7 +1365,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_txtbuscarusuarioKeyReleased
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Login n=new Login();
+        Login n = new Login();
         n.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
