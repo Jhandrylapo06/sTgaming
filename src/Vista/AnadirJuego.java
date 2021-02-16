@@ -20,6 +20,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -409,8 +410,8 @@ public class AnadirJuego extends javax.swing.JFrame {
                     imagencopiar = ImageIO.read(imagenP);
                     
                     System.out.println(fc.getSelectedFile().toString());
-                    ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Portada.png"));
-                    txtrutaportada.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Portada.png");
+                    ImageIO.write(imagencopiar, "jpg", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Portada.jpg"));
+                    txtrutaportada.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Portada.jpg");
                     
                 } catch (Exception e) {
                 }
@@ -432,9 +433,9 @@ public class AnadirJuego extends javax.swing.JFrame {
                 try {
                     imagencopiar = ImageIO.read(imagenP);
                     
-                    System.out.println(fc.getSelectedFile().toString());
-                    ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png"));
-                    txtRutaarchivo.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png");
+                    
+                    ImageIO.write(imagencopiar, "jpg", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Descargable.jpg"));
+                    txtRutaarchivo.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Descargable.jpg");
                     
                 } catch (Exception e) {
                 }
@@ -456,9 +457,9 @@ public class AnadirJuego extends javax.swing.JFrame {
                 try {
                     imagencopiar = ImageIO.read(imagenP);
                     
-                    System.out.println(fc.getSelectedFile().toString());
-                    ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png"));
-                    txtrutaMiniatura.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.png");
+                    
+                    ImageIO.write(imagencopiar, "jpg", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.jpg"));
+                    txtrutaMiniatura.setText("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + txtTituloJuego.getText() + "Miniatura.jpg");
                     
                 } catch (Exception e) {
                 }
@@ -516,11 +517,13 @@ public class AnadirJuego extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AnadirJuego().setVisible(true);
+                
                 try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
                     Logger.getLogger(AnadirJuego.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
             }
         });
     }

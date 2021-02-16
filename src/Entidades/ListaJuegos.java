@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,17 +21,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author ordon
+ * @author Usuario iTC
  */
 @Entity
 @Table(name = "lista_juegos")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "ListaJuegos.findAll", query = "SELECT l FROM ListaJuegos l"),
-    @NamedQuery(name = "ListaJuegos.findByIdListajuegos", query = "SELECT l FROM ListaJuegos l WHERE l.idListajuegos = :idListajuegos")})
+    @NamedQuery(name = "ListaJuegos.findAll", query = "SELECT l FROM ListaJuegos l")
+    , @NamedQuery(name = "ListaJuegos.findByIdListajuegos", query = "SELECT l FROM ListaJuegos l WHERE l.idListajuegos = :idListajuegos")})
 public class ListaJuegos implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idLista_juegos")
     private Integer idListajuegos;

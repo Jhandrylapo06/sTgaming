@@ -9,12 +9,17 @@ import Controlador.CuentaJpaController;
 import Controlador.JuegoJpaController;
 import Controlador.ListaJuegosJpaController;
 import Entidades.ListaJuegos;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,17 +34,19 @@ public class Tienda extends javax.swing.JFrame {
     Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Cuenta> listacuenta = ccuenta.findCuentaEntities();
-    Controlador.ListaJuegosJpaController clista=new ListaJuegosJpaController();
-    Entidades.ListaJuegos lista= new ListaJuegos();
+    Controlador.ListaJuegosJpaController clista = new ListaJuegosJpaController();
+    List<Entidades.ListaJuegos> listaMisjuegos = clista.findListaJuegosEntities();
+    Entidades.ListaJuegos lista = new ListaJuegos();
+    DefaultListModel misjuegos = new DefaultListModel();
     int idjuego = 0;
-    int idusuario=0;
+    int idusuario = 0;
 
     public Tienda(int id, int iduser) {
         initComponents();
         setResizable(false);
         setLocation(800, 200);
         idjuego = id;
-        idusuario=iduser;
+        idusuario = iduser;
 
         for (int i = 0; i < listaJ.size(); i++) {
             if (id == listaJ.get(i).getIdJuego()) {
@@ -220,37 +227,54 @@ public class Tienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
-        FileWriter JuegoDocument = null;
-        
-        for (int i = 0; i < listaJ.size(); i++) {
-            if (idjuego == listaJ.get(i).getIdJuego()) {
-                try {
-                    JuegoDocument = new FileWriter("C:/Users/Public/Downloads/Archivo Archivo de Juego: " + listaJ.get(i).getNombre());
-                } catch (IOException ex) {
-                    Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        this.setVisible(false);
-        
-        
-        for (int i = 0; i < listacuenta.size(); i++) {
-            if (listacuenta.get(i).getIdCuenta()==idusuario) {
-                for (int j = 0; j < listaJ.size(); j++) {
-                    if (listaJ.get(j).getIdJuego()==idjuego) {
-                        lista.setIdListajuegos(1);
-                        lista.setCuenta(listacuenta.get(i));
-                        lista.setJuegos(listaJ.get(j));
-                        try {
-                            clista.create(lista);
-                        } catch (Exception ex) {
-                            Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
+        if (txtNumtarjeta.getText().length() > 14 && txtNumtarjeta.getText().length() < 20) {
+            if (txtCodigo.getText().length() == 3) {
+
+            } else {
+                JOptionPane.showConfirmDialog(null, "El codigo de seguridad es no valido");
+                if (txtfVencimiento.getText().length() == 4) {
+                    for (int i = 0; i < listaJ.size(); i++) {
+                        if (idjuego == listaJ.get(i).getIdJuego()) {
+
+                            File imagenP = new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+listaJ.get(i).getNombre()+"Descargable.png");
+                            BufferedImage imagencopiar;
+                            try {
+                                imagencopiar = ImageIO.read(imagenP);
+
+                                ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Misjuegos/" + listaJ.get(i).getNombre() + "Descargable.png"));
+
+                            } catch (Exception e) {
+                            }
+
                         }
                     }
+                    this.setVisible(false);
+
+                    for (int i = 0; i < listacuenta.size(); i++) {
+                        if (listacuenta.get(i).getIdCuenta() == idusuario) {
+                            for (int j = 0; j < listaJ.size(); j++) {
+                                if (listaJ.get(j).getIdJuego() == idjuego) {
+                                    lista.setIdListajuegos(1);
+                                    lista.setCuenta(listacuenta.get(i));
+                                    lista.setJuegos(listaJ.get(j));
+                                    try {
+                                        clista.create(lista);
+                                    } catch (Exception ex) {
+                                        Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    JOptionPane.showConfirmDialog(null, "La fecha ingresada es no valida");
+
                 }
             }
+        } else {
+
+            JOptionPane.showConfirmDialog(null, "El numero de la tarjeta es un numero no valido");
         }
-        
 
 
     }//GEN-LAST:event_btnConfirmarCompraActionPerformed

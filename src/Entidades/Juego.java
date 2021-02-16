@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +17,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -38,6 +41,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Juego.findByRequisitosRec", query = "SELECT j FROM Juego j WHERE j.requisitosRec = :requisitosRec"),
     @NamedQuery(name = "Juego.findByDirjuego", query = "SELECT j FROM Juego j WHERE j.dirjuego = :dirjuego")})
 public class Juego implements Serializable {
+
+    @OneToMany(mappedBy = "juegos")
+    private Collection<ListaJuegos> listaJuegosCollection;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -199,6 +205,15 @@ public class Juego implements Serializable {
     @Override
     public String toString() {
         return "Entidades.Juego[ idJuego=" + idJuego + " ]";
+    }
+
+    @XmlTransient
+    public Collection<ListaJuegos> getListaJuegosCollection() {
+        return listaJuegosCollection;
+    }
+
+    public void setListaJuegosCollection(Collection<ListaJuegos> listaJuegosCollection) {
+        this.listaJuegosCollection = listaJuegosCollection;
     }
     
 }

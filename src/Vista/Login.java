@@ -6,9 +6,11 @@
 package Vista;
 
 import Controlador.CuentaJpaController;
+import Controlador.ListaJuegosJpaController;
 import Controlador.UsuarioJpaController;
 import Entidades.Cuenta_;
 import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -218,7 +220,11 @@ public class Login extends javax.swing.JFrame {
 
     private void lblBingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBingresarMouseClicked
         Controlador.UsuarioJpaController cusuarios = new UsuarioJpaController();
+        Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
+        Controlador.ListaJuegosJpaController clisjue = new ListaJuegosJpaController();
+        List<Entidades.ListaJuegos> Misjuegosl = clisjue.findListaJuegosEntities();
 
+        List<Entidades.Cuenta> listacuentas = ccuenta.findCuentaEntities();
         List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
         boolean verificador = false;
         for (int i = 0; i < listaU.size(); i++) {
@@ -231,6 +237,19 @@ public class Login extends javax.swing.JFrame {
                     n.btnAdministrar.setVisible(true);
                     n.lblUsuario.setText(listaU.get(i).getCuentauser().getNickname());
                     this.setVisible(false);
+                    DefaultListModel modelolista = new DefaultListModel();
+                    for (int k = 0; k < listacuentas.size(); k++) {
+                        if (txtNombreusuario.getText().equals(listacuentas.get(k).getNickname())) {
+                            for (int j = 0; j < Misjuegosl.size(); j++) {
+                                if (Misjuegosl.get(j).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                    modelolista.addElement(Misjuegosl.get(j).getJuegos().getNombre());
+                                }
+
+                            }
+                        }
+                    }
+                    n.JLMisjuegos.setModel(modelolista);
+                    n.JLMisjuegos.setVisible(true);
                     break;
 
                 } else if (listaU.get(i).getRoluser().getTipo().equals("user")) {
@@ -240,7 +259,19 @@ public class Login extends javax.swing.JFrame {
                     n.btnAdministrar.setVisible(false);
                     n.lblUsuario.setText(listaU.get(i).getCuentauser().getNickname());
                     this.setVisible(false);
+                    DefaultListModel modelolista = new DefaultListModel();
+                    for (int k = 0; k < listacuentas.size(); k++) {
+                        if (txtNombreusuario.getText().equals(listacuentas.get(k).getNickname())) {
+                            for (int j = 0; j < Misjuegosl.size(); j++) {
+                                if (Misjuegosl.get(j).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                    modelolista.addElement(Misjuegosl.get(j).getJuegos().getNombre());
+                                }
 
+                            }
+                        }
+                    }
+                    n.JLMisjuegos.setModel(modelolista);
+                    n.JLMisjuegos.setVisible(true);
                     break;
                 }
             } else {
