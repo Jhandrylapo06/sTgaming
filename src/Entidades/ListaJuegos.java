@@ -43,6 +43,12 @@ public class ListaJuegos implements Serializable {
     public ListaJuegos() {
     }
 
+    public ListaJuegos(Integer idListajuegos, Cuenta cuenta, Juego juegos) {
+        this.idListajuegos = idListajuegos;
+        this.cuenta = cuenta;
+        this.juegos = juegos;
+    }
+
     public ListaJuegos(Integer idListajuegos) {
         this.idListajuegos = idListajuegos;
     }

@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.CuentaJpaController;
 import Controlador.JuegoJpaController;
+import Controlador.ListaJuegosJpaController;
 import Controlador.RolJpaController;
 import Controlador.UsuarioJpaController;
 import Controlador.exceptions.NonexistentEntityException;
@@ -31,9 +32,13 @@ public class paginaInicio extends javax.swing.JFrame {
     Controlador.JuegoJpaController cjuego = new JuegoJpaController();
     Controlador.UsuarioJpaController cusuario = new UsuarioJpaController();
     Controlador.RolJpaController crol = new RolJpaController();
+    Controlador.ListaJuegosJpaController clisjue = new ListaJuegosJpaController();
+    Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
     List<Entidades.Usuario> listauser = cusuario.findUsuarioEntities();
+    List<Entidades.Cuenta> listacuentas = ccuenta.findCuentaEntities();
+    List<Entidades.ListaJuegos> Misjuegosl = clisjue.findListaJuegosEntities();
     DefaultListModel modelo = new DefaultListModel();
     boolean verificador;
 
@@ -45,7 +50,19 @@ public class paginaInicio extends javax.swing.JFrame {
         // Codigo de ordenacion de valoraciones de juego para las tendencias (mayor a menor valorados)
         initComponents();
         setResizable(false);
-
+        DefaultListModel modelolista = new DefaultListModel();
+        for (int i = 0; i < listacuentas.size(); i++) {
+            if(lblUsuario.getText().equals(listacuentas.get(i).getNickname())){
+                for (int j = 0; j <Misjuegosl.size() ; j++) {
+                    if(Misjuegosl.get(j).getCuenta().getIdCuenta()==listacuentas.get(i).getIdCuenta()){
+                        modelolista.addElement(Misjuegosl.get(j).getJuegos().getNombre());
+                    }
+                        
+                }
+            }
+        }
+        JLMisjuegos.setModel(modelolista);
+        JLMisjuegos.setVisible(true);
         DefaultListModel modelousu = new DefaultListModel();
         for (int i = 0; i < listauser.size(); i++) {
             modelousu.addElement(listauser.get(i).getCuentauser().getNickname());
@@ -111,6 +128,7 @@ public class paginaInicio extends javax.swing.JFrame {
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        lblMinT6 = new javax.swing.JLabel();
         SPgeneral = new javax.swing.JScrollPane();
         pGeneral = new javax.swing.JPanel();
         JPMisjuegos = new javax.swing.JPanel();
@@ -142,7 +160,6 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValT5 = new javax.swing.JLabel();
         JPtendencia6 = new javax.swing.JPanel();
         lblNomT6 = new javax.swing.JLabel();
-        lblMinT6 = new javax.swing.JLabel();
         lblValT6 = new javax.swing.JLabel();
         JPtendencia7 = new javax.swing.JPanel();
         lblNomT7 = new javax.swing.JLabel();
@@ -253,6 +270,8 @@ public class paginaInicio extends javax.swing.JFrame {
 
         menu2.setLabel("Edit");
         menuBar1.add(menu2);
+
+        lblMinT6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1024, 780));
@@ -408,9 +427,6 @@ public class paginaInicio extends javax.swing.JFrame {
         lblNomT6.setForeground(new java.awt.Color(204, 204, 204));
         lblNomT6.setText("Phasmophobia");
         JPtendencia6.add(lblNomT6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 340, 110));
-
-        lblMinT6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JPtendencia6.add(lblMinT6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         lblValT6.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
         lblValT6.setForeground(new java.awt.Color(255, 255, 255));
@@ -1132,7 +1148,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPgeneral.setViewportView(pGeneral);
 
-        getContentPane().add(SPgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 970));
+        getContentPane().add(SPgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1780, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

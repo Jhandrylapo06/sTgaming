@@ -5,8 +5,16 @@
  */
 package Vista;
 
+import Controlador.CuentaJpaController;
 import Controlador.JuegoJpaController;
+import Controlador.ListaJuegosJpaController;
+import Entidades.ListaJuegos;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,15 +25,24 @@ public class Tienda extends javax.swing.JFrame {
     /**
      * Creates new form AnadirJuego
      */
-    public Tienda(int id,int iduser) {
+    Controlador.JuegoJpaController cjuego = new JuegoJpaController();
+    Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
+    List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+    List<Entidades.Cuenta> listacuenta = ccuenta.findCuentaEntities();
+    Controlador.ListaJuegosJpaController clista=new ListaJuegosJpaController();
+    Entidades.ListaJuegos lista= new ListaJuegos();
+    int idjuego = 0;
+    int idusuario=0;
+
+    public Tienda(int id, int iduser) {
         initComponents();
         setResizable(false);
         setLocation(800, 200);
-        
-        Controlador.JuegoJpaController cjuego= new JuegoJpaController();
-        List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
+        idjuego = id;
+        idusuario=iduser;
+
         for (int i = 0; i < listaJ.size(); i++) {
-            if(id==listaJ.get(i).getIdJuego()){
+            if (id == listaJ.get(i).getIdJuego()) {
                 lblPrecioTotal.setText(listaJ.get(i).getPrecio());
             }
         }
@@ -203,11 +220,39 @@ public class Tienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
+        FileWriter JuegoDocument = null;
         
-        
+        for (int i = 0; i < listaJ.size(); i++) {
+            if (idjuego == listaJ.get(i).getIdJuego()) {
+                try {
+                    JuegoDocument = new FileWriter("C:/Users/Public/Downloads/Archivo Archivo de Juego: " + listaJ.get(i).getNombre());
+                } catch (IOException ex) {
+                    Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
         this.setVisible(false);
         
-                
+        
+        for (int i = 0; i < listacuenta.size(); i++) {
+            if (listacuenta.get(i).getIdCuenta()==idusuario) {
+                for (int j = 0; j < listaJ.size(); j++) {
+                    if (listaJ.get(j).getIdJuego()==idjuego) {
+                        lista.setIdListajuegos(1);
+                        lista.setCuenta(listacuenta.get(i));
+                        lista.setJuegos(listaJ.get(j));
+                        try {
+                            clista.create(lista);
+                        } catch (Exception ex) {
+                            Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }
+            }
+        }
+        
+
+
     }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
     private void btnVisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaActionPerformed
