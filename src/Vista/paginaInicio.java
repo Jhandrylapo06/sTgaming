@@ -122,7 +122,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
         SPMisjuegos = new javax.swing.JScrollPane();
-        JLMisjuegos = new javax.swing.JList<>();
+        JLMisjuegos = new javax.swing.JList<String>();
         JPApartadoTendencias = new javax.swing.JPanel();
         SPtendencias = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
@@ -239,7 +239,7 @@ public class paginaInicio extends javax.swing.JFrame {
         Pjuegos = new javax.swing.JPanel();
         PAdministrarJuegos = new javax.swing.JPanel();
         SPjuegos = new javax.swing.JScrollPane();
-        JlistJuegosadmin = new javax.swing.JList<>();
+        JlistJuegosadmin = new javax.swing.JList<String>();
         btnAgregarJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -249,7 +249,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPAdminRol = new javax.swing.JPanel();
         JPadministrarRoles = new javax.swing.JPanel();
         SpUsers = new javax.swing.JScrollPane();
-        JListUsuarios = new javax.swing.JList<>();
+        JListUsuarios = new javax.swing.JList<String>();
         txtbuscarusuario = new javax.swing.JTextField();
         btnBuscarUsuario = new javax.swing.JButton();
         btnAsignarAdmin = new javax.swing.JRadioButton();
@@ -945,7 +945,7 @@ public class paginaInicio extends javax.swing.JFrame {
 
         SPJuego.setViewportView(JPjuego);
 
-        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1630, 900));
+        JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1630, 980));
 
         txtbuscar3.setBackground(new java.awt.Color(51, 51, 51));
         txtbuscar3.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
@@ -1873,6 +1873,37 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblValoracionMouseClicked
 
     private void btnGuardarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarValorActionPerformed
+        double valoracion = 0;
+        double resultado = 0;
+        if (jRadioButton1.isSelected()) {
+            valoracion = 1;
+        } else if (jRadioButton2.isSelected()) {
+            valoracion = 2;
+        } else if (jRadioButton3.isSelected()) {
+            valoracion = 3;
+        } else if (jRadioButton4.isSelected()) {
+            valoracion = 4;
+        } else if (jRadioButton5.isSelected()) {
+            valoracion = 5;
+        } else {
+
+        }
+        List<Entidades.Juego> listavalora = cjuego.findJuegoEntities();
+        for (int i = 0; i < listavalora.size(); i++) {
+            if (lblNombre.equals(listavalora.get(i).getNombre())) {
+                try {
+                    resultado = (resultado + Integer.parseInt(listavalora.get(i).getValoracion().getValor())) / 2;
+                    listavalora.get(i).getValoracion().setValor(Double.toString(resultado));
+                    Entidades.Juego juego = new Juego();
+                    juego = listavalora.get(i);
+                    cjuego.edit(juego);
+                    lblValoracion.setText("Valoracion: " + listavalora.get(i).getValoracion().getValor());
+                } catch (Exception ex) {
+                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
         JPvalorar.setVisible(false);
     }//GEN-LAST:event_btnGuardarValorActionPerformed
 
