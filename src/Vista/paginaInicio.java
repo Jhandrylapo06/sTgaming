@@ -122,7 +122,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
         SPMisjuegos = new javax.swing.JScrollPane();
-        JLMisjuegos = new javax.swing.JList<String>();
+        JLMisjuegos = new javax.swing.JList<>();
         JPApartadoTendencias = new javax.swing.JPanel();
         SPtendencias = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
@@ -239,7 +239,7 @@ public class paginaInicio extends javax.swing.JFrame {
         Pjuegos = new javax.swing.JPanel();
         PAdministrarJuegos = new javax.swing.JPanel();
         SPjuegos = new javax.swing.JScrollPane();
-        JlistJuegosadmin = new javax.swing.JList<String>();
+        JlistJuegosadmin = new javax.swing.JList<>();
         btnAgregarJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -249,7 +249,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPAdminRol = new javax.swing.JPanel();
         JPadministrarRoles = new javax.swing.JPanel();
         SpUsers = new javax.swing.JScrollPane();
-        JListUsuarios = new javax.swing.JList<String>();
+        JListUsuarios = new javax.swing.JList<>();
         txtbuscarusuario = new javax.swing.JTextField();
         btnBuscarUsuario = new javax.swing.JButton();
         btnAsignarAdmin = new javax.swing.JRadioButton();

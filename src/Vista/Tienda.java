@@ -229,14 +229,12 @@ public class Tienda extends javax.swing.JFrame {
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
         if (txtNumtarjeta.getText().length() > 14 && txtNumtarjeta.getText().length() < 20) {
             if (txtCodigo.getText().length() == 3) {
-
-            } else {
-                JOptionPane.showConfirmDialog(null, "El codigo de seguridad es no valido");
                 if (txtfVencimiento.getText().length() == 4) {
                     for (int i = 0; i < listaJ.size(); i++) {
+                        System.out.println("Entra al for");
                         if (idjuego == listaJ.get(i).getIdJuego()) {
-
-                            File imagenP = new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/"+listaJ.get(i).getNombre()+"Descargable.png");
+                            System.out.println("Entra al if");
+                            File imagenP = new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJ.get(i).getNombre() + "Descargable.png");
                             BufferedImage imagencopiar;
                             try {
                                 imagencopiar = ImageIO.read(imagenP);
@@ -244,10 +242,12 @@ public class Tienda extends javax.swing.JFrame {
                                 ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Misjuegos/" + listaJ.get(i).getNombre() + "Descargable.png"));
 
                             } catch (Exception e) {
+                                System.out.println("HOLA");
                             }
 
                         }
                     }
+                    System.out.println("Pasa GUARDAR");
                     this.setVisible(false);
 
                     for (int i = 0; i < listacuenta.size(); i++) {
@@ -266,10 +266,14 @@ public class Tienda extends javax.swing.JFrame {
                             }
                         }
                     }
+                    System.out.println("Pasa añade mis juegos");
                 } else {
                     JOptionPane.showConfirmDialog(null, "La fecha ingresada es no valida");
 
                 }
+            } else {
+                JOptionPane.showConfirmDialog(null, "El codigo de seguridad es no valido");
+
             }
         } else {
 
