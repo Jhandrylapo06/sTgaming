@@ -117,6 +117,7 @@ public class paginaInicio extends javax.swing.JFrame {
         menu2 = new java.awt.Menu();
         buttonGroup1 = new javax.swing.ButtonGroup();
         lblMinT6 = new javax.swing.JLabel();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         pGeneral = new javax.swing.JPanel();
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
@@ -215,10 +216,19 @@ public class paginaInicio extends javax.swing.JFrame {
         JPrequisitosMi = new javax.swing.JScrollPane();
         jTextminimos = new javax.swing.JTextArea();
         lblPrecio = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         lblValoracion = new javax.swing.JLabel();
+        JPvalorar = new javax.swing.JPanel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jLabel9 = new javax.swing.JLabel();
+        btnGuardarValor = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        btnComprarJuego1 = new javax.swing.JButton();
         txtbuscar3 = new javax.swing.JTextField();
         btnBuscarJuego = new javax.swing.JButton();
         jPApartadoAdmin = new javax.swing.JPanel();
@@ -839,12 +849,6 @@ public class paginaInicio extends javax.swing.JFrame {
         lblPrecio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         JPjuego.add(lblPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 820, 240, -1));
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Candara Light", 1, 40)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Requisitos:");
-        JPjuego.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 1140, -1, -1));
-
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Candara Light", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
@@ -862,7 +866,82 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValoracion.setForeground(new java.awt.Color(204, 204, 204));
         lblValoracion.setText("Valoracion: 4.8/5");
         lblValoracion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblValoracion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblValoracionMouseClicked(evt);
+            }
+        });
         JPjuego.add(lblValoracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 780, 240, -1));
+
+        JPvalorar.setBackground(new java.awt.Color(6, 11, 25));
+        JPvalorar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JPvalorar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jRadioButton1.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup2.add(jRadioButton1);
+        jRadioButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton1.setText("1");
+        JPvalorar.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        jRadioButton2.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup2.add(jRadioButton2);
+        jRadioButton2.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton2.setText("2");
+        JPvalorar.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+
+        jRadioButton3.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup2.add(jRadioButton3);
+        jRadioButton3.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton3.setText("3");
+        JPvalorar.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
+
+        jRadioButton4.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup2.add(jRadioButton4);
+        jRadioButton4.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton4.setText("4");
+        JPvalorar.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
+
+        jRadioButton5.setBackground(new java.awt.Color(6, 11, 25));
+        buttonGroup2.add(jRadioButton5);
+        jRadioButton5.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton5.setText("5");
+        JPvalorar.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setText("Seleciona la valoración:");
+        JPvalorar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
+
+        btnGuardarValor.setBackground(new java.awt.Color(6, 11, 25));
+        btnGuardarValor.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        btnGuardarValor.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardarValor.setText("GUARDAR");
+        btnGuardarValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarValorActionPerformed(evt);
+            }
+        });
+        JPvalorar.add(btnGuardarValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 150, 60));
+
+        JPjuego.add(JPvalorar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 860, 540, 100));
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Candara Light", 1, 40)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("Requisitos:");
+        JPjuego.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 1140, -1, -1));
+
+        btnComprarJuego1.setBackground(new java.awt.Color(6, 11, 25));
+        btnComprarJuego1.setFont(new java.awt.Font("Candara Light", 1, 48)); // NOI18N
+        btnComprarJuego1.setForeground(new java.awt.Color(204, 204, 204));
+        btnComprarJuego1.setText("COMPRAR");
+        btnComprarJuego1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarJuego1ActionPerformed(evt);
+            }
+        });
+        JPjuego.add(btnComprarJuego1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 790, 360, 90));
 
         SPJuego.setViewportView(JPjuego);
 
@@ -1175,69 +1254,68 @@ public class paginaInicio extends javax.swing.JFrame {
             lblTendencias.setForeground(new java.awt.Color(255, 255, 255));
             //CONSULTA INICIAL
             //CONSULTA INICIAL
-        JPBuscado1.setVisible(false);
-        JPBuscado2.setVisible(false);
-        JPBuscado3.setVisible(false);
-        JPBuscado4.setVisible(false);
-        JPBuscado5.setVisible(false);
-        List<Entidades.Juego> buscado = cjuego.Buscarjuego("a");
-        int contador = 0;
-        System.out.println(contador);
-        for (int i = 0; i < buscado.size(); i++) {
-            System.out.println("i: " + i);
-            System.out.println("Contador: " + contador);
-            if (contador == 0) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(0).getNombre() + "Miniatura.jpg");
-                System.out.println("E1");
-                JPBuscado1.setVisible(true);
-                lblNombreB1.setText(buscado.get(0).getNombre());
-                lblPrecioB1.setText("PVP:" + buscado.get(0).getPrecio());
-                lblValorB1.setText("V:" + buscado.get(0).getValoracion().getValor());
-                lblMiniatura1.setIcon(Imagenes);
+            JPBuscado1.setVisible(false);
+            JPBuscado2.setVisible(false);
+            JPBuscado3.setVisible(false);
+            JPBuscado4.setVisible(false);
+            JPBuscado5.setVisible(false);
+            List<Entidades.Juego> buscado = cjuego.Buscarjuego("a");
+            int contador = 0;
+            System.out.println(contador);
+            for (int i = 0; i < buscado.size(); i++) {
 
-            }
-            if (contador == 1) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
-                System.out.println("E2");
-                JPBuscado2.setVisible(true);
-                lblNombreB2.setText(buscado.get(1).getNombre());
-                lblPrecioB2.setText("PVP:" + buscado.get(1).getPrecio());
-                lblValorB2.setText("V:" + buscado.get(1).getValoracion().getValor());
-                lblMiniatura2.setIcon(Imagenes);
+                if (contador == 0) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(0).getNombre() + "Miniatura.jpg");
 
-            }
-            if (contador == 2) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
-                System.out.println("E3");
-                JPBuscado3.setVisible(true);
-                lblNombreB3.setText(buscado.get(2).getNombre());
-                lblPrecioB3.setText("PVP:" + buscado.get(2).getPrecio());
-                lblValorB3.setText("V:" + buscado.get(2).getValoracion().getValor());
-                lblMiniatura3.setIcon(Imagenes);
+                    JPBuscado1.setVisible(true);
+                    lblNombreB1.setText(buscado.get(0).getNombre());
+                    lblPrecioB1.setText("PVP:" + buscado.get(0).getPrecio());
+                    lblValorB1.setText("V:" + buscado.get(0).getValoracion().getValor());
+                    lblMiniatura1.setIcon(Imagenes);
 
-            }
-            if (contador == 3) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
-                System.out.println("E4");
-                JPBuscado4.setVisible(true);
-                lblNombreB4.setText(buscado.get(3).getNombre());
-                lblPrecioB4.setText("PVP:" + buscado.get(3).getPrecio());
-                lblValorB4.setText("V:" + buscado.get(3).getValoracion().getValor());
-                lblMiniatura4.setIcon(Imagenes);
+                }
+                if (contador == 1) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
 
-            }
-            if (contador == 4) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
-                System.out.println("E5");
-                JPBuscado5.setVisible(true);
-                lblNombreB5.setText(buscado.get(4).getNombre());
-                lblPrecioB5.setText("PVP:" + buscado.get(4).getPrecio());
-                lblValorB5.setText("V:" + buscado.get(4).getValoracion().getValor());
-                lblMiniatura5.setIcon(Imagenes);
+                    JPBuscado2.setVisible(true);
+                    lblNombreB2.setText(buscado.get(1).getNombre());
+                    lblPrecioB2.setText("PVP:" + buscado.get(1).getPrecio());
+                    lblValorB2.setText("V:" + buscado.get(1).getValoracion().getValor());
+                    lblMiniatura2.setIcon(Imagenes);
 
+                }
+                if (contador == 2) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
+
+                    JPBuscado3.setVisible(true);
+                    lblNombreB3.setText(buscado.get(2).getNombre());
+                    lblPrecioB3.setText("PVP:" + buscado.get(2).getPrecio());
+                    lblValorB3.setText("V:" + buscado.get(2).getValoracion().getValor());
+                    lblMiniatura3.setIcon(Imagenes);
+
+                }
+                if (contador == 3) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
+
+                    JPBuscado4.setVisible(true);
+                    lblNombreB4.setText(buscado.get(3).getNombre());
+                    lblPrecioB4.setText("PVP:" + buscado.get(3).getPrecio());
+                    lblValorB4.setText("V:" + buscado.get(3).getValoracion().getValor());
+                    lblMiniatura4.setIcon(Imagenes);
+
+                }
+                if (contador == 4) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
+
+                    JPBuscado5.setVisible(true);
+                    lblNombreB5.setText(buscado.get(4).getNombre());
+                    lblPrecioB5.setText("PVP:" + buscado.get(4).getPrecio());
+                    lblValorB5.setText("V:" + buscado.get(4).getValoracion().getValor());
+                    lblMiniatura5.setIcon(Imagenes);
+
+                }
+                contador++;
             }
-            contador++;
-        }
 
         } catch (Exception e) {
         }
@@ -1389,6 +1467,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
@@ -1468,91 +1547,93 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void txtbuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscar2KeyReleased
-      try {
-        Icon Imagenes;
-        JPapartadoTienda.setVisible(true);
-        jPApartadoAdmin.setVisible(false);
-        JPApartadoTendencias.setVisible(false);
-        lblTienda.setForeground(new java.awt.Color(102, 153, 255));
-        lblTendencias.setForeground(new java.awt.Color(255, 255, 255));
-        //CONSULTA INICIAL
-        JPBuscado1.setVisible(false);
-        JPBuscado2.setVisible(false);
-        JPBuscado3.setVisible(false);
-        JPBuscado4.setVisible(false);
-        JPBuscado5.setVisible(false);
-        List<Entidades.Juego> buscado = cjuego.Buscarjuego(txtbuscar2.getText());
-        int contador = 0;
-        System.out.println(contador);
-        for (int i = 0; i < buscado.size(); i++) {
-            System.out.println("i: " + i);
-            System.out.println("Contador: " + contador);
-            if (contador == 0) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(0).getNombre() + "Miniatura.jpg");
-                System.out.println("E1");
-                JPBuscado1.setVisible(true);
-                lblNombreB1.setText(buscado.get(0).getNombre());
-                lblPrecioB1.setText("PVP:" + buscado.get(0).getPrecio());
-                lblValorB1.setText("V:" + buscado.get(0).getValoracion().getValor());
-                lblMiniatura1.setIcon(Imagenes);
+        try {
+            Icon Imagenes;
+            JPapartadoTienda.setVisible(true);
+            jPApartadoAdmin.setVisible(false);
+            JPApartadoTendencias.setVisible(false);
+            lblTienda.setForeground(new java.awt.Color(102, 153, 255));
+            lblTendencias.setForeground(new java.awt.Color(255, 255, 255));
+            //CONSULTA INICIAL
+            JPBuscado1.setVisible(false);
+            JPBuscado2.setVisible(false);
+            JPBuscado3.setVisible(false);
+            JPBuscado4.setVisible(false);
+            JPBuscado5.setVisible(false);
+            List<Entidades.Juego> buscado = cjuego.Buscarjuego(txtbuscar2.getText());
+            int contador = 0;
+            System.out.println(contador);
+            for (int i = 0; i < buscado.size(); i++) {
+                System.out.println("i: " + i);
+                System.out.println("Contador: " + contador);
+                if (contador == 0) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(0).getNombre() + "Miniatura.jpg");
+                    System.out.println("E1");
+                    JPBuscado1.setVisible(true);
+                    lblNombreB1.setText(buscado.get(0).getNombre());
+                    lblPrecioB1.setText("PVP:" + buscado.get(0).getPrecio());
+                    lblValorB1.setText("V:" + buscado.get(0).getValoracion().getValor());
+                    lblMiniatura1.setIcon(Imagenes);
 
-            }
-            if (contador == 1) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
-                System.out.println("E2");
-                JPBuscado2.setVisible(true);
-                lblNombreB2.setText(buscado.get(1).getNombre());
-                lblPrecioB2.setText("PVP:" + buscado.get(1).getPrecio());
-                lblValorB2.setText("V:" + buscado.get(1).getValoracion().getValor());
-                lblMiniatura2.setIcon(Imagenes);
+                }
+                if (contador == 1) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
+                    System.out.println("E2");
+                    JPBuscado2.setVisible(true);
+                    lblNombreB2.setText(buscado.get(1).getNombre());
+                    lblPrecioB2.setText("PVP:" + buscado.get(1).getPrecio());
+                    lblValorB2.setText("V:" + buscado.get(1).getValoracion().getValor());
+                    lblMiniatura2.setIcon(Imagenes);
 
-            }
-            if (contador == 2) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
-                System.out.println("E3");
-                JPBuscado3.setVisible(true);
-                lblNombreB3.setText(buscado.get(2).getNombre());
-                lblPrecioB3.setText("PVP:" + buscado.get(2).getPrecio());
-                lblValorB3.setText("V:" + buscado.get(2).getValoracion().getValor());
-                lblMiniatura3.setIcon(Imagenes);
+                }
+                if (contador == 2) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
+                    System.out.println("E3");
+                    JPBuscado3.setVisible(true);
+                    lblNombreB3.setText(buscado.get(2).getNombre());
+                    lblPrecioB3.setText("PVP:" + buscado.get(2).getPrecio());
+                    lblValorB3.setText("V:" + buscado.get(2).getValoracion().getValor());
+                    lblMiniatura3.setIcon(Imagenes);
 
-            }
-            if (contador == 3) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
-                System.out.println("E4");
-                JPBuscado4.setVisible(true);
-                lblNombreB4.setText(buscado.get(3).getNombre());
-                lblPrecioB4.setText("PVP:" + buscado.get(3).getPrecio());
-                lblValorB4.setText("V:" + buscado.get(3).getValoracion().getValor());
-                lblMiniatura4.setIcon(Imagenes);
+                }
+                if (contador == 3) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
+                    System.out.println("E4");
+                    JPBuscado4.setVisible(true);
+                    lblNombreB4.setText(buscado.get(3).getNombre());
+                    lblPrecioB4.setText("PVP:" + buscado.get(3).getPrecio());
+                    lblValorB4.setText("V:" + buscado.get(3).getValoracion().getValor());
+                    lblMiniatura4.setIcon(Imagenes);
 
-            }
-            if (contador == 4) {
-                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
-                System.out.println("E5");
-                JPBuscado5.setVisible(true);
-                lblNombreB5.setText(buscado.get(4).getNombre());
-                lblPrecioB5.setText("PVP:" + buscado.get(4).getPrecio());
-                lblValorB5.setText("V:" + buscado.get(4).getValoracion().getValor());
-                lblMiniatura5.setIcon(Imagenes);
+                }
+                if (contador == 4) {
+                    Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
+                    System.out.println("E5");
+                    JPBuscado5.setVisible(true);
+                    lblNombreB5.setText(buscado.get(4).getNombre());
+                    lblPrecioB5.setText("PVP:" + buscado.get(4).getPrecio());
+                    lblValorB5.setText("V:" + buscado.get(4).getValoracion().getValor());
+                    lblMiniatura5.setIcon(Imagenes);
 
+                }
+                contador++;
             }
-            contador++;
+
+        } catch (Exception e) {
         }
-
-       } catch (Exception e) {
-       }
 
     }//GEN-LAST:event_txtbuscar2KeyReleased
 
     private void JPBuscado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado2MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB2.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1560,19 +1641,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_JPBuscado2MouseClicked
 
     private void JPBuscado3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado3MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB3.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1580,19 +1664,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_JPBuscado3MouseClicked
 
     private void JPBuscado4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado4MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB4.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1600,19 +1687,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_JPBuscado4MouseClicked
 
     private void JPBuscado5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado5MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB5.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1620,19 +1710,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_JPBuscado5MouseClicked
 
     private void lblNombreB1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB1MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB1.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1640,19 +1733,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_lblNombreB1MouseClicked
 
     private void lblNombreB2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB2MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB2.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1660,19 +1756,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_lblNombreB2MouseClicked
 
     private void lblNombreB3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB3MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB3.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1680,19 +1779,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_lblNombreB3MouseClicked
 
     private void lblNombreB4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB4MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB4.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1700,19 +1802,22 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
     }//GEN-LAST:event_lblNombreB4MouseClicked
 
     private void lblNombreB5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreB5MouseClicked
-        // TODO add your handling code here:
+        Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB5.getText().equals(listaJuegos.get(i).getNombre())) {
+                Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
+                lblPortada.setIcon(Imagenes);
                 lblNombre.setText(listaJuegos.get(i).getNombre());
                 lblValoracion.setText("Valoracion: " + listaJuegos.get(i).getValoracion().getValor());
                 lblPrecio.setText("Precio: " + listaJuegos.get(i).getPrecio());
@@ -1720,6 +1825,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
                 JPapartadoComprar.setVisible(true);
+                JPvalorar.setVisible(false);
 
             }
         }
@@ -1757,6 +1863,18 @@ public class paginaInicio extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void btnComprarJuego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarJuego1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnComprarJuego1ActionPerformed
+
+    private void lblValoracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblValoracionMouseClicked
+        JPvalorar.setVisible(true);
+    }//GEN-LAST:event_lblValoracionMouseClicked
+
+    private void btnGuardarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarValorActionPerformed
+        JPvalorar.setVisible(false);
+    }//GEN-LAST:event_btnGuardarValorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1853,6 +1971,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JPanel JPtendencia7;
     private javax.swing.JPanel JPtendencia8;
     private javax.swing.JPanel JPtendencia9;
+    public javax.swing.JPanel JPvalorar;
     private javax.swing.JList<String> JlistJuegosadmin;
     private javax.swing.JPanel PAdministrarJuegos;
     private javax.swing.JTabbedPane PesstaañasAdmin;
@@ -1873,14 +1992,18 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarJuegoT;
     private javax.swing.JButton btnBuscarUsuario;
     private javax.swing.JButton btnComprarJuego;
+    private javax.swing.JButton btnComprarJuego1;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardarValor;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel39;
@@ -1898,6 +2021,11 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JTextArea jTextdescripcion;
     private javax.swing.JTextArea jTextminimos;
     private javax.swing.JTextArea jTextrecomendados;
