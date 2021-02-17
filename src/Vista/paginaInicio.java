@@ -10,6 +10,7 @@ import Controlador.JuegoJpaController;
 import Controlador.ListaJuegosJpaController;
 import Controlador.RolJpaController;
 import Controlador.UsuarioJpaController;
+import Controlador.ValoracionJpaController;
 import Controlador.exceptions.NonexistentEntityException;
 import Entidades.Juego;
 import Entidades.Rol;
@@ -33,6 +34,7 @@ public class paginaInicio extends javax.swing.JFrame {
     Controlador.UsuarioJpaController cusuario = new UsuarioJpaController();
     Controlador.RolJpaController crol = new RolJpaController();
     Controlador.ListaJuegosJpaController clisjue = new ListaJuegosJpaController();
+    Controlador.ValoracionJpaController cvaloracion = new ValoracionJpaController();
     Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
     List<Entidades.Juego> listaJ = cjuego.findJuegoEntities();
     List<Entidades.Juego> listaedit = cjuego.findJuegoEntities();
@@ -83,22 +85,50 @@ public class paginaInicio extends javax.swing.JFrame {
             ListaT[i] = juego;
             listaJ.remove(juego);
         }
+        Icon iconot;
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[0].getNombre()+ "Miniatura.jpg");
+        lblMinT1.setIcon(iconot);
         lblNomT1.setText(ListaT[0].getNombre());
         lblValT1.setText(ListaT[0].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[1].getNombre()+ "Miniatura.jpg");
+        lblMinT2.setIcon(iconot);
         lblNomT2.setText(ListaT[1].getNombre());
         lblValT2.setText(ListaT[1].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[2].getNombre()+ "Miniatura.jpg");
+        lblMinT3.setIcon(iconot);
         lblNomT3.setText(ListaT[2].getNombre());
         lblValT3.setText(ListaT[2].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[3].getNombre()+ "Miniatura.jpg");
+        lblMinT4.setIcon(iconot);
         lblNomT4.setText(ListaT[3].getNombre());
         lblValT4.setText(ListaT[3].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[4].getNombre()+ "Miniatura.jpg");
+        lblMinT5.setIcon(iconot);
         lblNomT5.setText(ListaT[4].getNombre());
         lblValT5.setText(ListaT[4].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[5].getNombre()+ "Miniatura.jpg");
+        mint6.setIcon(iconot);
         lblNomT6.setText(ListaT[5].getNombre());
         lblValT6.setText(ListaT[5].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[6].getNombre()+ "Miniatura.jpg");
+        lblMinT7.setIcon(iconot);
         lblNomT7.setText(ListaT[6].getNombre());
         lblValT7.setText(ListaT[6].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[7].getNombre()+ "Miniatura.jpg");
+        lblMinT8.setIcon(iconot);
         lblNomT8.setText(ListaT[7].getNombre());
         lblValT8.setText(ListaT[7].getValoracion().getValor());
+        
+        iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[8].getNombre()+ "Miniatura.jpg");
+        lblMinT9.setIcon(iconot);
         lblNomT9.setText(ListaT[8].getNombre());
         lblValT9.setText(ListaT[8].getValoracion().getValor());
     }
@@ -149,6 +179,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPtendencia6 = new javax.swing.JPanel();
         lblNomT6 = new javax.swing.JLabel();
         lblValT6 = new javax.swing.JLabel();
+        mint6 = new javax.swing.JLabel();
         JPtendencia7 = new javax.swing.JPanel();
         lblNomT7 = new javax.swing.JLabel();
         lblMinT7 = new javax.swing.JLabel();
@@ -229,8 +260,6 @@ public class paginaInicio extends javax.swing.JFrame {
         btnGuardarValor = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         btnComprarJuego1 = new javax.swing.JButton();
-        txtbuscar3 = new javax.swing.JTextField();
-        btnBuscarJuego = new javax.swing.JButton();
         jPApartadoAdmin = new javax.swing.JPanel();
         SCadministracion = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
@@ -431,6 +460,9 @@ public class paginaInicio extends javax.swing.JFrame {
         lblValT6.setForeground(new java.awt.Color(255, 255, 255));
         lblValT6.setText("V: 4.6/5");
         JPtendencia6.add(lblValT6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 180, 100));
+
+        mint6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JPtendencia6.add(mint6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 210));
 
         jPanel5.add(JPtendencia6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 490, 780, 230));
 
@@ -947,22 +979,6 @@ public class paginaInicio extends javax.swing.JFrame {
 
         JPapartadoComprar.add(SPJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1630, 980));
 
-        txtbuscar3.setBackground(new java.awt.Color(51, 51, 51));
-        txtbuscar3.setFont(new java.awt.Font("Eras Light ITC", 0, 18)); // NOI18N
-        txtbuscar3.setForeground(new java.awt.Color(204, 204, 204));
-        JPapartadoComprar.add(txtbuscar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 50));
-
-        btnBuscarJuego.setBackground(new java.awt.Color(6, 11, 25));
-        btnBuscarJuego.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
-        btnBuscarJuego.setForeground(new java.awt.Color(102, 153, 255));
-        btnBuscarJuego.setText("BUSCAR");
-        btnBuscarJuego.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarJuegoActionPerformed(evt);
-            }
-        });
-        JPapartadoComprar.add(btnBuscarJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 50));
-
         pGeneral.add(JPapartadoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 1610, 970));
 
         jPApartadoAdmin.setBackground(new java.awt.Color(0, 0, 0, 100));
@@ -1056,6 +1072,7 @@ public class paginaInicio extends javax.swing.JFrame {
         PAdministrarJuegos.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 200, 50));
 
         jLabel3.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Lista de juegos");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1456,6 +1473,9 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
+
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB1.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1466,6 +1486,26 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1490,28 +1530,29 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTendenciasMouseClicked
 
     private void btnComprarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarJuegoActionPerformed
-        int id = 0;
-        int iduser = 0;
-        List<Entidades.Juego> listajuegos = cjuego.findJuegoEntities();
-        Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
-        List<Entidades.Cuenta> listadecuentas = ccuenta.findCuentaEntities();
-        for (int i = 0; i < listajuegos.size(); i++) {
-            if (lblNombre.getText().equals(listajuegos.get(i).getNombre())) {
-                id = listajuegos.get(i).getIdJuego();
+        if (btnComprarJuego.getText().equals("COMPRAR")) {
+            int id = 0;
+            int iduser = 0;
+            List<Entidades.Juego> listajuegos = cjuego.findJuegoEntities();
+            Controlador.CuentaJpaController ccuenta = new CuentaJpaController();
+            List<Entidades.Cuenta> listadecuentas = ccuenta.findCuentaEntities();
+            for (int i = 0; i < listajuegos.size(); i++) {
+                if (lblNombre.getText().equals(listajuegos.get(i).getNombre())) {
+                    id = listajuegos.get(i).getIdJuego();
+                }
             }
-        }
-        for (int i = 0; i < listadecuentas.size(); i++) {
-            if (lblUsuario.getText().equals(listadecuentas.get(i).getNickname())) {
-                iduser = listadecuentas.get(i).getIdCuenta();
+            for (int i = 0; i < listadecuentas.size(); i++) {
+                if (lblUsuario.getText().equals(listadecuentas.get(i).getNickname())) {
+                    iduser = listadecuentas.get(i).getIdCuenta();
+                }
             }
+            Tienda tienda = new Tienda(id, iduser);
+            tienda.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Ya has comprado este juego");
         }
-        Tienda tienda = new Tienda(id, iduser);
-        tienda.setVisible(true);
-    }//GEN-LAST:event_btnComprarJuegoActionPerformed
 
-    private void btnBuscarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJuegoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarJuegoActionPerformed
+    }//GEN-LAST:event_btnComprarJuegoActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         cjuego.Buscarjuego(txtbuscar.getText());
@@ -1630,6 +1671,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB2.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1640,6 +1682,25 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1653,6 +1714,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB3.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1663,6 +1725,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1676,6 +1756,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB4.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1699,6 +1780,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB5.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1709,6 +1791,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1722,6 +1822,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB1.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1732,6 +1833,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1745,6 +1864,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB2.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1755,6 +1875,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1768,6 +1906,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB3.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1778,6 +1917,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1791,6 +1948,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB4.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1801,6 +1959,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1814,6 +1990,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JPapartadoTienda.setVisible(false);
         JPApartadoTendencias.setVisible(false);
         List<Entidades.Juego> listaJuegos = cjuego.findJuegoEntities();
+        List<Entidades.ListaJuegos> Misjuegos = clisjue.findListaJuegosEntities();
         for (int i = 0; i < listaJuegos.size(); i++) {
             if (lblNombreB5.getText().equals(listaJuegos.get(i).getNombre())) {
                 Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJuegos.get(i).getNombre() + "Portada.jpg");
@@ -1824,6 +2001,24 @@ public class paginaInicio extends javax.swing.JFrame {
                 jTextdescripcion.setText(listaJuegos.get(i).getDescripcion());
                 jTextminimos.setText(listaJuegos.get(i).getRequisitosMIn());
                 jTextrecomendados.setText(listaJuegos.get(i).getRequisitosRec());
+                for (int k = 0; k < listacuentas.size(); k++) {
+                    if (lblUsuario.getText().equals(listacuentas.get(k).getNickname())) {
+                        for (int h = 0; h < Misjuegos.size(); h++) {
+                            if (Misjuegos.get(h).getCuenta().getIdCuenta() == listacuentas.get(k).getIdCuenta()) {
+                                if (listaJuegos.get(i).getIdJuego() == Misjuegos.get(h).getJuegos().getIdJuego()) {
+                                    System.out.println("idd" + listaJuegos.get(i).getIdJuego());
+                                    System.out.println("id" + Misjuegos.get(h).getJuegos().getIdJuego());
+                                    btnComprarJuego.setText("COMPRADO");
+                                } else {
+                                    btnComprarJuego.setText("COMPRAR");
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                 JPapartadoComprar.setVisible(true);
                 JPvalorar.setVisible(false);
 
@@ -1886,25 +2081,56 @@ public class paginaInicio extends javax.swing.JFrame {
         } else if (jRadioButton5.isSelected()) {
             valoracion = 5;
         } else {
-
+            JOptionPane.showMessageDialog(null, "No ha selecionado una valoración");
         }
-        List<Entidades.Juego> listavalora = cjuego.findJuegoEntities();
-        for (int i = 0; i < listavalora.size(); i++) {
-            if (lblNombre.equals(listavalora.get(i).getNombre())) {
-                try {
-                    resultado = (resultado + Integer.parseInt(listavalora.get(i).getValoracion().getValor())) / 2;
-                    listavalora.get(i).getValoracion().setValor(Double.toString(resultado));
-                    Entidades.Juego juego = new Juego();
-                    juego = listavalora.get(i);
-                    cjuego.edit(juego);
-                    lblValoracion.setText("Valoracion: " + listavalora.get(i).getValoracion().getValor());
-                } catch (Exception ex) {
-                    Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+        if (valoracion != 0) {
+
+            List<Entidades.Juego> listavalora = cjuego.findJuegoEntities();
+             List<Entidades.Valoracion> valoraciones = cvaloracion.findValoracionEntities();
+            for (int i = 0; i < listavalora.size(); i++) {
+
+                if (lblNombre.getText().equals(listavalora.get(i).getNombre())) {
+
+                    try {
+                        if (Double.parseDouble(listavalora.get(i).getValoracion().getValor()) != 0.0) {
+
+                            resultado = (valoracion + Double.parseDouble(listavalora.get(i).getValoracion().getValor())) / 2;
+                            listavalora.get(i).getValoracion().setValor(Double.toString(resultado));
+                            Entidades.Juego juego = new Juego();
+                            juego = listavalora.get(i);
+                            cjuego.edit(juego);
+                            lblValoracion.setText("Valoracion: " + listavalora.get(i).getValoracion().getValor());
+                            System.out.println("VAloracion2");
+
+                        } else {
+                            
+                            resultado = valoracion;
+                            listavalora.get(i).getValoracion().setValor(Double.toString(resultado));
+                            for (int j = 0; j < valoraciones.size(); j++) {
+                                if (listavalora.get(i).getValoracion().getIdvaloracion()==valoraciones.get(j).getIdvaloracion()) {
+                                    cvaloracion.findValoracion(valoraciones.get(j).getIdvaloracion());
+                                    
+                                    
+                                }
+                            }
+                            
+                            lblValoracion.setText("Valoracion:" + listavalora.get(i).getValoracion().getValor());
+                           
+
+                        }
+
+                    } catch (Exception ex) {
+                        Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
+
+            JPvalorar.setVisible(false);
+        } else {
+            JPvalorar.setVisible(false);
+
         }
 
-        JPvalorar.setVisible(false);
     }//GEN-LAST:event_btnGuardarValorActionPerformed
 
     /**
@@ -2019,10 +2245,9 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnAsignarAdmin;
     private javax.swing.JRadioButton btnAsignarUser;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnBuscarJuego;
     private javax.swing.JButton btnBuscarJuegoT;
     private javax.swing.JButton btnBuscarUsuario;
-    private javax.swing.JButton btnComprarJuego;
+    public javax.swing.JButton btnComprarJuego;
     private javax.swing.JButton btnComprarJuego1;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
@@ -2119,10 +2344,10 @@ public class paginaInicio extends javax.swing.JFrame {
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
+    private javax.swing.JLabel mint6;
     private javax.swing.JPanel pGeneral;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtbuscar2;
-    private javax.swing.JTextField txtbuscar3;
     private javax.swing.JTextField txtbuscarusuario;
     // End of variables declaration//GEN-END:variables
 }

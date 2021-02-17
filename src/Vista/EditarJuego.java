@@ -99,10 +99,8 @@ public class EditarJuego extends javax.swing.JFrame {
         GuardarEdicion = new javax.swing.JButton();
         SCRM = new javax.swing.JScrollPane();
         txtRequisitosMin = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         txtrutaportada = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editar Juego");
@@ -145,7 +143,7 @@ public class EditarJuego extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("IMAGEN Miniatura");
-        JPeditarJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, 30));
+        JPeditarJuego.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, 30));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
@@ -193,7 +191,6 @@ public class EditarJuego extends javax.swing.JFrame {
         txtRutajuego.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtRutajuego.setForeground(new java.awt.Color(255, 255, 255));
         txtRutajuego.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtRutajuego.setText("rutadescargable");
         txtRutajuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRutajuegoActionPerformed(evt);
@@ -222,7 +219,7 @@ public class EditarJuego extends javax.swing.JFrame {
                 txtRutaminiaturaActionPerformed(evt);
             }
         });
-        JPeditarJuego.add(txtRutaminiatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 460, -1));
+        JPeditarJuego.add(txtRutaminiatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 460, -1));
 
         btnAccion.setBackground(new java.awt.Color(6, 11, 25));
         btnAccion.setForeground(new java.awt.Color(204, 204, 204));
@@ -277,39 +274,17 @@ public class EditarJuego extends javax.swing.JFrame {
 
         JPeditarJuego.add(SCRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 350, 120));
 
-        jButton1.setBackground(new java.awt.Color(6, 11, 25));
-        jButton1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        JPeditarJuego.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 370, -1, 30));
-
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
         jLabel20.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(204, 204, 204));
         jLabel20.setText("IMAGEN Portada");
-        JPeditarJuego.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+        JPeditarJuego.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         txtrutaportada.setBackground(new java.awt.Color(6, 11, 25));
         txtrutaportada.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtrutaportada.setForeground(new java.awt.Color(255, 255, 255));
         txtrutaportada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JPeditarJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 460, -1));
-
-        jButton2.setBackground(new java.awt.Color(6, 11, 25));
-        jButton2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        JPeditarJuego.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, -1, 30));
+        JPeditarJuego.add(txtrutaportada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 460, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -374,17 +349,9 @@ public class EditarJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutajuegoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void txtRutaminiaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutaminiaturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutaminiaturaActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -435,8 +402,6 @@ public class EditarJuego extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnMundoAbierto;
     private javax.swing.JRadioButton btnTerror;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
