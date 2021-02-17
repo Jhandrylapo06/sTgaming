@@ -65,7 +65,7 @@ public class paginaInicio extends javax.swing.JFrame {
         }
         JlistJuegosadmin.setModel(modelo);
         JlistJuegosadmin.setVisible(true);
-
+        //BUSCA LOS JUEGOS CON MAYOR VALORACION PARA LA PAGINA DE TENDENCIAS
         Entidades.Juego[] ListaT = new Entidades.Juego[9];
         double may = 0;
         double actual = 0;
@@ -85,6 +85,8 @@ public class paginaInicio extends javax.swing.JFrame {
             ListaT[i] = juego;
             listaJ.remove(juego);
         }
+        
+        //AL INGRESAR DESPUES DE LOGUEARTE MUESTRA LOS JUEGOS MAYOR VALORADOS
         Icon iconot;
         
         iconot = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + ListaT[0].getNombre()+ "Miniatura.jpg");
@@ -148,6 +150,7 @@ public class paginaInicio extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         lblMinT6 = new javax.swing.JLabel();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jLabel4 = new javax.swing.JLabel();
         pGeneral = new javax.swing.JPanel();
         JPMisjuegos = new javax.swing.JPanel();
         lblMisjuegos = new javax.swing.JLabel();
@@ -304,6 +307,10 @@ public class paginaInicio extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1024, 780));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logo.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 130, 130));
+
         pGeneral.setMinimumSize(new java.awt.Dimension(1922, 780));
         pGeneral.setPreferredSize(new java.awt.Dimension(1922, 720));
         pGeneral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -323,7 +330,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 lblMisjuegosMouseEntered(evt);
             }
         });
-        JPMisjuegos.add(lblMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 50));
+        JPMisjuegos.add(lblMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 190, 50));
 
         JLMisjuegos.setBackground(new java.awt.Color(6, 11, 25));
         JLMisjuegos.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
@@ -331,7 +338,7 @@ public class paginaInicio extends javax.swing.JFrame {
         JLMisjuegos.setSelectionBackground(new java.awt.Color(102, 153, 255));
         SPMisjuegos.setViewportView(JLMisjuegos);
 
-        JPMisjuegos.add(SPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 250, 380));
+        JPMisjuegos.add(SPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 260, 380));
 
         pGeneral.add(JPMisjuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 310, 970));
 
@@ -1270,7 +1277,7 @@ public class paginaInicio extends javax.swing.JFrame {
             lblTienda.setForeground(new java.awt.Color(102, 153, 255));
             lblTendencias.setForeground(new java.awt.Color(255, 255, 255));
             //CONSULTA INICIAL
-            //CONSULTA INICIAL
+            
             JPBuscado1.setVisible(false);
             JPBuscado2.setVisible(false);
             JPBuscado3.setVisible(false);
@@ -1340,6 +1347,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTiendaMouseClicked
 
     private void btnAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrarActionPerformed
+        //MUESTRA EL PANEL DE ADMINISTRACION
         JPApartadoTendencias.setVisible(false);
         JPapartadoTienda.setVisible(false);
         JPapartadoComprar.setVisible(false);
@@ -1414,11 +1422,11 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAsignarAdminMouseClicked
 
     private void btnAsignarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarAdminActionPerformed
-
+        //CAMBIA EL ROL A ADMINISTRADOR
         Entidades.Usuario user;
         try {
             for (int i = 0; i < listauser.size(); i++) {
-                System.out.println("for");
+                
                 if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
 
                     try {
@@ -1441,20 +1449,21 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAsignarAdminActionPerformed
 
     private void btnAsignarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarUserActionPerformed
+        //CAMBIA EL ROL A USUARIO
         Entidades.Usuario user;
         try {
             for (int i = 0; i < listauser.size(); i++) {
-                System.out.println("for");
+                
                 if (listauser.get(i).getCuentauser().getNickname().equals(JListUsuarios.getSelectedValue())) {
-                    System.out.println("encontrado");
+                    
                     try {
                         user = listauser.get(i);
-                        System.out.println("user");
+                        
 
                         user.getRoluser().setIdrol(1);
-                        System.out.println("asa");
+                        
                         cusuario.edit(user);
-                        System.out.println("cambiado");
+                        
 
                     } catch (Exception ex) {
                         Logger.getLogger(paginaInicio.class.getName()).log(Level.SEVERE, null, ex);
@@ -1468,6 +1477,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAsignarUserActionPerformed
 
     private void JPBuscado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado1MouseClicked
+        //CUANDO TIPEE ALGO EN EL BUSCADOR FILTRARA LAS BUSQUEDAS
         Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
@@ -1530,6 +1540,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTendenciasMouseClicked
 
     private void btnComprarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarJuegoActionPerformed
+        //PERMITE COMPRAR UN JUEGO EN CASO DEQUE AUN NO LO POSEAS
         if (btnComprarJuego.getText().equals("COMPRAR")) {
             int id = 0;
             int iduser = 0;
@@ -1555,6 +1566,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprarJuegoActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
+        //BUSCA LOS JUEGOS EN LA BASE DE DATOS
         cjuego.Buscarjuego(txtbuscar.getText());
 
         DefaultListModel modelbus = new DefaultListModel();
@@ -1568,7 +1580,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_txtbuscarKeyReleased
 
     private void txtbuscarusuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarusuarioKeyReleased
-
+        //BUSCA USUARIOS EN LA BASE DE DATOS
         cusuario.Buscarusuario(txtbuscarusuario.getText());
 
         DefaultListModel modelbus = new DefaultListModel();
@@ -1588,6 +1600,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void txtbuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscar2KeyReleased
+        //CUANDO SE TIPEA EN EL BUSCADOR ENCUENTRA LAS COINCIIDENCIAS EN LA BASE DE DATOS Y SE ASIGNAN LOS DATOS DECADA JUEGO ENCONTRADO
         try {
             Icon Imagenes;
             JPapartadoTienda.setVisible(true);
@@ -1605,11 +1618,10 @@ public class paginaInicio extends javax.swing.JFrame {
             int contador = 0;
             System.out.println(contador);
             for (int i = 0; i < buscado.size(); i++) {
-                System.out.println("i: " + i);
-                System.out.println("Contador: " + contador);
+                
                 if (contador == 0) {
                     Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(0).getNombre() + "Miniatura.jpg");
-                    System.out.println("E1");
+                    
                     JPBuscado1.setVisible(true);
                     lblNombreB1.setText(buscado.get(0).getNombre());
                     lblPrecioB1.setText("PVP:" + buscado.get(0).getPrecio());
@@ -1619,7 +1631,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 }
                 if (contador == 1) {
                     Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(1).getNombre() + "Miniatura.jpg");
-                    System.out.println("E2");
+                   
                     JPBuscado2.setVisible(true);
                     lblNombreB2.setText(buscado.get(1).getNombre());
                     lblPrecioB2.setText("PVP:" + buscado.get(1).getPrecio());
@@ -1629,7 +1641,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 }
                 if (contador == 2) {
                     Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(2).getNombre() + "Miniatura.jpg");
-                    System.out.println("E3");
+                    
                     JPBuscado3.setVisible(true);
                     lblNombreB3.setText(buscado.get(2).getNombre());
                     lblPrecioB3.setText("PVP:" + buscado.get(2).getPrecio());
@@ -1639,7 +1651,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 }
                 if (contador == 3) {
                     Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(3).getNombre() + "Miniatura.jpg");
-                    System.out.println("E4");
+                    
                     JPBuscado4.setVisible(true);
                     lblNombreB4.setText(buscado.get(3).getNombre());
                     lblPrecioB4.setText("PVP:" + buscado.get(3).getPrecio());
@@ -1649,7 +1661,7 @@ public class paginaInicio extends javax.swing.JFrame {
                 }
                 if (contador == 4) {
                     Imagenes = new ImageIcon("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + buscado.get(4).getNombre() + "Miniatura.jpg");
-                    System.out.println("E5");
+                    
                     JPBuscado5.setVisible(true);
                     lblNombreB5.setText(buscado.get(4).getNombre());
                     lblPrecioB5.setText("PVP:" + buscado.get(4).getPrecio());
@@ -1666,6 +1678,7 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_txtbuscar2KeyReleased
 
     private void JPBuscado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado2MouseClicked
+        //LLEVA A LA PAGINA PARA COMPRAR JUEGO
         Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
         JPapartadoTienda.setVisible(false);
@@ -1707,7 +1720,7 @@ public class paginaInicio extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_JPBuscado2MouseClicked
-
+    //TODOS LOS SIGUIENTES HACEN EL MISMO PROCESO
     private void JPBuscado3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBuscado3MouseClicked
         Icon Imagenes;
         jPApartadoAdmin.setVisible(false);
@@ -2064,10 +2077,12 @@ public class paginaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprarJuego1ActionPerformed
 
     private void lblValoracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblValoracionMouseClicked
+        //MUESTRA LA SECCION DE VALORAR
         JPvalorar.setVisible(true);
     }//GEN-LAST:event_lblValoracionMouseClicked
 
     private void btnGuardarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarValorActionPerformed
+        //PERMITE VALORAR UN JUEGO
         double valoracion = 0;
         double resultado = 0;
         if (jRadioButton1.isSelected()) {
@@ -2263,6 +2278,7 @@ public class paginaInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;

@@ -227,6 +227,7 @@ public class Login extends javax.swing.JFrame {
         List<Entidades.Cuenta> listacuentas = ccuenta.findCuentaEntities();
         List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
         boolean verificador = false;
+        //BUSCA LOS DATOS QUE SE INGRESAN EN LA BASE DE DATOS Y VERIFICA QUE SEAN CORRECTOS
         for (int i = 0; i < listaU.size(); i++) {
             if (listaU.get(i).getCuentauser().getNickname().equals(txtNombreusuario.getText()) && listaU.get(i).getCuentauser().getContrasena().equals(txtcontrasena.getText())) {
                 verificador = true;

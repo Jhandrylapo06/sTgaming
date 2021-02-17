@@ -244,6 +244,7 @@ public class RecuperarContrasena extends javax.swing.JFrame {
 
     private void btnEnviarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarCodigoActionPerformed
         try {
+            //ENVIA UN CORREO CON UN CODIGO AL CORREO DEL QUE SE DESEA RECUPERAR LA CONTRASEÑA
             Controlador.UsuarioJpaController cusuarios = new UsuarioJpaController();
             List<Entidades.Usuario> listaU = cusuarios.findUsuarioEntities();
             boolean verificador = true;
@@ -304,7 +305,7 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEnviarCodigoActionPerformed
 
     private void btnGuardarNPsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarNPsActionPerformed
-        
+        //COMPUEBA DATOS DE LA NUEVA CONTRASEÑA
         Login n = new Login();
         
         try {
@@ -351,6 +352,7 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassnuevaActionPerformed
 
     private void btnVerificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificar1ActionPerformed
+        //VERIFICA QUE ELL CODIGO ENVIADO Y EL QUE SE INGRESO SON CORRECTOS
         if (txtcodConf.getText().equals(String.valueOf(codigo))) {
             panelverificar.setVisible(false);
             panelguardar.setVisible(true);

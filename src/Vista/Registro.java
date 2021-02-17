@@ -361,7 +361,7 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasConActionPerformed
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
-
+        //FILTRO PARA QUE SE INGRESEN DATOS VALIDOS
         try {
             List<Usuario> listausuarios = Cusuario.findUsuarioEntities();
             boolean e = false;
@@ -445,8 +445,8 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcodConfActionPerformed
 
     private void btnConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmarMouseClicked
-        // TODO add your handling code here:
-
+       
+        //COMPRUEBA QUE EL CODIGO QUE SE INGRESA SEA IGUAL QUE EL QUE SE ENVIO
         try {
             System.out.println("codigo=" + codigo
                     + "");

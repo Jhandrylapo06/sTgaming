@@ -227,27 +227,29 @@ public class Tienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
+        //COPIA EL ARCHIVO DESCARGABLE DEL JUEGO Y LO ENVIA A LA CARPETA DE MIS JUGOS
+        //EL JUEGO COMPRADO SE AÑADE A LA LISTA DE MIS JUEGOS
         if (txtNumtarjeta.getText().length() > 14 && txtNumtarjeta.getText().length() < 20) {
             if (txtCodigo.getText().length() == 3) {
                 if (txtfVencimiento.getText().length() == 4) {
                     for (int i = 0; i < listaJ.size(); i++) {
-                        System.out.println("Entra al for");
+                        
                         if (idjuego == listaJ.get(i).getIdJuego()) {
-                            System.out.println("Entra al if");
-                            File imagenP = new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJ.get(i).getNombre() + "Descargable.png");
+                           
+                            File imagenP = new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Img/" + listaJ.get(i).getNombre() + "Descargable.jpg");
                             BufferedImage imagencopiar;
                             try {
                                 imagencopiar = ImageIO.read(imagenP);
 
-                                ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Misjuegos/" + listaJ.get(i).getNombre() + "Descargable.png"));
+                                ImageIO.write(imagencopiar, "png", new File("C://Users/Usuario iTC/Documents/NetBeansProjects/sTgaming/src/Misjuegos/" + listaJ.get(i).getNombre() + "Descargable.jpg"));
 
                             } catch (Exception e) {
-                                System.out.println("HOLA");
+                                
                             }
 
                         }
                     }
-                    System.out.println("Pasa GUARDAR");
+                    
                     this.setVisible(false);
 
                     for (int i = 0; i < listacuenta.size(); i++) {
